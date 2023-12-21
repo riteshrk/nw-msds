@@ -1,0 +1,213 @@
+---
+title: 'Ritesh Kumar R Assignment #1 (50 points)'
+output:
+  html_document: default
+---
+
+```{r setup, include = FALSE}
+# DO NOT ADD OR REVISE CODE HERE
+knitr::opts_chunk$set(echo = TRUE, eval = TRUE)
+
+```
+
+### Instructions
+
+R markdown is a plain-text file format for integrating text and R code, and creating transparent, reproducible and interactive reports. An R markdown file (.Rmd) contains metadata, markdown and R code "chunks", and can be "knit" into numerous output types. Answer the test questions by adding R code to the fenced code areas below each item. Once completed, you will "knit" and submit the resulting .html file, as well the .Rmd file. The .html will include your R code *and* the output.
+
+**Before proceeding, look to the top of the .Rmd for the (YAML) metadata block, where the *title* and *output* are given. Please change *title* from 'Programming with R Assignment #1' to your name, with the format 'lastName_firstName.'**
+
+If you encounter issues with knitting the .html, please send an email via Canvas to your TA.
+
+Each code chunk is delineated by six (6) backticks; three (3) at the start and three (3) at the end. After the opening ticks, arguments are passed to the code chunk and in curly brackets. **Please do not add or remove backticks, or modify the arguments or values inside the curly brackets**. An example code chunk is included here: 
+
+```{r exampleCodeChunk, eval = FALSE}
+# Comments are included in each code chunk, simply as prompts
+
+...R code placed here
+
+...R code placed here
+
+```
+
+You need only enter text inside the code chunks for each test item.
+
+Depending on the problem, grading will be based on: 1) the correct result, 2) coding efficiency and 3) graphical presentation features (labeling, colors, size, legibility, etc).  I will be looking for well-rendered displays.  In the "knit" document, only those results specified in the problem statements should be displayed. For example, do not output - i.e. send to the Console - the contents of vectors or data frames unless requested by the problem.  You should be able to code for each solution in fewer than ten lines; though code for your visualizations may exceed this.
+
+**Submit both the .Rmd and .html files for grading**
+
+-----
+
+**Example Problem with Solution:**
+Use *rbinom()* to generate two random samples of size 10,000 from the binomial distribution. For the first sample, use p = 0.45 and n = 10. For the second sample, use p = 0.55 and n = 10.
+
+(a) Convert the sample frequencies to sample proportions and compute the mean number of successes for each sample. Present these statistics.
+
+```{r testExampleA}
+set.seed(123)
+sample.one <- table(rbinom(10000, 10, 0.45)) / 10000
+sample.two <- table(rbinom(10000, 10, 0.55)) / 10000
+
+successes <- seq(0, 10)
+
+sum(sample.one * successes) # [1] 4.4827
+sum(sample.two * successes) # [1] 5.523
+```
+
+(b) Present the proportions in a vertical, side-by-side barplot color coding the two samples.
+
+```{r testExampleB}
+counts <- rbind(sample.one, sample.two)
+
+barplot(counts, main = "Comparison of Binomial Sample Proportions", 
+  ylab = "Frequency", ylim = c(0,0.3),xlab = "Number of Successes",
+  beside = TRUE, col = c("darkblue","red"),legend = rownames(counts),
+  names.arg = c("0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"))
+```
+
+####  Please delete the Instructions and Examples shown above prior to submitting your .Rmd and .html files.
+
+-----
+
+### Test Items starts from here - There are 5 sections - 50 points total ##########################
+
+Read each question carefully and address each element.  Do not output contents of vectors or data frames unless requested.
+
+##### Section 1: (8 points) This problem deals with vector manipulations.
+
+(1)(a)  Create a vector that contains the following:
+* The integer sequence 1 to 5, inclusive,
+* The square root of 2,
+* The product of 17 and 14, and
+* Three (3) repetitions of the vector c(2.5, 5, 7.5).
+
+Assign the vector to the name q1_vector and output. You will use q1_vector for the following four (4) questions.
+
+```{r test1a}
+
+
+```
+
+(1)(b)  Remove all elements of q1_vector greater than 7. Assign this new vector, with only values equal to or less than 7, to the name q1_vector_7. What is the length of q1_vector_7?
+
+```{r test1b}
+
+
+```
+
+(1)(c) Sort q1_vector in ascending order and assign the sorted vector to the name q1_vector_sorted. What is the sum of the 5th through 10th elements of q1_vector_sorted, inclusive?
+
+```{r test1c}
+
+
+```
+
+(1)(d) Square each element of q1_vector and assign the new, squared value vector to the name q1_vector_sqrd. How many elements of q1_vector_sqrd are greater than 25?
+
+```{r test1d}
+
+
+```
+
+(1)(e) Remove the first and last elements of q1_vector. Assign the two (2) removed elements to the name q1_vector_short. What is the product of the elements of q1_vector_short?
+
+```{r test1e}
+
+
+```
+
+-----
+
+##### Section 2: (10 points) The expression y = sin(x/2) - cos(x/2) is a trigonometric function.
+
+(2)(a) Create a user-defined function - via *function()* - that implements the trigonometric function above, accepts numeric values, "x," calculates and returns values "y."
+
+```{r test2a}
+
+
+```
+
+(2)(b) Create a vector, x, of 4001 equally-spaced values from -2 to 2, inclusive. Compute values for y using the vector x and your function from (2)(a).  **Do not output x or y.**  Find the value in the vector x that corresponds to the minimum value in the vector y. Restrict attention to only the values of x and y you have computed; i.e. do not interpolate. Round to 3 decimal places and output both the maximum y and corresponding x value.
+
+Finding the two desired values can be accomplished in as few as two lines of code. Do not use packages or programs you may find on the internet or elsewhere. Do not output the other elements of the vectors x and y. Relevant coding methods are given in the *Quick Start Guide for R*.
+
+```{r test2b}
+
+
+```
+
+(2)(c) Plot y versus x in color, with x on the horizontal axis. Show the location of the maximum value of y determined in 2(b).  Show the values of x and y corresponding to the maximum value of y in the display. Add a title and other features such as text annotations. Text annotations may be added via *text()* for base R plots and *geom_text()* or *geom_label()* for ggplots.
+
+```{r test2c}
+
+
+```
+
+-----
+
+##### Section 3: (8 points) This problem requires finding the point of intersection of two functions.  Using the function ```y = cos(x / 2) * sin(x / 2)```, find where the curved line y = -(x/2)^3 intersects it within the range of values used in part (2) (i.e. 4001 equally-spaced values from -2 to 2).  Plot both functions on the same display, and show the point of intersection.  Present the coordinates of this point as text in the display.    
+
+```{r test3}
+
+
+```
+
+-----
+
+##### Section 4: (12 points) Use the "trees" dataset for the following items. This dataset has three variables (Girth, Height, Volume) on 31 felled black cherry trees.
+
+(4)(a) Use *data(trees)* to load the dataset. Check and output the structure with *str()*. Use *apply()* to return the mean values for the three variables. Output these values.  Using R and logicals, determine the number of trees with Volume greater than the mean Volume; effectively, how many rows have Volume greater than the mean Volume.   
+
+```{r test3a}
+data(trees)
+
+
+```
+
+(4)(b) Girth is defined as the diameter of a tree taken at 4 feet 6 inches from the ground. Convert each diameter to a radius, r. Calculate the cross-sectional area of each tree using pi times the squared radius. What is the interquartile range (IQR) of areas?
+
+```{r test3b}
+
+
+```
+
+(4)(c) Create a histogram of the areas calculated in (b). Title and label the axis.
+
+```{r test3c}
+
+
+```
+
+(4)(d) Identify the tree with the largest area and output on one line its row number and three measurements.
+
+```{r test3d}
+
+
+```
+
+-----
+
+##### Section 5: (12 points) The Student's t distribution is an example of a symmetric, bell-shaped distribution but with 'heavier' tails than a normal distribution.  This problem involves comparing the two.  
+
+5(a) Use *set.seed(9999)* and *rt()* with n = 100, df = 10 to generate a random sample designated as y.  Generate a second random sample designated as x with *set.seed(123)* and *rnorm()* using n = 100, mean = 0 and sd = 1.25.  
+
+Generate a new object using *cbind(x, y)*. Do not output this object; instead, assign it to a new name. Pass this object to *apply()* and compute the inter-quartile range (IQR) for each column:  x and y. Use the function *IQR()* for this purpose. Round the results to four decimal places and present (this exercise shows the similarity of the IQR values.).
+
+For information about *rt()*, use *help(rt)* or *?rt()*.  **Do not output x or y.**
+
+```{r test5a}
+
+
+```
+
+(5)(b) This item will illustrate the difference between a normal and heavy-tailed distribution.  For base R plots, use *par(mfrow = c(2, 2))* to generate a display with four diagrams; *grid.arrange()* for ggplots. On the first row, for the normal results, present a histogram and a horizontal boxplot for x in color.  For the t results, present a histogram and a horizontal boxplot for y in color.
+
+```{r test5b}
+
+
+```
+
+(5)(c) QQ plots are useful for detecting the presence of heavy-tailed distributions. Present side-by-side QQ plots, one for each sample, using *qqnorm()* and *qqline()*.  Add color and titles. In base R plots, "cex" can be used to control the size of the plotted data points and text; "size" for ggplot2 figures. Lastly, determine if there are any extreme outliers in either sample.Remember extreme outliers are based on 3 multiplied by the IQR in the box plot. R uses a default value of 1.5 times the IQR to define outliers (not extreme) in both boxplot and boxplot stats.
+```{r test5c}
+
+
+```
