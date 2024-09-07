@@ -18,5 +18,5 @@ This repository serves as a comprehensive archive of all assignments submitted d
 
 ### Note
 
-All materials have been posted with permission and in compliance with the university's academic policies. These assignments represent completed coursework.
+All materials have been posted in compliance with the university's academic policies. These assignments represent completed coursework.
 
