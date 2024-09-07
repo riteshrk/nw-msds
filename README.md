@@ -1,4 +1,4 @@
-# nw-msds-courses
+# nw-msds
 
 ## Submitted Assignments
 
