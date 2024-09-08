@@ -1,0 +1,255 @@
+SQL Queries
+
+
+Query 0
+
+
+-- Create the "stocks" database
+CREATE DATABASE stocks;
+
+
+-- Create the "stocks" table with a proper primary key definition
+CREATE TABLE stocks (
+    id VARCHAR(50) PRIMARY KEY, -- Changed from "primary_key" to "id" and set as PRIMARY KEY
+    stock VARCHAR(50),
+    date DATE,
+    open FLOAT(53),
+    high FLOAT(53),
+    low FLOAT(53),
+    close FLOAT(53),
+    adjusted_close FLOAT(53),
+    volume NUMERIC
+);
+
+
+
+
+query_1 = SELECT column_name FROM information_schema.columns WHERE table_name = 'stocks';
+
+query_2 = SELECT COUNT(*) FROM stocks;
+
+query_3 = SELECT COUNT(DISTINCT stock) FROM stocks;
+
+query_4 = SELECT COUNT(DISTINCT date) FROM stocks;
+
+query_5 = SELECT stock, STDDEV(close) AS stddev_close FROM stocks GROUP BY stock ORDER BY stddev_close DESC LIMIT 5;
+
+
+query_6 =  SELECT initial.stock, 
+       ((final.close - initial.close) / initial.close * 100) AS percentage_change
+FROM 
+    (SELECT stock, close
+     FROM stocks
+     WHERE date = (SELECT MIN(date) FROM stocks) 
+     ) AS initial
+JOIN 
+    (SELECT stock, close
+     FROM stocks
+     WHERE date = (SELECT MAX(date) FROM stocks)
+     ) AS final
+ON initial.stock = final.stock
+ORDER BY percentage_change DESC
+LIMIT 5;
+ 
+
+query_7 = '''
+
+WITH DateRange AS (
+  SELECT
+    stock,
+    MIN(date) AS start_date,
+    MAX(date) AS end_date
+  FROM
+    stocks
+  GROUP BY
+    stock
+),
+StartEndPrices AS (
+  SELECT
+    dr.stock,
+    MIN(CASE WHEN ns.date = dr.start_date THEN ns.close ELSE NULL END) AS close_start,
+    MAX(CASE WHEN ns.date = dr.end_date THEN ns.close ELSE NULL END) AS close_end
+  FROM
+    stocks ns
+  JOIN
+    DateRange dr ON ns.stock = dr.stock
+  GROUP BY
+    dr.stock
+),
+PercentageChange AS (
+  SELECT
+    stock,
+    close_start,
+    close_end,
+    (close_end - close_start) / close_start * 100 AS percentage_change
+  FROM
+    StartEndPrices
+)
+SELECT
+  stock,
+  close_start,
+  close_end,
+  percentage_change
+FROM
+  PercentageChange
+ORDER BY
+  percentage_change DESC
+LIMIT 5;
+
+'''
+
+query_8 = '''
+WITH DateExtremes AS (
+  SELECT
+    stock,
+    MIN(date) AS start_date,
+    MAX(date) AS end_date
+  FROM
+    stocks
+  GROUP BY
+    stock
+),
+PriceExtremes AS (
+  SELECT
+    e.stock,
+    MIN(s.close) AS close_start,
+    MAX(s.close) AS close_end
+  FROM
+    stocks s
+  JOIN
+    DateExtremes e ON s.stock = e.stock AND (s.date = e.start_date OR s.date = e.end_date)
+  GROUP BY
+    e.stock
+),
+StdDevData AS (
+  SELECT
+    stock,
+    STDDEV(close) AS stddev_close
+  FROM
+    stocks
+  GROUP BY
+    stock
+),
+FinalData AS (
+  SELECT
+    p.stock,
+    p.close_start,
+    p.close_end,
+    ((p.close_end - p.close_start) / p.close_start) * 100 AS percentage_change,
+    d.stddev_close
+  FROM
+    PriceExtremes p
+  JOIN
+    StdDevData d ON p.stock = d.stock
+)
+SELECT
+  *
+FROM
+  FinalData
+ORDER BY
+  percentage_change DESC
+LIMIT 5;
+'''
+
+query_9 = '''
+WITH DailyChanges AS (
+  SELECT
+    stock,
+    date,
+    close,
+    LAG(close, 1) OVER (PARTITION BY stock ORDER BY date) AS previous_close
+  FROM
+    stocks
+),
+DailyPercentageChanges AS (
+  SELECT
+    stock,
+    date,
+    close,
+    (close - previous_close) / previous_close * 100 AS change_percentage
+  FROM
+    DailyChanges
+  WHERE
+    previous_close IS NOT NULL AND previous_close > 0
+),
+AggregatedData AS (
+  SELECT
+    stock,
+    AVG(change_percentage) AS avg_change_percentage,
+    STDDEV(change_percentage) AS stddev_change,
+    MIN(close) AS min_close_price,
+    MAX(close) AS max_close_price
+  FROM
+    DailyPercentageChanges
+  GROUP BY
+    stock
+)
+SELECT
+  stock,
+  avg_change_percentage,
+  stddev_change,
+  min_close_price,
+  max_close_price
+FROM
+  AggregatedData
+ORDER BY
+  avg_change_percentage DESC
+LIMIT 5;
+'''
+
+
+query_10 = '''
+WITH DailyChanges AS (
+  SELECT
+    stock,
+    date,
+    close,
+    volume,
+    LAG(close) OVER (PARTITION BY stock ORDER BY date) AS previous_close,
+    LAG(volume) OVER (PARTITION BY stock ORDER BY date) AS previous_volume
+  FROM
+    stocks
+),
+DailyPercentageChanges AS (
+  SELECT
+    stock,
+    date,
+    close,
+    volume,
+    CASE
+      WHEN previous_close > 0 THEN (close - previous_close) / previous_close * 100
+      ELSE NULL
+    END AS price_change_percentage,
+    CASE
+      WHEN previous_volume > 0 THEN (volume - previous_volume) / previous_volume * 100
+      ELSE NULL
+    END AS volume_change_percentage
+  FROM
+    DailyChanges
+),
+AggregatedData AS (
+  SELECT
+    stock,
+    AVG(price_change_percentage) FILTER (WHERE price_change_percentage IS NOT NULL) AS avg_price_change_percentage,
+    STDDEV(price_change_percentage) FILTER (WHERE price_change_percentage IS NOT NULL) AS stddev_price_change,
+    MIN(close) AS min_close_price,
+    MAX(close) AS max_close_price,
+    AVG(volume_change_percentage) FILTER (WHERE volume_change_percentage IS NOT NULL) AS avg_volume_change_percentage
+  FROM
+    DailyPercentageChanges
+  GROUP BY
+    stock
+)
+SELECT
+  stock,
+  avg_price_change_percentage,
+  stddev_price_change,
+  min_close_price,
+  max_close_price,
+  avg_volume_change_percentage
+FROM
+  AggregatedData
+ORDER BY
+  avg_price_change_percentage DESC
+LIMIT 5;
+''' 
