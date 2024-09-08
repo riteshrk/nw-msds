@@ -1,0 +1,540 @@
+<html>
+<head>
+<title>Classification.ipynb</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #8c8c8c; font-style: italic;}
+.s1 { color: #080808;}
+.s2 { color: #0033b3;}
+.s3 { color: #067d17;}
+.s4 { color: #1750eb;}
+.s5 { color: #0037a6;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Classification.ipynb</font>
+</center></td></tr></table>
+<pre><span class="s0">#%% 
+# Import Libraries</span>
+<span class="s2">import </span><span class="s1">pandas </span><span class="s2">as </span><span class="s1">pd</span>
+<span class="s2">import </span><span class="s1">numpy </span><span class="s2">as </span><span class="s1">np</span>
+<span class="s2">import </span><span class="s1">matplotlib.pyplot </span><span class="s2">as </span><span class="s1">plt</span>
+<span class="s2">import </span><span class="s1">seaborn </span><span class="s2">as </span><span class="s1">sns</span>
+<span class="s2">from </span><span class="s1">sklearn.model_selection </span><span class="s2">import </span><span class="s1">train_test_split</span>
+<span class="s2">from </span><span class="s1">sklearn </span><span class="s2">import </span><span class="s1">metrics</span>
+<span class="s2">from </span><span class="s1">sklearn </span><span class="s2">import </span><span class="s1">svm</span>
+<span class="s2">from </span><span class="s1">sklearn.linear_model </span><span class="s2">import </span><span class="s1">LogisticRegression</span>
+<span class="s2">from </span><span class="s1">sklearn.naive_bayes </span><span class="s2">import </span><span class="s1">GaussianNB</span>
+<span class="s2">from </span><span class="s1">sklearn.model_selection </span><span class="s2">import </span><span class="s1">GridSearchCV</span>
+<span class="s2">from </span><span class="s1">sklearn.metrics </span><span class="s2">import </span><span class="s1">roc_curve, auc, precision_recall_curve, f1_score, confusion_matrix</span>
+<span class="s2">from </span><span class="s1">sklearn.preprocessing </span><span class="s2">import </span><span class="s1">StandardScaler</span>
+<span class="s2">from </span><span class="s1">imblearn.over_sampling </span><span class="s2">import </span><span class="s1">SMOTE</span>
+
+
+<span class="s2">import </span><span class="s1">warnings</span>
+<span class="s1">warnings.filterwarnings(action=</span><span class="s3">&quot;ignore&quot;</span><span class="s1">)</span>
+<span class="s0">#%% 
+# Read datafile</span>
+<span class="s1">df = pd.read_csv(</span><span class="s3">'data.csv'</span><span class="s1">)</span>
+<span class="s0">#%% 
+# Cleaning the column_names</span>
+<span class="s1">df.columns = df.columns.str.strip()</span>
+<span class="s0">#%% 
+# Get the size of the dataframe</span>
+<span class="s1">df.shape</span>
+<span class="s0">#%% 
+</span><span class="s1">df.info()</span>
+<span class="s0">#%% md 
+</span><span class="s1">All the variables are numerical. It is possible to describe the data. 
+</span><span class="s0">#%% 
+</span><span class="s1">df.describe()</span>
+<span class="s0">#%% 
+# Checking for missing values</span>
+<span class="s1">df.isna().sum().max()</span>
+<span class="s0">#%% 
+# Checking for duplicates()</span>
+<span class="s1">df.duplicated().sum()</span>
+<span class="s0">#%% 
+# Identifying binary columns</span>
+
+<span class="s1">binary_columns = [column </span><span class="s2">for </span><span class="s1">column </span><span class="s2">in </span><span class="s1">df.columns </span><span class="s2">if </span><span class="s1">df[column].nunique() == </span><span class="s4">2 </span><span class="s2">and </span><span class="s1">set(df[column].unique()) == set([</span><span class="s4">0</span><span class="s1">, </span><span class="s4">1</span><span class="s1">])]</span>
+
+<span class="s1">print(</span><span class="s3">&quot;Columns that have only 0s and 1s: &quot;</span><span class="s1">, binary_columns)</span>
+<span class="s0">#%% 
+# Counting the number of columns with values between 0 and 1</span>
+<span class="s1">cols_in_range = [col </span><span class="s2">for </span><span class="s1">col </span><span class="s2">in </span><span class="s1">df.columns </span><span class="s2">if </span><span class="s1">df[col].between(</span><span class="s4">0</span><span class="s1">, </span><span class="s4">1</span><span class="s1">).all()]</span>
+
+<span class="s1">print(</span><span class="s3">&quot;Number of columns with values between 0 and 1 (inclusive): &quot;</span><span class="s1">, len(cols_in_range))</span>
+<span class="s0">#%% md 
+</span><span class="s1">Of the 96 features, 74 have have values between 0 and 1 (inclusive) 
+</span><span class="s0">#%% 
+# Bar chart of Bankrupt?</span>
+
+<span class="s0"># Bar chart</span>
+<span class="s1">plt.figure(figsize=(</span><span class="s4">12</span><span class="s1">, </span><span class="s4">8</span><span class="s1">))</span>
+<span class="s1">bar_plot = sns.countplot(x=df[</span><span class="s3">'Bankrupt?'</span><span class="s1">])</span>
+
+<span class="s1">plt.title(</span><span class="s3">'Bar Chart of Bankrupt?'</span><span class="s1">)</span>
+
+<span class="s0"># Adding data labels</span>
+<span class="s2">for </span><span class="s1">p </span><span class="s2">in </span><span class="s1">bar_plot.patches:</span>
+    <span class="s1">bar_plot.annotate(format(p.get_height(), </span><span class="s3">'.2f'</span><span class="s1">),</span>
+                      <span class="s1">(p.get_x() + p.get_width() / </span><span class="s4">2.</span><span class="s1">, p.get_height()),</span>
+                      <span class="s1">ha = </span><span class="s3">'center'</span><span class="s1">,</span>
+                      <span class="s1">va = </span><span class="s3">'center'</span><span class="s1">,</span>
+                      <span class="s1">fontsize = </span><span class="s4">11</span><span class="s1">,</span>
+                      <span class="s1">xytext = (</span><span class="s4">0</span><span class="s1">, </span><span class="s4">10</span><span class="s1">),</span>
+                      <span class="s1">textcoords = </span><span class="s3">'offset points'</span><span class="s1">)</span>
+
+<span class="s1">plt.show()</span>
+<span class="s0">#%% md 
+</span><span class="s1">Outlier removal in the independent variables for a dataset with a highly imbalanced dependent variable like this one (where bankrupt cases are the minority) could potentially eliminate valuable information. Since bankruptcies are rare events, the characteristics that lead to bankruptcy may be present as outliers in the independent variables. These &quot;outliers&quot; might be critical in predicting the rare event of bankruptcy. If they were removed, the model's ability to generalize and identify the risk of bankruptcy could be significantly impaired. Hence, preserving outliers in the independent variables may be essential for capturing the full picture of what contributes to bankruptcy. 
+</span><span class="s0">#%% 
+# Boxplot of Bankrupt?</span>
+<span class="s1">plt.figure(figsize=(</span><span class="s4">12</span><span class="s1">, </span><span class="s4">6</span><span class="s1">))</span>
+<span class="s1">sns.boxplot(x=df[</span><span class="s3">'Bankrupt?'</span><span class="s1">])</span>
+<span class="s1">plt.title(</span><span class="s3">'Boxplot of Bankrupt?'</span><span class="s1">)</span>
+<span class="s1">plt.show()</span>
+<span class="s0">#%% 
+# Plot Density Plot</span>
+<span class="s1">sns.distplot(df[</span><span class="s3">'Bankrupt?'</span><span class="s1">], hist = </span><span class="s2">False</span><span class="s1">, kde = </span><span class="s2">True</span><span class="s1">,</span>
+             <span class="s1">kde_kws = {</span><span class="s3">'shade'</span><span class="s1">: </span><span class="s2">True</span><span class="s1">, </span><span class="s3">'linewidth'</span><span class="s1">: </span><span class="s4">3</span><span class="s1">})</span>
+
+<span class="s1">plt.title(</span><span class="s3">'Density Plot for Bankrupt?'</span><span class="s1">)</span>
+<span class="s1">plt.xlabel(</span><span class="s3">'Bankrupt?'</span><span class="s1">)</span>
+<span class="s1">plt.ylabel(</span><span class="s3">'Density'</span><span class="s1">)</span>
+
+<span class="s1">plt.show()</span>
+<span class="s0">#%% 
+# Identify the features that have the highest correlation with Bankrupt?</span>
+
+<span class="s0"># Compute the correlation matrix</span>
+<span class="s1">correlation_matrix = df.corr()</span>
+
+<span class="s0"># Get the correlation of 'Bankrupt?' with other features</span>
+<span class="s1">correlation_with_bankrupt = correlation_matrix[</span><span class="s3">'Bankrupt?'</span><span class="s1">]</span>
+
+<span class="s0"># Get absolute values of correlation for comparison</span>
+<span class="s1">absolute_correlation_with_bankrupt = correlation_with_bankrupt.abs()</span>
+
+<span class="s0"># Get the twenty features that have the highest correlation with 'Bankrupt?'</span>
+<span class="s1">top_20_correlated_features = absolute_correlation_with_bankrupt.nlargest(</span><span class="s4">21</span><span class="s1">).drop(</span><span class="s3">'Bankrupt?'</span><span class="s1">, errors=</span><span class="s3">'ignore'</span><span class="s1">)</span>
+
+<span class="s1">print(top_20_correlated_features)</span>
+<span class="s0">#%% 
+# Plot the heatmap</span>
+<span class="s1">features_list = list(top_20_correlated_features.index) + [</span><span class="s3">'Bankrupt?'</span><span class="s1">]</span>
+
+<span class="s0"># Construct a DataFrame with wanted features only</span>
+<span class="s1">df_subset = df[features_list]</span>
+
+<span class="s0"># Compute the correlation matrix for the subset dataframe</span>
+<span class="s1">correlation_matrix_subset = df_subset.corr()</span>
+
+<span class="s0"># Generate a mask for the upper triangle</span>
+<span class="s1">mask = np.triu(np.ones_like(correlation_matrix_subset, dtype=bool))</span>
+
+<span class="s0"># Set up the matplotlib figure</span>
+<span class="s1">f, ax = plt.subplots(figsize=(</span><span class="s4">11</span><span class="s1">, </span><span class="s4">9</span><span class="s1">))</span>
+
+<span class="s0"># Generate a custom diverging colormap</span>
+<span class="s1">cmap = sns.diverging_palette(</span><span class="s4">230</span><span class="s1">, </span><span class="s4">20</span><span class="s1">, as_cmap=</span><span class="s2">True</span><span class="s1">)</span>
+
+<span class="s0"># Draw the heatmap with the mask and correct aspect ratio</span>
+<span class="s1">sns.heatmap(correlation_matrix_subset, mask=mask, cmap=cmap, vmax=</span><span class="s4">1</span><span class="s1">, center=</span><span class="s4">0</span><span class="s1">,</span>
+            <span class="s1">square=</span><span class="s2">True</span><span class="s1">, linewidths=</span><span class="s4">.5</span><span class="s1">, cbar_kws={</span><span class="s3">&quot;shrink&quot;</span><span class="s1">: </span><span class="s4">.5</span><span class="s1">}, annot=</span><span class="s2">True</span><span class="s1">)</span>
+<span class="s1">plt.show()</span>
+<span class="s0">#%% 
+# To avoid multi-colinearity, we identify the highly correlated features in df</span>
+
+<span class="s0"># Calculate correlation matrix</span>
+<span class="s1">corr_matrix = df.corr()</span>
+<span class="s0"># Select upper triangle of correlation matrix</span>
+<span class="s1">upper = corr_matrix.where(np.triu(np.ones(corr_matrix.shape), k=</span><span class="s4">1</span><span class="s1">).astype(bool))</span>
+<span class="s0"># Identify pairs with correlation above 0.95</span>
+<span class="s1">pairs = [(column, row) </span><span class="s2">for </span><span class="s1">column </span><span class="s2">in </span><span class="s1">upper.columns </span><span class="s2">for </span><span class="s1">row </span><span class="s2">in </span><span class="s1">upper.index </span><span class="s2">if </span><span class="s1">abs(upper[column][row]) &gt; </span><span class="s4">0.95</span><span class="s1">]</span>
+<span class="s0"># Prepare a list containing column pairs and their correlation</span>
+<span class="s1">output = [(pair[</span><span class="s4">0</span><span class="s1">], pair[</span><span class="s4">1</span><span class="s1">], upper[pair[</span><span class="s4">0</span><span class="s1">]][pair[</span><span class="s4">1</span><span class="s1">]]) </span><span class="s2">for </span><span class="s1">pair </span><span class="s2">in </span><span class="s1">pairs]</span>
+<span class="s0"># Create a DataFrame from the list</span>
+<span class="s1">df_output = pd.DataFrame(output, columns=[</span><span class="s3">'Feature1'</span><span class="s1">, </span><span class="s3">'Feature2'</span><span class="s1">, </span><span class="s3">'Correlation'</span><span class="s1">])</span>
+<span class="s0"># Set pandas to display all columns in DataFrame</span>
+<span class="s1">pd.set_option(</span><span class="s3">'display.expand_frame_repr'</span><span class="s1">, </span><span class="s2">False</span><span class="s1">)</span>
+<span class="s0"># Print the output DataFrame</span>
+<span class="s1">print(df_output)</span>
+<span class="s0">#%% 
+# Drop features to avoid multi-colinearity</span>
+<span class="s0"># Set the columns we want to drop</span>
+<span class="s1">columns_to_drop = [</span>
+    <span class="s3">&quot;ROA(C) before interest and depreciation before interest&quot;</span><span class="s1">,</span>
+    <span class="s3">&quot;ROA(A) before interest and % after tax&quot;</span><span class="s1">,</span>
+    <span class="s3">&quot;Operating Gross Margin&quot;</span><span class="s1">,</span>
+    <span class="s3">&quot;Pre-tax net Interest Rate&quot;</span><span class="s1">,</span>
+    <span class="s3">&quot;After-tax net Interest Rate&quot;</span><span class="s1">,</span>
+    <span class="s3">&quot;Net Value Per Share (B)&quot;</span><span class="s1">,</span>
+    <span class="s3">&quot;Net Value Per Share (C)&quot;</span><span class="s1">,</span>
+    <span class="s3">&quot;Persistent EPS in the Last Four Seasons&quot;</span><span class="s1">,</span>
+    <span class="s3">&quot;After-tax Net Profit Growth Rate&quot;</span><span class="s1">,</span>
+    <span class="s3">&quot;Debt ratio %&quot;</span><span class="s1">,</span>
+    <span class="s3">&quot;Operating Profit Per Share (Yuan ¥)&quot;</span><span class="s1">,</span>
+    <span class="s3">&quot;Persistent EPS in the Last Four Seasons&quot;</span><span class="s1">,</span>
+    <span class="s3">&quot;Per Share Net profit before tax (Yuan ¥)&quot;</span><span class="s1">,</span>
+    <span class="s3">&quot;Current Liabilities/Liability&quot;</span><span class="s1">,</span>
+    <span class="s3">&quot;Current Liabilities/Equity&quot;</span><span class="s1">,</span>
+    <span class="s3">&quot;Operating Gross Margin&quot;</span><span class="s1">,</span>
+    <span class="s3">&quot;Realized Sales Gross Margin&quot;</span><span class="s1">,</span>
+    <span class="s3">&quot;Borrowing dependency&quot;</span><span class="s1">,</span>
+    <span class="s3">&quot;Current Liabilities/Equity&quot;</span><span class="s1">,</span>
+    <span class="s3">&quot;Current Liability to Equity&quot;</span>
+<span class="s1">]</span>
+
+<span class="s0"># Drop the columns</span>
+<span class="s1">df = df.drop(columns_to_drop, axis=</span><span class="s4">1</span><span class="s1">)</span>
+<span class="s0">#%% 
+# Identify the features that have the hgihest correlation with Bankrupt?</span>
+
+<span class="s0"># Compute the correlation matrix</span>
+<span class="s1">correlation_matrix = df.corr()</span>
+
+<span class="s0"># Get the correlation of 'Bankrupt?' with other features</span>
+<span class="s1">correlation_with_bankrupt = correlation_matrix[</span><span class="s3">'Bankrupt?'</span><span class="s1">]</span>
+
+<span class="s0"># Get absolute values of correlation for comparison</span>
+<span class="s1">absolute_correlation_with_bankrupt = correlation_with_bankrupt.abs()</span>
+
+<span class="s0"># Get the twenty features that have the highest correlation with 'Bankrupt?'</span>
+<span class="s1">top_20_correlated_features = absolute_correlation_with_bankrupt.nlargest(</span><span class="s4">21</span><span class="s1">).drop(</span><span class="s3">'Bankrupt?'</span><span class="s1">, errors=</span><span class="s3">'ignore'</span><span class="s1">)</span>
+
+<span class="s1">print(top_20_correlated_features)</span>
+<span class="s0">#%% 
+# Plot the heatmap</span>
+<span class="s1">features_list = list(top_20_correlated_features.index) + [</span><span class="s3">'Bankrupt?'</span><span class="s1">]</span>
+
+<span class="s0"># Construct a DataFrame with wanted features only</span>
+<span class="s1">df_subset = df[features_list]</span>
+
+<span class="s0"># Compute the correlation matrix for the subset dataframe</span>
+<span class="s1">correlation_matrix_subset = df_subset.corr()</span>
+
+<span class="s0"># Generate a mask for the upper triangle</span>
+<span class="s1">mask = np.triu(np.ones_like(correlation_matrix_subset, dtype=bool))</span>
+
+<span class="s0"># Set up the matplotlib figure</span>
+<span class="s1">f, ax = plt.subplots(figsize=(</span><span class="s4">11</span><span class="s1">, </span><span class="s4">9</span><span class="s1">))</span>
+
+<span class="s0"># Generate a custom diverging colormap</span>
+<span class="s1">cmap = sns.diverging_palette(</span><span class="s4">230</span><span class="s1">, </span><span class="s4">20</span><span class="s1">, as_cmap=</span><span class="s2">True</span><span class="s1">)</span>
+
+<span class="s0"># Draw the heatmap with the mask and correct aspect ratio</span>
+<span class="s1">sns.heatmap(correlation_matrix_subset, mask=mask, cmap=cmap, vmax=</span><span class="s4">1</span><span class="s1">, center=</span><span class="s4">0</span><span class="s1">,</span>
+            <span class="s1">square=</span><span class="s2">True</span><span class="s1">, linewidths=</span><span class="s4">.5</span><span class="s1">, cbar_kws={</span><span class="s3">&quot;shrink&quot;</span><span class="s1">: </span><span class="s4">.4</span><span class="s1">}, annot=</span><span class="s2">True</span><span class="s1">)</span>
+<span class="s1">plt.show()</span>
+<span class="s0">#%% 
+# Plot the boxplots</span>
+
+<span class="s1">fig, axs = plt.subplots(nrows=</span><span class="s4">5</span><span class="s1">, ncols=</span><span class="s4">4</span><span class="s1">, figsize=(</span><span class="s4">20</span><span class="s1">, </span><span class="s4">20</span><span class="s1">))</span>
+
+<span class="s0"># assuming that top_ten_correlated_features index contains feature names</span>
+<span class="s1">features = top_20_correlated_features.index</span>
+
+<span class="s2">for </span><span class="s1">i, feature </span><span class="s2">in </span><span class="s1">enumerate(features):</span>
+    <span class="s0"># calculate row and column index</span>
+    <span class="s1">row = i // </span><span class="s4">4</span>
+    <span class="s1">col = i % </span><span class="s4">4</span>
+
+    <span class="s0"># plot boxplot on corresponding subplot</span>
+    <span class="s1">sns.boxplot(df[feature], ax=axs[row, col])</span>
+    <span class="s1">axs[row, col].set_title(feature)</span>
+
+<span class="s1">plt.tight_layout()</span>
+<span class="s1">plt.show()</span>
+<span class="s0">#%% 
+# Plot the distribution plots of top_ten_correlated_features</span>
+<span class="s1">fig, axs = plt.subplots(nrows=</span><span class="s4">5</span><span class="s1">, ncols=</span><span class="s4">4</span><span class="s1">, figsize=(</span><span class="s4">20</span><span class="s1">, </span><span class="s4">20</span><span class="s1">))</span>
+
+<span class="s0"># assuming that top_ten_correlated_features index contains feature names</span>
+<span class="s1">features = top_20_correlated_features.index</span>
+
+<span class="s2">for </span><span class="s1">i, feature </span><span class="s2">in </span><span class="s1">enumerate(features):</span>
+     <span class="s0"># calculate row and column index</span>
+    <span class="s1">row = i // </span><span class="s4">4</span>
+    <span class="s1">col = i % </span><span class="s4">4</span>
+
+    <span class="s0"># plot distribution on corresponding subplot</span>
+    <span class="s1">sns.histplot(df[feature], ax=axs[row, col])</span>
+    <span class="s1">axs[row, col].set_title(feature)</span>
+
+<span class="s1">plt.tight_layout()</span>
+<span class="s1">plt.show()</span>
+<span class="s0">#%% md 
+</span><span class="s1">The box plots suggest that some have strong net income to assets and shareholder equity ratios, but there's also high borrowing dependency and variability in working capital measures. A notable number of outliers in retained earnings to assets and liability-asset flags indicate exceptional cases. Histograms show positively skewed distributions for most metrics, particularly in operating profit per person and tax rates, implying that lower values are more common but with some firms having significantly higher ratios. 
+</span><span class="s0">#%% 
+# Define the features and target variable for Modelling</span>
+<span class="s1">X = df.drop(</span><span class="s3">'Bankrupt?'</span><span class="s1">, axis=</span><span class="s4">1</span><span class="s1">)</span>
+<span class="s1">y = df[</span><span class="s3">'Bankrupt?'</span><span class="s1">]</span>
+
+<span class="s0"># Split the data</span>
+<span class="s1">X_train, X_val, y_train, y_val = train_test_split(X, y, test_size=</span><span class="s4">0.2</span><span class="s1">, random_state=</span><span class="s4">42</span><span class="s1">)</span>
+<span class="s0">#%% 
+# Initialize the scaler</span>
+<span class="s1">scaler = StandardScaler()</span>
+<span class="s0"># Fit and transform the training data</span>
+<span class="s1">X_train_scaled = scaler.fit_transform(X_train)</span>
+<span class="s0"># Transform validation data</span>
+<span class="s1">X_val_scaled = scaler.transform(X_val)  </span><span class="s0"># Note we only 'transform' the validation set, not 'fit_transform'</span>
+<span class="s0"># Initialize SMOTE</span>
+<span class="s1">smote = SMOTE(random_state=</span><span class="s4">42</span><span class="s1">)</span>
+<span class="s0"># Fit and resample the training data</span>
+<span class="s1">X_train_smote, y_train_smote = smote.fit_resample(X_train_scaled, y_train)</span>
+
+<span class="s0"># Now you can proceed with your training using: X_train_smote, y_train_smote, X_val_scaled and y_val</span>
+<span class="s0">#%% md 
+</span><span class="s1">Our dataset showcases a significant class imbalance with a vast majority of cases being non-bankrupt (6599) and a small minority being bankrupt (220). In such scenarios, logistic regression models tend to be biased towards the majority class, leading to poor classification performance on the minority class. SMOTE (Synthetic Minority Over-sampling Technique) is justified in this context as it generates synthetic samples for the minority class, helping to balance the dataset. This balance allows the logistic regression model to learn a more generalized decision boundary, improving its ability to correctly identify cases of bankruptcy, which is critical for the model's predictive performance. By enhancing the representation of the minority class, SMOTE helps in improving the sensitivity (recall) and precision of the model, ensuring that both classes are predicted more accurately, rather than the model overwhelmingly predicting the majority class. 
+</span><span class="s0">#%% 
+# Logistic Regression Model</span>
+
+<span class="s0"># Define the hyperparameters and their values</span>
+<span class="s1">param_grid = {</span>
+    <span class="s3">'C'</span><span class="s1">: [</span><span class="s4">800</span><span class="s1">, </span><span class="s4">900</span><span class="s1">, </span><span class="s4">1000</span><span class="s1">, </span><span class="s4">1100</span><span class="s1">, </span><span class="s4">1200</span><span class="s1">, </span><span class="s4">1300</span><span class="s1">],</span>
+    <span class="s3">'penalty'</span><span class="s1">: [</span><span class="s3">'l1'</span><span class="s1">, </span><span class="s3">'l2'</span><span class="s1">, </span><span class="s3">'elasticnet'</span><span class="s1">, </span><span class="s3">'none'</span><span class="s1">]</span>
+<span class="s1">}</span>
+
+
+<span class="s0"># Instantiate and fit the GridSearchCV model</span>
+<span class="s1">logi_grid = GridSearchCV(LogisticRegression(solver=</span><span class="s3">'saga'</span><span class="s1">), param_grid, cv=</span><span class="s4">5</span><span class="s1">)  </span><span class="s0"># Use 'saga' solver</span>
+<span class="s1">logi_grid.fit(X_train_smote, y_train_smote)  </span><span class="s0"># Use SMOTE-sampled training set</span>
+
+<span class="s0"># Print the best parameters</span>
+<span class="s1">print(logi_grid.best_params_)</span>
+
+<span class="s0"># Predict on the validation set</span>
+<span class="s1">lr_pred = logi_grid.predict(X_val_scaled)   </span><span class="s0"># Use scaled validation set</span>
+
+<span class="s0"># Print Accuracy, Precision and Recall</span>
+<span class="s1">accuracy = metrics.accuracy_score(y_val, lr_pred)</span>
+<span class="s1">precision = metrics.precision_score(y_val, lr_pred)</span>
+<span class="s1">recall = metrics.recall_score(y_val, lr_pred)</span>
+<span class="s1">print(</span><span class="s3">&quot;Accuracy: &quot;</span><span class="s1">, accuracy)</span>
+<span class="s1">print(</span><span class="s3">&quot;Precision: &quot;</span><span class="s1">, precision)</span>
+<span class="s1">print(</span><span class="s3">&quot;Recall: &quot;</span><span class="s1">, recall)</span>
+
+<span class="s0"># F1 Score</span>
+<span class="s1">print(</span><span class="s3">&quot;F1 Score (Logistic Regression): &quot;</span><span class="s1">, metrics.f1_score(y_val, lr_pred))</span>
+
+<span class="s0"># Calculate False Positive Rate and True Positive Rate</span>
+<span class="s1">fpr, tpr, _ = roc_curve(y_val, lr_pred)</span>
+<span class="s1">roc_auc = auc(fpr, tpr)</span>
+
+<span class="s0"># Precision-Recall curve</span>
+<span class="s1">precision, recall, _ = precision_recall_curve(y_val, lr_pred)</span>
+<span class="s1">pr_auc = auc(recall, precision)</span>
+
+<span class="s0"># Plot ROC curve</span>
+<span class="s1">plt.figure()</span>
+<span class="s1">plt.plot(fpr, tpr, label=</span><span class="s3">'ROC curve (area = %0.2f)' </span><span class="s1">% roc_auc)</span>
+<span class="s1">plt.plot([</span><span class="s4">0</span><span class="s1">, </span><span class="s4">1</span><span class="s1">], [</span><span class="s4">0</span><span class="s1">, </span><span class="s4">1</span><span class="s1">], </span><span class="s3">'k--'</span><span class="s1">)</span>
+<span class="s1">plt.xlim([</span><span class="s4">0.0</span><span class="s1">, </span><span class="s4">1.0</span><span class="s1">])</span>
+<span class="s1">plt.ylim([</span><span class="s4">0.0</span><span class="s1">, </span><span class="s4">1.05</span><span class="s1">])</span>
+<span class="s1">plt.xlabel(</span><span class="s3">'False Positive Rate'</span><span class="s1">)</span>
+<span class="s1">plt.ylabel(</span><span class="s3">'True Positive Rate'</span><span class="s1">)</span>
+<span class="s1">plt.title(</span><span class="s3">'Receiver Operating Characteristic'</span><span class="s1">)</span>
+<span class="s1">plt.legend(loc=</span><span class="s3">&quot;lower right&quot;</span><span class="s1">)</span>
+<span class="s1">plt.show()</span>
+
+<span class="s0"># Plot Precision-Recall curve</span>
+<span class="s1">plt.figure()</span>
+<span class="s1">plt.plot(recall, precision, label=</span><span class="s3">'PR curve (area = %0.2f)' </span><span class="s1">% pr_auc)</span>
+<span class="s1">plt.xlim([</span><span class="s4">0.0</span><span class="s1">, </span><span class="s4">1.0</span><span class="s1">])</span>
+<span class="s1">plt.ylim([</span><span class="s4">0.0</span><span class="s1">, </span><span class="s4">1.05</span><span class="s1">])</span>
+<span class="s1">plt.xlabel(</span><span class="s3">'Recall'</span><span class="s1">)</span>
+<span class="s1">plt.ylabel(</span><span class="s3">'Precision'</span><span class="s1">)</span>
+<span class="s1">plt.title(</span><span class="s3">'Precision-Recall chart'</span><span class="s1">)</span>
+<span class="s1">plt.legend(loc=</span><span class="s3">&quot;lower right&quot;</span><span class="s1">)</span>
+<span class="s1">plt.show()</span>
+<span class="s0">#%% md 
+</span><span class="s1">The ROC curve shows an area under the curve (AUC) of 0.82, indicating a good ability of the model to distinguish between the positive and negative classes. This is a significant improvement over random chance (AUC = 0.50). 
+ 
+The Precision-Recall chart, however, presents an AUC of 0.48, which isn't far from random for precision-recall performance but is typical in the context of imbalanced datasets. 
+ 
+The hyperparameters `{'C': 800, 'penalty': 'l1'}` indicate that the model is using L1 regularization with a relatively high penalty strength, which tends to produce a model with more feature selection (due to the L1 norm's tendency to push coefficients to exactly zero). 
+ 
+The accuracy of 0.8621 is relatively high, but accuracy is not a reliable metric in the context of imbalanced classes. The precision of 0.1814 is low, indicating that when the model predicts bankruptcy, it is correct only about 18% of the time. The recall of 0.7647 is high, which means the model is able to identify approximately 76% of all actual bankrupt cases. This suggests that the model is biased towards predicting the minority class, which is often desirable in scenarios where the cost of missing a positive case is high (such as predicting bankruptcy). 
+ 
+The F1 score, which balances precision and recall, is 0.2932, reflecting a moderate trade-off between precision and recall. This score is not high, indicating that there is still room for improvement in achieving a balance between precision and recall. 
+ 
+In summary, the model is a significant step in the right direction, especially in terms of recall and ROC AUC, but the low precision and moderate F1 score indicate that the model may still be improved, perhaps by further adjusting the class balance or the regularization strength. 
+</span><span class="s0">#%% 
+# Gaussian Naive Bayes Model</span>
+
+<span class="s0"># Instantiate and fit the model</span>
+<span class="s1">gnb = GaussianNB()</span>
+<span class="s1">gnb.fit(X_train_smote, y_train_smote)</span>
+
+<span class="s0"># Predict on the validation set</span>
+<span class="s1">gnb_pred = gnb.predict(X_val_scaled)</span>
+
+<span class="s0"># Print Accuracy, Precision and Recall</span>
+<span class="s1">accuracy = metrics.accuracy_score(y_val, gnb_pred)</span>
+<span class="s1">precision = metrics.precision_score(y_val, gnb_pred)</span>
+<span class="s1">recall = metrics.recall_score(y_val, gnb_pred)</span>
+<span class="s1">print(</span><span class="s3">&quot;Accuracy: &quot;</span><span class="s1">, accuracy)</span>
+<span class="s1">print(</span><span class="s3">&quot;Precision: &quot;</span><span class="s1">, precision)</span>
+<span class="s1">print(</span><span class="s3">&quot;Recall: &quot;</span><span class="s1">, recall)</span>
+
+<span class="s0"># F1 Score</span>
+<span class="s1">print(</span><span class="s3">&quot;F1 Score (Gaussian Naive Bayes): &quot;</span><span class="s1">, metrics.f1_score(y_val, gnb_pred))</span>
+
+<span class="s0"># Calculate False Positive Rate and True Positive Rate</span>
+<span class="s1">fpr, tpr, _ = roc_curve(y_val, gnb_pred)</span>
+<span class="s1">roc_auc = auc(fpr, tpr)</span>
+
+<span class="s0"># Precision-Recall curve</span>
+<span class="s1">precision, recall, _ = precision_recall_curve(y_val, gnb_pred)</span>
+<span class="s1">pr_auc = auc(recall, precision)</span>
+
+<span class="s0"># Plot ROC curve</span>
+<span class="s1">plt.figure()</span>
+<span class="s1">plt.plot(fpr, tpr, label=</span><span class="s3">'ROC curve (area = %0.2f)' </span><span class="s1">% roc_auc)</span>
+<span class="s1">plt.plot([</span><span class="s4">0</span><span class="s1">, </span><span class="s4">1</span><span class="s1">], [</span><span class="s4">0</span><span class="s1">, </span><span class="s4">1</span><span class="s1">], </span><span class="s3">'k--'</span><span class="s1">)</span>
+<span class="s1">plt.xlim([</span><span class="s4">0.0</span><span class="s1">, </span><span class="s4">1.0</span><span class="s1">])</span>
+<span class="s1">plt.ylim([</span><span class="s4">0.0</span><span class="s1">, </span><span class="s4">1.05</span><span class="s1">])</span>
+<span class="s1">plt.xlabel(</span><span class="s3">'False Positive Rate'</span><span class="s1">)</span>
+<span class="s1">plt.ylabel(</span><span class="s3">'True Positive Rate'</span><span class="s1">)</span>
+<span class="s1">plt.title(</span><span class="s3">'Receiver Operating Characteristic'</span><span class="s1">)</span>
+<span class="s1">plt.legend(loc=</span><span class="s3">&quot;lower right&quot;</span><span class="s1">)</span>
+<span class="s1">plt.show()</span>
+
+<span class="s0"># Plot Precision-Recall curve</span>
+<span class="s1">plt.figure()</span>
+<span class="s1">plt.plot(recall, precision, label=</span><span class="s3">'PR curve (area = %0.2f)' </span><span class="s1">% pr_auc)</span>
+<span class="s1">plt.xlim([</span><span class="s4">0.0</span><span class="s1">, </span><span class="s4">1.0</span><span class="s1">])</span>
+<span class="s1">plt.ylim([</span><span class="s4">0.0</span><span class="s1">, </span><span class="s4">1.05</span><span class="s1">])</span>
+<span class="s1">plt.xlabel(</span><span class="s3">'Recall'</span><span class="s1">)</span>
+<span class="s1">plt.ylabel(</span><span class="s3">'Precision'</span><span class="s1">)</span>
+<span class="s1">plt.title(</span><span class="s3">'Precision-Recall chart'</span><span class="s1">)</span>
+<span class="s1">plt.legend(loc=</span><span class="s3">&quot;lower right&quot;</span><span class="s1">)</span>
+<span class="s1">plt.show()</span>
+<span class="s0">#%% md 
+</span><span class="s1">The Receiver Operating Characteristic (ROC) curve shows an area under the curve (AUC) of 0.52, which suggests that the model's ability to distinguish between positive and negative classes is barely better than random chance, which would have an AUC of 0.50. This indicates that the model is not effective at correctly classifying the positive class. 
+ 
+The Precision-Recall (PR) chart presents an AUC of 0.48, which indicates that the model performs poorly in terms of both precision and recall, as this value is even less than random chance for PR performance. However, it should be noted that such outcomes can be characteristic of datasets where the positive class is very rare. 
+ 
+Despite the poor AUC scores, the model exhibits a surprisingly high recall of 0.9216, meaning it correctly identifies approximately 92% of all actual positive cases. This is an indication that the model is quite sensitive to the positive class, but this often comes at the expense of precision. 
+ 
+The model's precision is extremely low at 0.039, which implies that when the model predicts an instance as positive, it is correct only about 4% of the time. This could lead to a large number of false positives, which might be costly or undesirable depending on the application. 
+ 
+An accuracy of 0.1474 is quite low, which highlights that the model is incorrect in its predictions most of the time. This is not uncommon in imbalanced datasets where the metric can be misleading. 
+ 
+The F1 Score for the Gaussian Naive Bayes model is 0.0748, which is a harmonic mean of precision and recall. This low score reflects the imbalance between the model's high recall and very low precision, indicating poor overall performance. 
+ 
+</span><span class="s0">#%% 
+# Support Vector Machine (SVM) Model</span>
+
+<span class="s0"># Define the hyperparameters and their values</span>
+<span class="s1">param_grid = {</span><span class="s3">'C'</span><span class="s1">: [</span><span class="s4">1</span><span class="s1">, </span><span class="s4">10</span><span class="s1">, </span><span class="s4">100</span><span class="s1">],</span>
+              <span class="s3">'gamma'</span><span class="s1">: [</span><span class="s4">1</span><span class="s1">, </span><span class="s4">0.1</span><span class="s1">, </span><span class="s4">0.01</span><span class="s1">],</span>
+              <span class="s3">'kernel'</span><span class="s1">: [</span><span class="s3">'linear'</span><span class="s1">, </span><span class="s3">'rbf'</span><span class="s1">]}</span>
+
+<span class="s0"># Instantiate and fit the GridSearchCV model</span>
+<span class="s1">svm_grid = GridSearchCV(svm.SVC(), param_grid, cv=</span><span class="s4">5</span><span class="s1">)</span>
+<span class="s1">svm_grid.fit(X_train_smote, y_train_smote)</span>
+
+<span class="s0"># Print the best parameters</span>
+<span class="s1">print(svm_grid.best_params_)</span>
+
+<span class="s0"># Predict on the validation set</span>
+<span class="s1">svm_pred = svm_grid.predict(X_val_scaled)</span>
+
+<span class="s0"># Print Accuracy, Precision and Recall</span>
+<span class="s1">accuracy = metrics.accuracy_score(y_val, svm_pred)</span>
+<span class="s1">precision = metrics.precision_score(y_val, svm_pred)</span>
+<span class="s1">recall = metrics.recall_score(y_val, svm_pred)</span>
+<span class="s1">print(</span><span class="s3">&quot;Accuracy: &quot;</span><span class="s1">, accuracy)</span>
+<span class="s1">print(</span><span class="s3">&quot;Precision: &quot;</span><span class="s1">, precision)</span>
+<span class="s1">print(</span><span class="s3">&quot;Recall: &quot;</span><span class="s1">, recall)</span>
+
+<span class="s0"># F1 Score</span>
+<span class="s1">print(</span><span class="s3">&quot;F1 Score (SVM): &quot;</span><span class="s1">, metrics.f1_score(y_val, svm_pred))</span>
+
+<span class="s0"># Calculate False Positive Rate and True Positive Rate</span>
+<span class="s1">fpr, tpr, _ = roc_curve(y_val, svm_pred)</span>
+<span class="s1">roc_auc = auc(fpr, tpr)</span>
+
+<span class="s0"># Precision-Recall curve</span>
+<span class="s1">precision, recall, _ = precision_recall_curve(y_val, svm_pred)</span>
+<span class="s1">pr_auc = auc(recall, precision)</span>
+
+<span class="s0"># Plot ROC curve</span>
+<span class="s1">plt.figure()</span>
+<span class="s1">plt.plot(fpr, tpr, label=</span><span class="s3">'ROC curve (area = %0.2f)' </span><span class="s1">% roc_auc)</span>
+<span class="s1">plt.plot([</span><span class="s4">0</span><span class="s1">, </span><span class="s4">1</span><span class="s1">], [</span><span class="s4">0</span><span class="s1">, </span><span class="s4">1</span><span class="s1">], </span><span class="s3">'k--'</span><span class="s1">)</span>
+<span class="s1">plt.xlim([</span><span class="s4">0.0</span><span class="s1">, </span><span class="s4">1.0</span><span class="s1">])</span>
+<span class="s1">plt.ylim([</span><span class="s4">0.0</span><span class="s1">, </span><span class="s4">1.05</span><span class="s1">])</span>
+<span class="s1">plt.xlabel(</span><span class="s3">'False Positive Rate'</span><span class="s1">)</span>
+<span class="s1">plt.ylabel(</span><span class="s3">'True Positive Rate'</span><span class="s1">)</span>
+<span class="s1">plt.title(</span><span class="s3">'Receiver Operating Characteristic'</span><span class="s1">)</span>
+<span class="s1">plt.legend(loc=</span><span class="s3">&quot;lower right&quot;</span><span class="s1">)</span>
+<span class="s1">plt.show()</span>
+
+<span class="s0"># Plot Precision-Recall curve</span>
+<span class="s1">plt.figure()</span>
+<span class="s1">plt.plot(recall, precision, label=</span><span class="s3">'PR curve (area = %0.2f)' </span><span class="s1">% pr_auc)</span>
+<span class="s1">plt.xlim([</span><span class="s4">0.0</span><span class="s1">, </span><span class="s4">1.0</span><span class="s1">])</span>
+<span class="s1">plt.ylim([</span><span class="s4">0.0</span><span class="s1">, </span><span class="s4">1.05</span><span class="s1">])</span>
+<span class="s1">plt.xlabel(</span><span class="s3">'Recall'</span><span class="s1">)</span>
+<span class="s1">plt.ylabel(</span><span class="s3">'Precision'</span><span class="s1">)</span>
+<span class="s1">plt.title(</span><span class="s3">'Precision-Recall chart'</span><span class="s1">)</span>
+<span class="s1">plt.legend(loc=</span><span class="s3">&quot;lower right&quot;</span><span class="s1">)</span>
+<span class="s1">plt.show()</span>
+<span class="s0">#%% md 
+</span><span class="s1">The Receiver Operating Characteristic (ROC) curve for this model displays an area under the curve (AUC) of 0.55, which suggests only a slight improvement over random guessing, which would have an AUC of 0.50. This indicates that the model's discriminative ability to correctly classify the positive cases is marginally better than chance. 
+ 
+The Precision-Recall (PR) chart shows an even lower AUC of 0.29, reflecting that the model is particularly weak in terms of precision and recall. This is further emphasized by the model's precision of 0.4545, indicating that when the model predicts a positive outcome, it is correct less than half of the time. Such a low precision can result in a high number of false positives. 
+ 
+Moreover, the recall of the model is 0.0980, which means it identifies less than 10% of all actual positive cases. This low recall suggests that the model is not sensitive enough to the positive class, missing many positive instances. 
+ 
+Despite these limitations, the model achieves an accuracy of approximately 0.962, which could be misleading as it does not reflect the model's poor performance in correctly classifying the positive class — a phenomenon often observed in imbalanced datasets where accuracy is not an informative metric. 
+ 
+Lastly, the F1 Score, which balances precision and recall, is very low at 0.1613. This score is consistent with the poor AUC values and reflects the model's inadequate performance in classifying the positive class correctly. 
+</span><span class="s0">#%% 
+# Define the models and their names</span>
+<span class="s1">predictions = [lr_pred, gnb_pred, svm_pred]</span>
+<span class="s1">model_names = [</span><span class="s3">'Logistic Regression'</span><span class="s1">, </span><span class="s3">'Naive Bayes'</span><span class="s1">, </span><span class="s3">'Support Vector Machine'</span><span class="s1">]</span>
+
+<span class="s0"># Make sure the figure is large enough</span>
+<span class="s1">plt.figure(figsize=(</span><span class="s4">15</span><span class="s1">, </span><span class="s4">5</span><span class="s1">))</span>
+
+<span class="s0"># Iterate over the predictions and plot their confusion matrix</span>
+<span class="s2">for </span><span class="s1">i, (prediction, model_name) </span><span class="s2">in </span><span class="s1">enumerate(zip(predictions, model_names)):</span>
+    <span class="s0"># Get the confusion matrix</span>
+    <span class="s1">cm = confusion_matrix(y_val, prediction)</span>
+
+    <span class="s0"># Create a subplot for each confusion matrix</span>
+    <span class="s1">plt.subplot(</span><span class="s4">1</span><span class="s1">, </span><span class="s4">3</span><span class="s1">, i + </span><span class="s4">1</span><span class="s1">)  </span><span class="s0"># rows, columns, index</span>
+
+    <span class="s0"># Visualize the confusion matrix using matshow</span>
+    <span class="s1">plt.imshow(cm, cmap=plt.cm.Blues)</span>
+    <span class="s1">plt.title(</span><span class="s3">'Confusion Matrix for </span><span class="s5">\n</span><span class="s3">' </span><span class="s1">+ model_name)</span>
+    <span class="s1">plt.colorbar(label=</span><span class="s3">'Count'</span><span class="s1">)</span>
+    <span class="s1">plt.ylabel(</span><span class="s3">'Actual Bankruptcy'</span><span class="s1">)</span>
+    <span class="s1">plt.xlabel(</span><span class="s3">'Predicted Bankruptcy'</span><span class="s1">)</span>
+    <span class="s1">plt.xticks([</span><span class="s4">0</span><span class="s1">, </span><span class="s4">1</span><span class="s1">])</span>
+    <span class="s1">plt.yticks([</span><span class="s4">0</span><span class="s1">, </span><span class="s4">1</span><span class="s1">])</span>
+
+    <span class="s0"># Loop over data dimensions and create text annotations.</span>
+    <span class="s2">for </span><span class="s1">i </span><span class="s2">in </span><span class="s1">range(cm.shape[</span><span class="s4">0</span><span class="s1">]):</span>
+        <span class="s2">for </span><span class="s1">j </span><span class="s2">in </span><span class="s1">range(cm.shape[</span><span class="s4">1</span><span class="s1">]):</span>
+            <span class="s1">plt.text(j, i, cm[i, j], ha=</span><span class="s3">&quot;center&quot;</span><span class="s1">, va=</span><span class="s3">&quot;center&quot;</span><span class="s1">, color=</span><span class="s3">&quot;violet&quot;</span><span class="s1">, fontsize=</span><span class="s4">14</span><span class="s1">)</span>
+    <span class="s1">plt.grid(</span><span class="s2">False</span><span class="s1">)</span>
+
+<span class="s0"># Adjust the layout so that the plots do not overlap</span>
+<span class="s1">plt.tight_layout()</span>
+
+<span class="s0"># Display the plots</span>
+<span class="s1">plt.show()</span>
+<span class="s0">#%% md 
+</span><span class="s1">Logistic Regression demonstrates a reasonable trade-off between precision and recall, with an accuracy of approximately 86.7%, precision at 18.8%, and a recall of 76.5%, leading to an F1 score of around 0.300. Naive Bayes offers high recall at 92.2%, indicating its strength in identifying actual bankruptcy cases, but it suffers from a higher false positive rate, resulting in a precision of 23.4% and an overall F1 score of 0.372. SVM, on the other hand, achieves high accuracy at 96.2% but is heavily biased towards predicting the non-bankruptcy class, evidenced by a low recall of 9.8%. This bias yields a precision of 45.5% and a notably lower F1 score of 0.161. While SVM may appear superior in terms of accuracy, its practical usefulness is questionable due to its poor recall. Conversely, the Naive Bayes model, with the highest F1 score, suggests a more balanced performance, especially important in scenarios where failing to detect actual bankruptcies could have significant consequences. Hence, despite having the lowest accuracy, Naive Bayes could be considered the most effective model for predicting bankruptcy in imbalanced datasets where identifying the positive class is critical.</span></pre>
+</body>
+</html>
