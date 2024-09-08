@@ -1,0 +1,88 @@
+import _thread as thread
+import json
+import time
+import websocket  # You can use either "python3 setup.py install" or "pip3 install websocket-client"
+
+endpoint = "ws://test.lisuns.com:4575/"
+apikey = "30be59d7-d90d-4431-82c2-ca764251c9b4"
+cumulative_open_interest = 0  # global variable to store cumulative open interest
+
+
+def authenticate(ws):
+    print("Authenticating...")
+    ws.send('{"MessageType":"Authenticate","Password":"' + apikey + '"}')
+
+
+def get_last_quote_option_chain(ws, expiry, strike_price):
+    exchange = "NFO"
+    product = "BANKNIFTY"
+    option_type = "CE"
+    ws.send(f'{{"MessageType":"GetLastQuoteOptionChain","Exchange":"{exchange}","Product":"{product}", \
+                "OptionType":"{option_type}","Expiry":"{expiry}","StrikePrice":{strike_price}}}')
+
+
+def on_message(ws, message):
+    global cumulative_open_interest
+    print("Response : " + message)
+    data = json.loads(message)
+
+    if "open_interest" in data:
+        for item in data["open_interest"]:
+            cumulative_open_interest += item
+
+        print('Cumulative Open Interest: ', cumulative_open_interest)
+        ws.close()  # Close the websocket connection after computing cumulative open interest
+
+    allures = message.split(',')
+    str_complete = allures[0].split(':')
+    result = str(str_complete[1])
+
+    if result == "true":
+        print('AUTHENTICATED!!!')
+        expiry_dates = ["21MAR2024", "22MAR2024", "26MAR2024", "27MAR2024", "28MAR2024", "01APR2024"]
+        strike_prices = list(range(40000, 50001, 100))
+
+        for expiry in expiry_dates:
+            for price in strike_prices:
+                get_last_quote_option_chain(ws, expiry, price)
+
+
+def on_error(ws, error):
+    print("Error")
+
+
+def on_close(ws):
+    print("Reconnecting...")
+    websocket.setdefaulttimeout(30)
+    ws.connect(endpoint)
+
+
+def on_open(ws):
+    def run(*args):
+        time.sleep(1)
+        authenticate(ws)
+
+    thread.start_new_thread(run, ())
+
+
+run_once = False
+
+
+def run_websocket():
+    global run_once
+    if not run_once:
+        run_once = True
+        websocket.enableTrace(True)
+        ws = websocket.WebSocketApp(endpoint,
+                                    on_open=on_open,
+                                    on_message=on_message,
+                                    on_error=on_error,
+                                    on_close=on_close)
+
+        ws.run_forever()
+
+    print("Cumulative Open Interest after WebSocket closed: ", cumulative_open_interest)
+
+
+if __name__ == "__main__":
+    run_websocket()
