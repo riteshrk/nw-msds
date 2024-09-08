@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>631386</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<div class="cell code" id="nBHWA0KCsyRH">
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> tensorflow <span class="im">as</span> tf</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> packaging <span class="im">import</span> version</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tensorflow.keras <span class="im">import</span> layers, models, backend <span class="im">as</span> k</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> collections <span class="im">import</span> defaultdict, Counter</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> classification_report, accuracy_score, mean_squared_error <span class="im">as</span> MSE, confusion_matrix</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> nltk</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>nltk.download(<span class="st">&#39;stopwords&#39;</span>, quiet<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.corpus <span class="im">import</span> stopwords</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> tensorflow_datasets <span class="im">as</span> tfds</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> string</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span></code></pre></div>
+</div>
+<div class="cell code" data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}" id="BHOb25iXs-tW" data-outputId="e292e75a-a49b-4935-a9c7-40661fa5aac4">
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;TensorFlow version: &quot;</span>, tf.__version__)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> version.parse(tf.__version__).release[<span class="dv">0</span>] <span class="op">&gt;=</span><span class="dv">2</span></span></code></pre></div>
+<div class="output stream stdout">
+<pre><code>TensorFlow version:  2.15.0
+</code></pre>
+</div>
+</div>
+<div class="cell code" data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}" id="CueJ-aBqtUoO" data-outputId="7bca038d-5f00-4cf7-9edb-2a6996be472b">
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>tfds build <span class="op">--</span>register_checksums <span class="op">--</span>datasets<span class="op">=</span>ag_news_subset</span></code></pre></div>
+<div class="output stream stdout">
+<pre><code>Traceback (most recent call last):
+  File &quot;/usr/local/bin/tfds&quot;, line 5, in &lt;module&gt;
+    from tensorflow_datasets.scripts.cli.main import launch_cli
+  File &quot;/usr/local/lib/python3.10/dist-packages/tensorflow_datasets/scripts/cli/main.py&quot;, line 37, in &lt;module&gt;
+    from tensorflow_datasets.scripts.cli import convert_format
+  File &quot;/usr/local/lib/python3.10/dist-packages/tensorflow_datasets/scripts/cli/convert_format.py&quot;, line 32, in &lt;module&gt;
+    from tensorflow_datasets.scripts.cli import convert_format_utils
+  File &quot;/usr/local/lib/python3.10/dist-packages/tensorflow_datasets/scripts/cli/convert_format_utils.py&quot;, line 169, in &lt;module&gt;
+    pipeline: beam.Pipeline | None = None,
+  File &quot;/usr/local/lib/python3.10/dist-packages/etils/epy/lazy_imports_utils.py&quot;, line 90, in __getattr__
+    return getattr(self._module, name)
+  File &quot;/usr/lib/python3.10/functools.py&quot;, line 981, in __get__
+    val = self.func(instance)
+  File &quot;/usr/local/lib/python3.10/dist-packages/etils/epy/lazy_imports_utils.py&quot;, line 76, in _module
+    module = importlib.import_module(self.module_name)
+  File &quot;/usr/lib/python3.10/importlib/__init__.py&quot;, line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+ModuleNotFoundError: No module named &#39;apache_beam&#39;
+</code></pre>
+</div>
+</div>
+<div class="cell code" data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:148,&quot;referenced_widgets&quot;:[&quot;0b9503a2650846d89f8ca14d23387caa&quot;,&quot;5f17a5eacdf84532a23a2f33604553af&quot;,&quot;a67ade42253d4aa597529b927f4d3000&quot;,&quot;320b85474fe94eb0b6b4332fb897bcd4&quot;,&quot;14126b6975bd44b9bd764bfdeb72b000&quot;,&quot;17d6de4d875644c3a71b6391c4236706&quot;,&quot;13bc2621609b4b8d9067f910ada9fbc3&quot;,&quot;28347220b92a4bbf8f2cc941e54d4ec2&quot;,&quot;e35dd480080e4f1fba8ac88bc8fb5f62&quot;,&quot;61769b94afbe42378e33cf020af8dd39&quot;,&quot;dcd92dbeafd3491ba1813ba9fab0eb6e&quot;,&quot;624626419dd241bda5a20179dd20c57e&quot;,&quot;c8563dac6a3f4f6a8a492797953ea97a&quot;,&quot;5339e2add11440cd81a62901e314621d&quot;,&quot;57187879642f407799e57bdb7b2db2ac&quot;,&quot;9273b00e4c19435dbe229ab29ab27944&quot;,&quot;78ebade2359142a89549905d72cb9a44&quot;,&quot;3749213fb14148c7874b7d39fea667be&quot;,&quot;a99aa08fc17144a8957cb78b8c56a3be&quot;,&quot;a5f72034579b41d39d5e2e196fe33f04&quot;,&quot;2f77504714bc4441bc28451238bf97b2&quot;,&quot;dcc6e3c06a3746d3ac8b6fbcef272516&quot;,&quot;bc37f40d481c4669b1f0f1d1f64b0e93&quot;,&quot;a25ce20ccc06404590c4b2be1dd9178a&quot;,&quot;b3cd719a4eff4fea9b15de3e33241069&quot;,&quot;a916d181998a48b186163effcfb32828&quot;,&quot;1445208db4e7408ea7ed3bdc4f5a391c&quot;,&quot;0074a1dfb6cb471d87f28da41cced7c4&quot;,&quot;d2b0c4f635b449f0a8143f8673270609&quot;,&quot;c7320042c3d84d6392ae33329c881195&quot;,&quot;aaad55ae6795481d9d82fb03db6b247c&quot;,&quot;0f90740a46be4622b2360eb244f2b7a3&quot;,&quot;86faf5d9c2c341b98ad3faa07adf96af&quot;,&quot;ba078d6066234550a40eec14fe03e097&quot;,&quot;4aa3d94cccea42fbb7a3c0306e539aa6&quot;,&quot;e635eed1b3cd44e7a8296a296cb11e03&quot;,&quot;0ec2162ee2fe45c69172c94fdfa82728&quot;,&quot;0d154adf7d5e44a388ab9e4cbaf4d268&quot;,&quot;72dc3f9473f14e53be4c3b5d26f9c8ff&quot;,&quot;91d155b5a32f44eeb9b429a6d5e483c8&quot;,&quot;5d92d234071c45c9a44d5e83c866794b&quot;,&quot;954403dad3f24a18bac3c05fc108fdc4&quot;,&quot;3e9f1ee6e9a94ec8886dd90724d696e8&quot;,&quot;84fd01dff62643c1a61a5867dcb70f90&quot;,&quot;9e41ce3918c542839642427441fec711&quot;,&quot;2ebac202691749a28c3f8d984939554f&quot;,&quot;ed38ed2daf7042df8953fdd45a3c58cc&quot;,&quot;6ab71c22b05743d5bbfbd152c1bf224d&quot;,&quot;a8508d2e096746d5b72bbe17d4124fab&quot;,&quot;9b50441cd069488b85642d28e37526b2&quot;,&quot;dea6e7d55b6f441caf47cbfc915442b6&quot;,&quot;eaea51fcd4ee41c08689ef352f58d041&quot;,&quot;e4869d134f6145fb96cd592bb019e21f&quot;,&quot;2433eb0a49134db1b059d7c0a1bb604a&quot;,&quot;080ba02116014a21b5f46ee3a859344d&quot;,&quot;ce53b260f05d4426a1cd8e2240e3495a&quot;,&quot;4e09303d36314c208f084946d65deb61&quot;,&quot;648788680a614d0b944d81e54b0006b5&quot;,&quot;d01d88bfbe784885a5d24d0e1d802cc2&quot;,&quot;004fa218bb8948c9934524177286f088&quot;,&quot;ab641f06bb2a42bb8e0f1e9af81befdb&quot;,&quot;a2359fcc9fba4a8d941504d03d664926&quot;,&quot;9fb363e307744acbb2fbf49bc52679df&quot;,&quot;72241c9dfb7842af94285080baf99293&quot;,&quot;023bd086c352498c89d14a0dbe093b7a&quot;,&quot;e590ea8310b540d481a5e987758aac4e&quot;,&quot;c83f02c7d98e485d98fa6b71179af141&quot;,&quot;658b0af0488140c987c14390a50b15fd&quot;,&quot;0eecb21c21354ce2954d59562528aba0&quot;,&quot;63c7e0ac7b184b8b87d52c885f120f91&quot;,&quot;a7f0ba6a912049dcafe711274eef309e&quot;,&quot;d00516fefa314f66b0406ecd83fd2bf9&quot;,&quot;2f2f9e261a45482ba59b514c5a9fd2fc&quot;,&quot;4dd92b843c634743830909e60cc4d259&quot;,&quot;4dc8c0bf89754ca48639909925c1d905&quot;,&quot;dcb952b9299d4d2da78401924743d1c5&quot;,&quot;6981594daa4744d68a9102a528d70e9e&quot;,&quot;dc4fd4385c2242c9a2f80b8b6bcbad34&quot;,&quot;7880a9cceaf943349631111abdd78504&quot;,&quot;9dc69d760b9542deb8df2dcd83a7b980&quot;,&quot;88879736e39c4a0e826f003b25f0b3b3&quot;,&quot;94cb7da644a140d0935b7a14c4e3c207&quot;,&quot;3743b6f145064c6395853e071ba68ad7&quot;,&quot;d0fdbbf69e2f497fadcc6c037e65374b&quot;,&quot;d7116bf3c4f549428294224a3b0aba54&quot;,&quot;ff1e09e1bbe74e87a2d8569ca5e673d3&quot;,&quot;524cf5c59b294ceca0b03fcbedcb3053&quot;,&quot;5a775be1a0af4030857e8ab0d5c7b993&quot;]}" id="OmJH0RKmtCwV" data-outputId="8cd196bc-0e9a-4ee8-80a7-aff6fecae6de">
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># https://www.tensorflow.org/datasets/splits</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># The full `train` and `test` splits, interleaved together.</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>ri <span class="op">=</span> tfds.core.ReadInstruction(<span class="st">&#39;train&#39;</span>) <span class="op">+</span> tfds.core.ReadInstruction(<span class="st">&#39;test&#39;</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>dataset_all, info <span class="op">=</span> tfds.load(<span class="st">&#39;ag_news_subset&#39;</span>, with_info<span class="op">=</span><span class="va">True</span>,  split<span class="op">=</span>ri, as_supervised<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>text_only_dataset_all<span class="op">=</span>dataset_all.<span class="bu">map</span>(<span class="kw">lambda</span> x, y: x)</span></code></pre></div>
+<div class="output stream stdout">
+<pre><code>Downloading and preparing dataset 11.24 MiB (download: 11.24 MiB, generated: 35.79 MiB, total: 47.03 MiB) to /root/tensorflow_datasets/ag_news_subset/1.0.0...
+</code></pre>
+</div>
+<div class="output display_data">
+<div class="sourceCode" id="cb8"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span><span class="dt">&quot;model_id&quot;</span><span class="fu">:</span><span class="st">&quot;0b9503a2650846d89f8ca14d23387caa&quot;</span><span class="fu">,</span><span class="dt">&quot;version_major&quot;</span><span class="fu">:</span><span class="dv">2</span><span class="fu">,</span><span class="dt">&quot;version_minor&quot;</span><span class="fu">:</span><span class="dv">0</span><span class="fu">}</span></span></code></pre></div>
+</div>
+<div class="output display_data">
+<div class="sourceCode" id="cb9"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span><span class="dt">&quot;model_id&quot;</span><span class="fu">:</span><span class="st">&quot;624626419dd241bda5a20179dd20c57e&quot;</span><span class="fu">,</span><span class="dt">&quot;version_major&quot;</span><span class="fu">:</span><span class="dv">2</span><span class="fu">,</span><span class="dt">&quot;version_minor&quot;</span><span class="fu">:</span><span class="dv">0</span><span class="fu">}</span></span></code></pre></div>
+</div>
+<div class="output display_data">
+<div class="sourceCode" id="cb10"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span><span class="dt">&quot;model_id&quot;</span><span class="fu">:</span><span class="st">&quot;bc37f40d481c4669b1f0f1d1f64b0e93&quot;</span><span class="fu">,</span><span class="dt">&quot;version_major&quot;</span><span class="fu">:</span><span class="dv">2</span><span class="fu">,</span><span class="dt">&quot;version_minor&quot;</span><span class="fu">:</span><span class="dv">0</span><span class="fu">}</span></span></code></pre></div>
+</div>
+<div class="output display_data">
+<div class="sourceCode" id="cb11"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span><span class="dt">&quot;model_id&quot;</span><span class="fu">:</span><span class="st">&quot;ba078d6066234550a40eec14fe03e097&quot;</span><span class="fu">,</span><span class="dt">&quot;version_major&quot;</span><span class="fu">:</span><span class="dv">2</span><span class="fu">,</span><span class="dt">&quot;version_minor&quot;</span><span class="fu">:</span><span class="dv">0</span><span class="fu">}</span></span></code></pre></div>
+</div>
+<div class="output display_data">
+<div class="sourceCode" id="cb12"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span><span class="dt">&quot;model_id&quot;</span><span class="fu">:</span><span class="st">&quot;9e41ce3918c542839642427441fec711&quot;</span><span class="fu">,</span><span class="dt">&quot;version_major&quot;</span><span class="fu">:</span><span class="dv">2</span><span class="fu">,</span><span class="dt">&quot;version_minor&quot;</span><span class="fu">:</span><span class="dv">0</span><span class="fu">}</span></span></code></pre></div>
+</div>
+<div class="output display_data">
+<div class="sourceCode" id="cb13"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span><span class="dt">&quot;model_id&quot;</span><span class="fu">:</span><span class="st">&quot;ce53b260f05d4426a1cd8e2240e3495a&quot;</span><span class="fu">,</span><span class="dt">&quot;version_major&quot;</span><span class="fu">:</span><span class="dv">2</span><span class="fu">,</span><span class="dt">&quot;version_minor&quot;</span><span class="fu">:</span><span class="dv">0</span><span class="fu">}</span></span></code></pre></div>
+</div>
+<div class="output display_data">
+<div class="sourceCode" id="cb14"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span><span class="dt">&quot;model_id&quot;</span><span class="fu">:</span><span class="st">&quot;c83f02c7d98e485d98fa6b71179af141&quot;</span><span class="fu">,</span><span class="dt">&quot;version_major&quot;</span><span class="fu">:</span><span class="dv">2</span><span class="fu">,</span><span class="dt">&quot;version_minor&quot;</span><span class="fu">:</span><span class="dv">0</span><span class="fu">}</span></span></code></pre></div>
+</div>
+<div class="output display_data">
+<div class="sourceCode" id="cb15"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span><span class="dt">&quot;model_id&quot;</span><span class="fu">:</span><span class="st">&quot;dc4fd4385c2242c9a2f80b8b6bcbad34&quot;</span><span class="fu">,</span><span class="dt">&quot;version_major&quot;</span><span class="fu">:</span><span class="dv">2</span><span class="fu">,</span><span class="dt">&quot;version_minor&quot;</span><span class="fu">:</span><span class="dv">0</span><span class="fu">}</span></span></code></pre></div>
+</div>
+<div class="output stream stdout">
+<pre><code>Dataset ag_news_subset downloaded and prepared to /root/tensorflow_datasets/ag_news_subset/1.0.0. Subsequent calls will reuse this data.
+</code></pre>
+</div>
+</div>
+<div class="cell code" data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:318}" id="wq1xBcfitHUH" data-outputId="142a2d6f-0801-48bd-cf8f-56805e41473e">
+<div class="sourceCode" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check the dataframe</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>tfds.as_dataframe(dataset_all.take(<span class="dv">10</span>),info)</span></code></pre></div>
+<div class="output execute_result" data-execution_count="5">
+
+  <div id="df-5b27ed48-38df-497a-aa6a-5f182eeb9037" class="colab-df-container">
+    <style type="text/css">
+</style>
+<table id="T_badf5">
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_badf5_level0_col0" class="col_heading level0 col0" >description</th>
+      <th id="T_badf5_level0_col1" class="col_heading level0 col1" >label</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_badf5_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_badf5_row0_col0" class="data row0 col0" >AMD #39;s new dual-core Opteron chip is designed mainly for corporate computing applications, including databases, Web services, and financial transactions.</td>
+      <td id="T_badf5_row0_col1" class="data row0 col1" >3 (Sci/Tech)</td>
+    </tr>
+    <tr>
+      <th id="T_badf5_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_badf5_row1_col0" class="data row1 col0" >Reuters - Major League Baseball\Monday announced a decision on the appeal filed by Chicago Cubs\pitcher Kerry Wood regarding a suspension stemming from an\incident earlier this season.</td>
+      <td id="T_badf5_row1_col1" class="data row1 col1" >1 (Sports)</td>
+    </tr>
+    <tr>
+      <th id="T_badf5_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_badf5_row2_col0" class="data row2 col0" >President Bush #39;s quot;revenue-neutral quot; tax reform needs losers to balance its winners, and people claiming the federal deduction for state and local taxes may be in administration planners #39; sights, news reports say.</td>
+      <td id="T_badf5_row2_col1" class="data row2 col1" >2 (Business)</td>
+    </tr>
+    <tr>
+      <th id="T_badf5_level0_row3" class="row_heading level0 row3" >3</th>
+      <td id="T_badf5_row3_col0" class="data row3 col0" >Britain will run out of leading scientists unless science education is improved, says Professor Colin Pillinger.</td>
+      <td id="T_badf5_row3_col1" class="data row3 col1" >3 (Sci/Tech)</td>
+    </tr>
+    <tr>
+      <th id="T_badf5_level0_row4" class="row_heading level0 row4" >4</th>
+      <td id="T_badf5_row4_col0" class="data row4 col0" >London, England (Sports Network) - England midfielder Steven Gerrard injured his groin late in Thursday #39;s training session, but is hopeful he will be ready for Saturday #39;s World Cup qualifier against Austria.</td>
+      <td id="T_badf5_row4_col1" class="data row4 col1" >1 (Sports)</td>
+    </tr>
+    <tr>
+      <th id="T_badf5_level0_row5" class="row_heading level0 row5" >5</th>
+      <td id="T_badf5_row5_col0" class="data row5 col0" >TOKYO - Sony Corp. is banking on the \$3 billion deal to acquire Hollywood studio Metro-Goldwyn-Mayer Inc...</td>
+      <td id="T_badf5_row5_col1" class="data row5 col1" >0 (World)</td>
+    </tr>
+    <tr>
+      <th id="T_badf5_level0_row6" class="row_heading level0 row6" >6</th>
+      <td id="T_badf5_row6_col0" class="data row6 col0" >Giant pandas may well prefer bamboo to laptops, but wireless technology is helping researchers in China in their efforts to protect the engandered animals living in the remote Wolong Nature Reserve.</td>
+      <td id="T_badf5_row6_col1" class="data row6 col1" >3 (Sci/Tech)</td>
+    </tr>
+    <tr>
+      <th id="T_badf5_level0_row7" class="row_heading level0 row7" >7</th>
+      <td id="T_badf5_row7_col0" class="data row7 col0" >VILNIUS, Lithuania - Lithuania #39;s main parties formed an alliance to try to keep a Russian-born tycoon and his populist promises out of the government in Sunday #39;s second round of parliamentary elections in this Baltic country.</td>
+      <td id="T_badf5_row7_col1" class="data row7 col1" >0 (World)</td>
+    </tr>
+    <tr>
+      <th id="T_badf5_level0_row8" class="row_heading level0 row8" >8</th>
+      <td id="T_badf5_row8_col0" class="data row8 col0" >Witnesses in the trial of a US soldier charged with abusing prisoners at Abu Ghraib have told the court that the CIA sometimes directed abuse and orders were received from military command to toughen interrogations.</td>
+      <td id="T_badf5_row8_col1" class="data row8 col1" >0 (World)</td>
+    </tr>
+    <tr>
+      <th id="T_badf5_level0_row9" class="row_heading level0 row9" >9</th>
+      <td id="T_badf5_row9_col0" class="data row9 col0" >Dan Olsen of Ponte Vedra Beach, Fla., shot a 7-under 65 Thursday to take a one-shot lead after two rounds of the PGA Tour qualifying tournament.</td>
+      <td id="T_badf5_row9_col1" class="data row9 col1" >1 (Sports)</td>
+    </tr>
+  </tbody>
+</table>
+
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-5b27ed48-38df-497a-aa6a-5f182eeb9037')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-5b27ed48-38df-497a-aa6a-5f182eeb9037 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-5b27ed48-38df-497a-aa6a-5f182eeb9037');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+<div id="df-8a1e7e6b-130a-48fc-8c86-a678c9753fd0">
+  <button class="colab-df-quickchart" onclick="quickchart('df-8a1e7e6b-130a-48fc-8c86-a678c9753fd0')"
+            title="Suggest charts"
+            style="display:none;">
+
+<svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+     width="24px">
+    <g>
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+    </g>
+</svg>
+  </button>
+
+<style>
+  .colab-df-quickchart {
+      --bg-color: #E8F0FE;
+      --fill-color: #1967D2;
+      --hover-bg-color: #E2EBFA;
+      --hover-fill-color: #174EA6;
+      --disabled-fill-color: #AAA;
+      --disabled-bg-color: #DDD;
+  }
+
+  [theme=dark] .colab-df-quickchart {
+      --bg-color: #3B4455;
+      --fill-color: #D2E3FC;
+      --hover-bg-color: #434B5C;
+      --hover-fill-color: #FFFFFF;
+      --disabled-bg-color: #3B4455;
+      --disabled-fill-color: #666;
+  }
+
+  .colab-df-quickchart {
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    fill: var(--fill-color);
+    height: 32px;
+    padding: 0;
+    width: 32px;
+  }
+
+  .colab-df-quickchart:hover {
+    background-color: var(--hover-bg-color);
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    fill: var(--button-hover-fill-color);
+  }
+
+  .colab-df-quickchart-complete:disabled,
+  .colab-df-quickchart-complete:disabled:hover {
+    background-color: var(--disabled-bg-color);
+    fill: var(--disabled-fill-color);
+    box-shadow: none;
+  }
+
+  .colab-df-spinner {
+    border: 2px solid var(--fill-color);
+    border-color: transparent;
+    border-bottom-color: var(--fill-color);
+    animation:
+      spin 1s steps(1) infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+      border-left-color: var(--fill-color);
+    }
+    20% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    30% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+      border-right-color: var(--fill-color);
+    }
+    40% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    60% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+    }
+    80% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-bottom-color: var(--fill-color);
+    }
+    90% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+    }
+  }
+</style>
+
+  <script>
+    async function quickchart(key) {
+      const quickchartButtonEl =
+        document.querySelector('#' + key + ' button');
+      quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
+      quickchartButtonEl.classList.add('colab-df-spinner');
+      try {
+        const charts = await google.colab.kernel.invokeFunction(
+            'suggestCharts', [key], {});
+      } catch (error) {
+        console.error('Error during call to suggestCharts:', error);
+      }
+      quickchartButtonEl.classList.remove('colab-df-spinner');
+      quickchartButtonEl.classList.add('colab-df-quickchart-complete');
+    }
+    (() => {
+      let quickchartButtonEl =
+        document.querySelector('#df-8a1e7e6b-130a-48fc-8c86-a678c9753fd0 button');
+      quickchartButtonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+    })();
+  </script>
+</div>
+
+    </div>
+  </div>
+
+</div>
+</div>
+<div class="cell code" data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}" id="j_ozMR2gtHLx" data-outputId="18b2d5e2-a024-4b4e-f550-79892098012b">
+<div class="sourceCode" id="cb18"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check the categories</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>categories <span class="op">=</span><span class="bu">dict</span>(<span class="bu">enumerate</span>(info.features[<span class="st">&quot;label&quot;</span>].names))</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&#39;Dictionary: &#39;</span>,categories)</span></code></pre></div>
+<div class="output stream stdout">
+<pre><code>Dictionary:  {0: &#39;World&#39;, 1: &#39;Sports&#39;, 2: &#39;Business&#39;, 3: &#39;Sci/Tech&#39;}
+</code></pre>
+</div>
+</div>
+<div class="cell code" data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}" id="_YEdGSm7tHGz" data-outputId="0741475d-21a9-4c89-dbe9-82d1824490a7">
+<div class="sourceCode" id="cb20"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Review Class Balance</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>train_categories <span class="op">=</span> [categories[label] <span class="cf">for</span> label <span class="kw">in</span> dataset_all.<span class="bu">map</span>(<span class="kw">lambda</span> text, label: label).as_numpy_iterator()]</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>Counter(train_categories).most_common()</span></code></pre></div>
+<div class="output execute_result" data-execution_count="7">
+<pre><code>[(&#39;Sci/Tech&#39;, 31900), (&#39;Sports&#39;, 31900), (&#39;Business&#39;, 31900), (&#39;World&#39;, 31900)]</code></pre>
+</div>
+</div>
+<div class="cell code" id="HmIaBn3NtHDx">
+<div class="sourceCode" id="cb22"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> custom_stopwords(input_text):</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>    lowercase <span class="op">=</span> tf.strings.lower(input_text)</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>    stripped_punct <span class="op">=</span> tf.strings.regex_replace(lowercase</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>                                  ,<span class="st">&#39;[</span><span class="sc">%s</span><span class="st">]&#39;</span> <span class="op">%</span> re.escape(string.punctuation)</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>                                  ,<span class="st">&#39;&#39;</span>)</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> tf.strings.regex_replace(stripped_punct, <span class="vs">r&#39;\b(&#39;</span> <span class="op">+</span> <span class="vs">r&#39;|&#39;</span>.join(STOPWORDS) <span class="op">+</span> <span class="vs">r&#39;)\b\s*&#39;</span>,<span class="st">&quot;&quot;</span>)</span></code></pre></div>
+</div>
+<div class="cell code" id="AMWYdep6tsQT">
+<div class="sourceCode" id="cb23"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>nltk.download(<span class="st">&#39;stopwords&#39;</span>,quiet<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>STOPWORDS <span class="op">=</span> stopwords.words(<span class="st">&quot;english&quot;</span>)</span></code></pre></div>
+</div>
+<div class="cell code" id="s1jrX2O46z-q">
+<div class="sourceCode" id="cb24"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Custom Stopwords Function</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> custom_stopwords(input_text):</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    lowercase <span class="op">=</span> tf.strings.lower(input_text)</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>    stripped_punct <span class="op">=</span> tf.strings.regex_replace(lowercase, <span class="st">&#39;[</span><span class="sc">%s</span><span class="st">]&#39;</span> <span class="op">%</span> re.escape(string.punctuation), <span class="st">&#39;&#39;</span>)</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> tf.strings.regex_replace(stripped_punct, <span class="vs">r&#39;\b(&#39;</span> <span class="op">+</span> <span class="vs">r&#39;|&#39;</span>.join(STOPWORDS) <span class="op">+</span> <span class="vs">r&#39;)\b\s*&#39;</span>, <span class="st">&#39;&#39;</span>)</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Text Vectorization and Vocabulary Adaptation</span></span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> text_vectorization_and_adapt(text_dataset, max_tokens<span class="op">=</span><span class="va">None</span>, standardize_fn<span class="op">=</span><span class="va">None</span>, output_sequence_length<span class="op">=</span><span class="va">None</span>):</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>    text_vectorization <span class="op">=</span> tf.keras.layers.TextVectorization(</span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>        max_tokens<span class="op">=</span>max_tokens,</span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>        output_mode<span class="op">=</span><span class="st">&quot;int&quot;</span>,</span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>        standardize<span class="op">=</span>standardize_fn,</span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a>        output_sequence_length<span class="op">=</span>output_sequence_length</span>
+<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a>    text_vectorization.adapt(text_dataset)</span>
+<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> text_vectorization</span></code></pre></div>
+</div>
+<div class="cell code" id="DCMNwHHB6z7I">
+<div class="sourceCode" id="cb25"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Train and Evaluate Models with Different Vocabulary Sizes</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> create_model(vocab_size, output_sequence_length):</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    k.clear_session()</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>    inputs <span class="op">=</span> tf.keras.Input(shape<span class="op">=</span>(output_sequence_length,), dtype<span class="op">=</span><span class="st">&quot;int64&quot;</span>)</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>    embedded <span class="op">=</span> layers.Embedding(input_dim<span class="op">=</span>vocab_size, output_dim<span class="op">=</span><span class="dv">256</span>, input_length<span class="op">=</span>output_sequence_length)(inputs)</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> layers.LSTM(<span class="dv">32</span>, return_sequences<span class="op">=</span><span class="va">False</span>)(embedded)</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> layers.Dropout(<span class="fl">0.5</span>)(x)</span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>    outputs <span class="op">=</span> layers.Dense(<span class="dv">4</span>, activation<span class="op">=</span><span class="st">&quot;softmax&quot;</span>)(x)</span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>    model <span class="op">=</span> tf.keras.Model(inputs, outputs)</span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>    model.<span class="bu">compile</span>(optimizer<span class="op">=</span><span class="st">&quot;rmsprop&quot;</span>,</span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>                  loss<span class="op">=</span><span class="st">&quot;SparseCategoricalCrossentropy&quot;</span>,</span>
+<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a>                  metrics<span class="op">=</span>[<span class="st">&quot;accuracy&quot;</span>])</span>
+<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> model</span></code></pre></div>
+</div>
+<div class="cell code" id="MrLA45026z37">
+<div class="sourceCode" id="cb26"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> train_and_evaluate_unidirectional_model(vocab_size, text_vectorization, output_sequence_length, model_name):</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;Starting experiment: </span><span class="sc">{</span>model_name<span class="sc">}</span><span class="ss"> with vocab size </span><span class="sc">{</span>vocab_size<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Prepare the dataset</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> vectorize_text(text, label):</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>        text <span class="op">=</span> text_vectorization(text)</span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> text, label</span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>    vectorized_dataset <span class="op">=</span> dataset_all.<span class="bu">map</span>(vectorize_text)</span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>    vectorized_dataset <span class="op">=</span> vectorized_dataset.cache().prefetch(buffer_size<span class="op">=</span>tf.data.AUTOTUNE)</span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Split the dataset</span></span>
+<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a>    dataset_size <span class="op">=</span> <span class="bu">len</span>(<span class="bu">list</span>(vectorized_dataset))</span>
+<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a>    train_size <span class="op">=</span> <span class="bu">int</span>(<span class="fl">0.8</span> <span class="op">*</span> dataset_size)</span>
+<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a>    val_size <span class="op">=</span> dataset_size <span class="op">-</span> train_size</span>
+<span id="cb26-16"><a href="#cb26-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-17"><a href="#cb26-17" aria-hidden="true" tabindex="-1"></a>    train_dataset <span class="op">=</span> vectorized_dataset.take(train_size).batch(<span class="dv">32</span>)</span>
+<span id="cb26-18"><a href="#cb26-18" aria-hidden="true" tabindex="-1"></a>    val_dataset <span class="op">=</span> vectorized_dataset.skip(train_size).take(val_size).batch(<span class="dv">32</span>)</span>
+<span id="cb26-19"><a href="#cb26-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-20"><a href="#cb26-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Train the model</span></span>
+<span id="cb26-21"><a href="#cb26-21" aria-hidden="true" tabindex="-1"></a>    model <span class="op">=</span> create_model(vocab_size, output_sequence_length)</span>
+<span id="cb26-22"><a href="#cb26-22" aria-hidden="true" tabindex="-1"></a>    callbacks <span class="op">=</span> [</span>
+<span id="cb26-23"><a href="#cb26-23" aria-hidden="true" tabindex="-1"></a>        tf.keras.callbacks.ModelCheckpoint(<span class="ss">f&quot;</span><span class="sc">{</span>model_name<span class="sc">}</span><span class="ss">.h5&quot;</span>, save_best_only<span class="op">=</span><span class="va">True</span>),</span>
+<span id="cb26-24"><a href="#cb26-24" aria-hidden="true" tabindex="-1"></a>        tf.keras.callbacks.EarlyStopping(monitor<span class="op">=</span><span class="st">&#39;val_accuracy&#39;</span>, patience<span class="op">=</span><span class="dv">3</span>)</span>
+<span id="cb26-25"><a href="#cb26-25" aria-hidden="true" tabindex="-1"></a>    ]</span>
+<span id="cb26-26"><a href="#cb26-26" aria-hidden="true" tabindex="-1"></a>    start_time <span class="op">=</span> time.time()</span>
+<span id="cb26-27"><a href="#cb26-27" aria-hidden="true" tabindex="-1"></a>    history <span class="op">=</span> model.fit(train_dataset, validation_data<span class="op">=</span>val_dataset, epochs<span class="op">=</span><span class="dv">200</span>, callbacks<span class="op">=</span>callbacks)</span>
+<span id="cb26-28"><a href="#cb26-28" aria-hidden="true" tabindex="-1"></a>    training_time <span class="op">=</span> time.time() <span class="op">-</span> start_time</span>
+<span id="cb26-29"><a href="#cb26-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-30"><a href="#cb26-30" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Evaluate on validation dataset</span></span>
+<span id="cb26-31"><a href="#cb26-31" aria-hidden="true" tabindex="-1"></a>    val_loss, val_accuracy <span class="op">=</span> model.evaluate(val_dataset)</span>
+<span id="cb26-32"><a href="#cb26-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-33"><a href="#cb26-33" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Load the best model and evaluate on validation dataset</span></span>
+<span id="cb26-34"><a href="#cb26-34" aria-hidden="true" tabindex="-1"></a>    model <span class="op">=</span> models.load_model(<span class="ss">f&quot;</span><span class="sc">{</span>model_name<span class="sc">}</span><span class="ss">.h5&quot;</span>)</span>
+<span id="cb26-35"><a href="#cb26-35" aria-hidden="true" tabindex="-1"></a>    test_loss, test_accuracy <span class="op">=</span> model.evaluate(val_dataset)</span>
+<span id="cb26-36"><a href="#cb26-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-37"><a href="#cb26-37" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Collect final train accuracy and loss</span></span>
+<span id="cb26-38"><a href="#cb26-38" aria-hidden="true" tabindex="-1"></a>    train_acc <span class="op">=</span> history.history[<span class="st">&#39;accuracy&#39;</span>][<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb26-39"><a href="#cb26-39" aria-hidden="true" tabindex="-1"></a>    train_loss <span class="op">=</span> history.history[<span class="st">&#39;loss&#39;</span>][<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb26-40"><a href="#cb26-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-41"><a href="#cb26-41" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> {</span>
+<span id="cb26-42"><a href="#cb26-42" aria-hidden="true" tabindex="-1"></a>        <span class="st">&#39;model_name&#39;</span>: model_name,</span>
+<span id="cb26-43"><a href="#cb26-43" aria-hidden="true" tabindex="-1"></a>        <span class="st">&#39;train_acc&#39;</span>: train_acc,</span>
+<span id="cb26-44"><a href="#cb26-44" aria-hidden="true" tabindex="-1"></a>        <span class="st">&#39;train_loss&#39;</span>: train_loss,</span>
+<span id="cb26-45"><a href="#cb26-45" aria-hidden="true" tabindex="-1"></a>        <span class="st">&#39;train_time&#39;</span>: training_time,</span>
+<span id="cb26-46"><a href="#cb26-46" aria-hidden="true" tabindex="-1"></a>        <span class="st">&#39;val_acc&#39;</span>: val_accuracy,</span>
+<span id="cb26-47"><a href="#cb26-47" aria-hidden="true" tabindex="-1"></a>        <span class="st">&#39;val_loss&#39;</span>: val_loss,</span>
+<span id="cb26-48"><a href="#cb26-48" aria-hidden="true" tabindex="-1"></a>        <span class="st">&#39;test_acc&#39;</span>: test_accuracy,</span>
+<span id="cb26-49"><a href="#cb26-49" aria-hidden="true" tabindex="-1"></a>        <span class="st">&#39;test_loss&#39;</span>: test_loss,</span>
+<span id="cb26-50"><a href="#cb26-50" aria-hidden="true" tabindex="-1"></a>        <span class="st">&#39;history&#39;</span>: history  <span class="co"># Ensure history is returned</span></span>
+<span id="cb26-51"><a href="#cb26-51" aria-hidden="true" tabindex="-1"></a>    }</span></code></pre></div>
+</div>
+<div class="cell code" id="M0tzqI6M6z0l">
+<div class="sourceCode" id="cb27"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Experiment with unedited and edited vocabularies</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>experiments <span class="op">=</span> [</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>    {<span class="st">&quot;name&quot;</span>: <span class="st">&quot;unedited&quot;</span>, <span class="st">&quot;vocab_sizes&quot;</span>: [<span class="dv">5000</span>, <span class="dv">10000</span>, <span class="dv">20000</span>], <span class="st">&quot;standardize_fn&quot;</span>: <span class="va">None</span>, <span class="st">&quot;output_sequence_length&quot;</span>: <span class="dv">100</span>},</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>    {<span class="st">&quot;name&quot;</span>: <span class="st">&quot;edited&quot;</span>, <span class="st">&quot;vocab_sizes&quot;</span>: [<span class="dv">5000</span>, <span class="dv">10000</span>, <span class="dv">20000</span>], <span class="st">&quot;standardize_fn&quot;</span>: custom_stopwords, <span class="st">&quot;output_sequence_length&quot;</span>: <span class="dv">100</span>},</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>    {<span class="st">&quot;name&quot;</span>: <span class="st">&quot;unedited_fixed_length&quot;</span>, <span class="st">&quot;vocab_sizes&quot;</span>: [<span class="dv">5000</span>, <span class="dv">10000</span>, <span class="dv">20000</span>], <span class="st">&quot;standardize_fn&quot;</span>: <span class="va">None</span>, <span class="st">&quot;output_sequence_length&quot;</span>: <span class="dv">100</span>},</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>    {<span class="st">&quot;name&quot;</span>: <span class="st">&quot;edited_fixed_length&quot;</span>, <span class="st">&quot;vocab_sizes&quot;</span>: [<span class="dv">5000</span>, <span class="dv">10000</span>, <span class="dv">20000</span>], <span class="st">&quot;standardize_fn&quot;</span>: custom_stopwords, <span class="st">&quot;output_sequence_length&quot;</span>: <span class="dv">100</span>}</span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>]</span></code></pre></div>
+</div>
+<div class="cell code" data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}" id="gsVOUh8r6zxu" data-outputId="edc7e05c-f54a-4d51-9514-c44cd9268924">
+<div class="sourceCode" id="cb28"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Collecting results for unidirectional model</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>all_results_unidirectional <span class="op">=</span> []</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> experiment <span class="kw">in</span> experiments:</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> vocab_size <span class="kw">in</span> experiment[<span class="st">&quot;vocab_sizes&quot;</span>]:</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">try</span>:</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>            text_vectorization <span class="op">=</span> text_vectorization_and_adapt(</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>                dataset_all.<span class="bu">map</span>(<span class="kw">lambda</span> text, label: text),</span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>                max_tokens<span class="op">=</span>vocab_size,</span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>                standardize_fn<span class="op">=</span>experiment[<span class="st">&quot;standardize_fn&quot;</span>],</span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>                output_sequence_length<span class="op">=</span>experiment[<span class="st">&quot;output_sequence_length&quot;</span>]</span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a>            )</span>
+<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a>            results <span class="op">=</span> train_and_evaluate_unidirectional_model(vocab_size, text_vectorization, experiment[<span class="st">&quot;output_sequence_length&quot;</span>], experiment[<span class="st">&quot;name&quot;</span>])</span>
+<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a>            all_results_unidirectional.append(results)</span>
+<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">except</span> <span class="pp">ValueError</span> <span class="im">as</span> e:</span>
+<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f&quot;Error with vocab_size </span><span class="sc">{</span>vocab_size<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>e<span class="sc">}</span><span class="ss">&quot;</span>)</span></code></pre></div>
+<div class="output stream stdout">
+<pre><code>Starting experiment: unedited with vocab size 5000
+Epoch 1/200
+3190/3190 [==============================] - 33s 9ms/step - loss: 1.3875 - accuracy: 0.2511 - val_loss: 1.3878 - val_accuracy: 0.2485
+Epoch 2/200
+  19/3190 [..............................] - ETA: 18s - loss: 1.3853 - accuracy: 0.2681</code></pre>
+</div>
+<div class="output stream stderr">
+<pre><code>/usr/local/lib/python3.10/dist-packages/keras/src/engine/training.py:3103: UserWarning: You are saving your model as an HDF5 file via `model.save()`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save(&#39;my_model.keras&#39;)`.
+  saving_api.save_model(
+</code></pre>
+</div>
+<div class="output stream stdout">
+<pre><code>3190/3190 [==============================] - 21s 6ms/step - loss: 1.3861 - accuracy: 0.2508 - val_loss: 1.3867 - val_accuracy: 0.2485
+Epoch 3/200
+3190/3190 [==============================] - 21s 7ms/step - loss: 1.3235 - accuracy: 0.3303 - val_loss: 1.1223 - val_accuracy: 0.4958
+Epoch 4/200
+3190/3190 [==============================] - 21s 6ms/step - loss: 1.1467 - accuracy: 0.4309 - val_loss: 1.1344 - val_accuracy: 0.4143
+Epoch 5/200
+3190/3190 [==============================] - 22s 7ms/step - loss: 1.1291 - accuracy: 0.4495 - val_loss: 1.0991 - val_accuracy: 0.4481
+Epoch 6/200
+3190/3190 [==============================] - 21s 7ms/step - loss: 1.1040 - accuracy: 0.4425 - val_loss: 1.0733 - val_accuracy: 0.4521
+798/798 [==============================] - 3s 3ms/step - loss: 1.0733 - accuracy: 0.4521
+798/798 [==============================] - 3s 3ms/step - loss: 1.0733 - accuracy: 0.4521
+Starting experiment: unedited with vocab size 10000
+Epoch 1/200
+3190/3190 [==============================] - 32s 10ms/step - loss: 1.3876 - accuracy: 0.2497 - val_loss: 1.3879 - val_accuracy: 0.2485
+Epoch 2/200
+3190/3190 [==============================] - 21s 7ms/step - loss: 1.3865 - accuracy: 0.2505 - val_loss: 1.3872 - val_accuracy: 0.2485
+Epoch 3/200
+3190/3190 [==============================] - 21s 7ms/step - loss: 1.3860 - accuracy: 0.2544 - val_loss: 1.3825 - val_accuracy: 0.2485
+Epoch 4/200
+3190/3190 [==============================] - 21s 6ms/step - loss: 1.3364 - accuracy: 0.3243 - val_loss: 1.3000 - val_accuracy: 0.3277
+Epoch 5/200
+3190/3190 [==============================] - 21s 6ms/step - loss: 1.2623 - accuracy: 0.3761 - val_loss: 1.2235 - val_accuracy: 0.4213
+Epoch 6/200
+3190/3190 [==============================] - 21s 6ms/step - loss: 1.2473 - accuracy: 0.3708 - val_loss: 1.2219 - val_accuracy: 0.3784
+Epoch 7/200
+3190/3190 [==============================] - 21s 6ms/step - loss: 1.1696 - accuracy: 0.4052 - val_loss: 1.1448 - val_accuracy: 0.4167
+Epoch 8/200
+3190/3190 [==============================] - 21s 7ms/step - loss: 0.8359 - accuracy: 0.6360 - val_loss: 0.4559 - val_accuracy: 0.8403
+Epoch 9/200
+3190/3190 [==============================] - 21s 6ms/step - loss: 0.3994 - accuracy: 0.8751 - val_loss: 0.3457 - val_accuracy: 0.8877
+Epoch 10/200
+3190/3190 [==============================] - 21s 6ms/step - loss: 0.3182 - accuracy: 0.9054 - val_loss: 0.3219 - val_accuracy: 0.8956
+Epoch 11/200
+3190/3190 [==============================] - 22s 7ms/step - loss: 0.2816 - accuracy: 0.9183 - val_loss: 0.3272 - val_accuracy: 0.8971
+Epoch 12/200
+3190/3190 [==============================] - 21s 7ms/step - loss: 0.2569 - accuracy: 0.9262 - val_loss: 0.3298 - val_accuracy: 0.8938
+Epoch 13/200
+3190/3190 [==============================] - 22s 7ms/step - loss: 0.2382 - accuracy: 0.9324 - val_loss: 0.3344 - val_accuracy: 0.8949
+Epoch 14/200
+3190/3190 [==============================] - 22s 7ms/step - loss: 0.2225 - accuracy: 0.9374 - val_loss: 0.3578 - val_accuracy: 0.8906
+798/798 [==============================] - 3s 3ms/step - loss: 0.3578 - accuracy: 0.8906
+798/798 [==============================] - 4s 3ms/step - loss: 0.3219 - accuracy: 0.8956
+Starting experiment: unedited with vocab size 20000
+Epoch 1/200
+3190/3190 [==============================] - 35s 11ms/step - loss: 1.3875 - accuracy: 0.2519 - val_loss: 1.3868 - val_accuracy: 0.2485
+Epoch 2/200
+3190/3190 [==============================] - 22s 7ms/step - loss: 1.3868 - accuracy: 0.2521 - val_loss: 1.3869 - val_accuracy: 0.2485
+Epoch 3/200
+3190/3190 [==============================] - 23s 7ms/step - loss: 1.3865 - accuracy: 0.2486 - val_loss: 1.3871 - val_accuracy: 0.2485
+Epoch 4/200
+3190/3190 [==============================] - 22s 7ms/step - loss: 1.3864 - accuracy: 0.2524 - val_loss: 1.3868 - val_accuracy: 0.2485
+798/798 [==============================] - 3s 3ms/step - loss: 1.3868 - accuracy: 0.2485
+798/798 [==============================] - 3s 3ms/step - loss: 1.3868 - accuracy: 0.2485
+Starting experiment: edited with vocab size 5000
+Epoch 1/200
+3190/3190 [==============================] - 32s 10ms/step - loss: 1.3877 - accuracy: 0.2510 - val_loss: 1.3868 - val_accuracy: 0.2485
+Epoch 2/200
+3190/3190 [==============================] - 22s 7ms/step - loss: 1.3868 - accuracy: 0.2529 - val_loss: 1.3868 - val_accuracy: 0.2485
+Epoch 3/200
+3190/3190 [==============================] - 22s 7ms/step - loss: 1.3867 - accuracy: 0.2500 - val_loss: 1.3867 - val_accuracy: 0.2485
+Epoch 4/200
+3190/3190 [==============================] - 22s 7ms/step - loss: 1.3866 - accuracy: 0.2504 - val_loss: 1.3868 - val_accuracy: 0.2485
+798/798 [==============================] - 3s 3ms/step - loss: 1.3868 - accuracy: 0.2485
+798/798 [==============================] - 4s 3ms/step - loss: 1.3867 - accuracy: 0.2485
+Starting experiment: edited with vocab size 10000
+Epoch 1/200
+3190/3190 [==============================] - 33s 10ms/step - loss: 1.3875 - accuracy: 0.2516 - val_loss: 1.3874 - val_accuracy: 0.2485
+Epoch 2/200
+3190/3190 [==============================] - 22s 7ms/step - loss: 1.3868 - accuracy: 0.2488 - val_loss: 1.3868 - val_accuracy: 0.2485
+Epoch 3/200
+3190/3190 [==============================] - 22s 7ms/step - loss: 1.3867 - accuracy: 0.2510 - val_loss: 1.3868 - val_accuracy: 0.2485
+Epoch 4/200
+3190/3190 [==============================] - 22s 7ms/step - loss: 1.3866 - accuracy: 0.2505 - val_loss: 1.3868 - val_accuracy: 0.2485
+798/798 [==============================] - 3s 3ms/step - loss: 1.3868 - accuracy: 0.2485
+798/798 [==============================] - 3s 3ms/step - loss: 1.3868 - accuracy: 0.2485
+Starting experiment: edited with vocab size 20000
+Epoch 1/200
+3190/3190 [==============================] - 34s 10ms/step - loss: 1.3876 - accuracy: 0.2520 - val_loss: 1.3869 - val_accuracy: 0.2485
+Epoch 2/200
+3190/3190 [==============================] - 23s 7ms/step - loss: 1.3869 - accuracy: 0.2501 - val_loss: 1.3866 - val_accuracy: 0.2485
+Epoch 3/200
+3190/3190 [==============================] - 22s 7ms/step - loss: 1.3867 - accuracy: 0.2500 - val_loss: 1.3866 - val_accuracy: 0.2485
+Epoch 4/200
+3190/3190 [==============================] - 23s 7ms/step - loss: 1.3866 - accuracy: 0.2510 - val_loss: 1.3866 - val_accuracy: 0.2485
+798/798 [==============================] - 3s 3ms/step - loss: 1.3866 - accuracy: 0.2485
+798/798 [==============================] - 3s 3ms/step - loss: 1.3866 - accuracy: 0.2485
+Starting experiment: unedited_fixed_length with vocab size 5000
+Epoch 1/200
+3190/3190 [==============================] - 34s 10ms/step - loss: 1.3874 - accuracy: 0.2493 - val_loss: 1.3868 - val_accuracy: 0.2485
+Epoch 2/200
+3190/3190 [==============================] - 24s 8ms/step - loss: 1.3864 - accuracy: 0.2508 - val_loss: 1.3854 - val_accuracy: 0.2485
+Epoch 3/200
+3190/3190 [==============================] - 24s 8ms/step - loss: 1.3127 - accuracy: 0.3244 - val_loss: 1.1668 - val_accuracy: 0.4040
+Epoch 4/200
+3190/3190 [==============================] - 24s 7ms/step - loss: 1.1371 - accuracy: 0.4326 - val_loss: 1.0986 - val_accuracy: 0.4572
+Epoch 5/200
+3190/3190 [==============================] - 24s 8ms/step - loss: 1.0537 - accuracy: 0.4620 - val_loss: 0.9418 - val_accuracy: 0.5025
+Epoch 6/200
+3190/3190 [==============================] - 24s 7ms/step - loss: 0.9474 - accuracy: 0.4827 - val_loss: 0.9362 - val_accuracy: 0.4798
+Epoch 7/200
+3190/3190 [==============================] - 25s 8ms/step - loss: 0.9311 - accuracy: 0.4850 - val_loss: 0.9279 - val_accuracy: 0.4812
+Epoch 8/200
+3190/3190 [==============================] - 24s 7ms/step - loss: 0.9042 - accuracy: 0.4990 - val_loss: 0.9127 - val_accuracy: 0.5160
+Epoch 9/200
+3190/3190 [==============================] - 24s 8ms/step - loss: 0.8315 - accuracy: 0.5796 - val_loss: 0.6765 - val_accuracy: 0.6670
+Epoch 10/200
+3190/3190 [==============================] - 24s 8ms/step - loss: 0.5979 - accuracy: 0.6993 - val_loss: 0.5915 - val_accuracy: 0.6877
+Epoch 11/200
+3190/3190 [==============================] - 24s 7ms/step - loss: 0.4610 - accuracy: 0.8350 - val_loss: 0.3984 - val_accuracy: 0.8644
+Epoch 12/200
+3190/3190 [==============================] - 24s 8ms/step - loss: 0.3494 - accuracy: 0.8935 - val_loss: 0.3496 - val_accuracy: 0.8850
+Epoch 13/200
+3190/3190 [==============================] - 24s 7ms/step - loss: 0.3113 - accuracy: 0.9063 - val_loss: 0.3413 - val_accuracy: 0.8883
+Epoch 14/200
+3190/3190 [==============================] - 25s 8ms/step - loss: 0.2896 - accuracy: 0.9128 - val_loss: 0.3414 - val_accuracy: 0.8877
+Epoch 15/200
+3190/3190 [==============================] - 24s 7ms/step - loss: 0.2738 - accuracy: 0.9185 - val_loss: 0.3543 - val_accuracy: 0.8889
+Epoch 16/200
+3190/3190 [==============================] - 24s 8ms/step - loss: 0.2605 - accuracy: 0.9230 - val_loss: 0.3484 - val_accuracy: 0.8900
+Epoch 17/200
+3190/3190 [==============================] - 24s 8ms/step - loss: 0.2500 - accuracy: 0.9266 - val_loss: 0.3538 - val_accuracy: 0.8887
+Epoch 18/200
+3190/3190 [==============================] - 24s 7ms/step - loss: 0.2356 - accuracy: 0.9310 - val_loss: 0.3819 - val_accuracy: 0.8818
+Epoch 19/200
+3190/3190 [==============================] - 24s 8ms/step - loss: 0.2244 - accuracy: 0.9353 - val_loss: 0.3929 - val_accuracy: 0.8820
+798/798 [==============================] - 3s 3ms/step - loss: 0.3929 - accuracy: 0.8820
+798/798 [==============================] - 4s 3ms/step - loss: 0.3413 - accuracy: 0.8883
+Starting experiment: unedited_fixed_length with vocab size 10000
+Epoch 1/200
+3190/3190 [==============================] - 36s 11ms/step - loss: 1.3875 - accuracy: 0.2503 - val_loss: 1.3874 - val_accuracy: 0.2485
+Epoch 2/200
+3190/3190 [==============================] - 24s 8ms/step - loss: 1.3865 - accuracy: 0.2503 - val_loss: 1.3884 - val_accuracy: 0.2485
+Epoch 3/200
+3190/3190 [==============================] - 24s 8ms/step - loss: 1.3864 - accuracy: 0.2544 - val_loss: 1.3848 - val_accuracy: 0.2485
+Epoch 4/200
+3190/3190 [==============================] - 24s 7ms/step - loss: 1.3367 - accuracy: 0.3255 - val_loss: 1.2756 - val_accuracy: 0.3691
+Epoch 5/200
+3190/3190 [==============================] - 24s 8ms/step - loss: 1.2792 - accuracy: 0.3737 - val_loss: 1.2667 - val_accuracy: 0.3766
+Epoch 6/200
+3190/3190 [==============================] - 24s 7ms/step - loss: 1.2791 - accuracy: 0.3665 - val_loss: 1.3857 - val_accuracy: 0.2515
+Epoch 7/200
+3190/3190 [==============================] - 24s 8ms/step - loss: 1.2740 - accuracy: 0.3866 - val_loss: 1.2552 - val_accuracy: 0.3954
+Epoch 8/200
+3190/3190 [==============================] - 23s 7ms/step - loss: 1.2720 - accuracy: 0.3757 - val_loss: 1.2910 - val_accuracy: 0.3447
+Epoch 9/200
+3190/3190 [==============================] - 24s 8ms/step - loss: 1.2740 - accuracy: 0.3703 - val_loss: 1.2617 - val_accuracy: 0.3735
+Epoch 10/200
+3190/3190 [==============================] - 24s 7ms/step - loss: 1.2717 - accuracy: 0.3696 - val_loss: 1.2648 - val_accuracy: 0.3789
+798/798 [==============================] - 3s 3ms/step - loss: 1.2648 - accuracy: 0.3789
+798/798 [==============================] - 4s 3ms/step - loss: 1.2552 - accuracy: 0.3954
+Starting experiment: unedited_fixed_length with vocab size 20000
+Epoch 1/200
+3190/3190 [==============================] - 37s 11ms/step - loss: 1.3875 - accuracy: 0.2509 - val_loss: 1.3873 - val_accuracy: 0.2485
+Epoch 2/200
+3190/3190 [==============================] - 24s 8ms/step - loss: 1.3867 - accuracy: 0.2514 - val_loss: 1.3869 - val_accuracy: 0.2485
+Epoch 3/200
+3190/3190 [==============================] - 24s 7ms/step - loss: 1.3865 - accuracy: 0.2511 - val_loss: 1.3882 - val_accuracy: 0.2485
+Epoch 4/200
+3190/3190 [==============================] - 24s 7ms/step - loss: 1.3863 - accuracy: 0.2514 - val_loss: 1.3847 - val_accuracy: 0.2485
+798/798 [==============================] - 3s 3ms/step - loss: 1.3847 - accuracy: 0.2485
+798/798 [==============================] - 4s 4ms/step - loss: 1.3847 - accuracy: 0.2485
+Starting experiment: edited_fixed_length with vocab size 5000
+Epoch 1/200
+3190/3190 [==============================] - 34s 10ms/step - loss: 1.3877 - accuracy: 0.2491 - val_loss: 1.3870 - val_accuracy: 0.2485
+Epoch 2/200
+3190/3190 [==============================] - 23s 7ms/step - loss: 1.3869 - accuracy: 0.2485 - val_loss: 1.3867 - val_accuracy: 0.2485
+Epoch 3/200
+3190/3190 [==============================] - 24s 7ms/step - loss: 1.3868 - accuracy: 0.2503 - val_loss: 1.3866 - val_accuracy: 0.2485
+Epoch 4/200
+3190/3190 [==============================] - 23s 7ms/step - loss: 1.3866 - accuracy: 0.2499 - val_loss: 1.3867 - val_accuracy: 0.2485
+798/798 [==============================] - 3s 4ms/step - loss: 1.3867 - accuracy: 0.2485
+798/798 [==============================] - 4s 4ms/step - loss: 1.3866 - accuracy: 0.2485
+Starting experiment: edited_fixed_length with vocab size 10000
+Epoch 1/200
+3190/3190 [==============================] - 35s 11ms/step - loss: 1.3875 - accuracy: 0.2511 - val_loss: 1.3869 - val_accuracy: 0.2485
+Epoch 2/200
+3190/3190 [==============================] - 23s 7ms/step - loss: 1.3869 - accuracy: 0.2519 - val_loss: 1.3871 - val_accuracy: 0.2485
+Epoch 3/200
+3190/3190 [==============================] - 24s 8ms/step - loss: 1.3866 - accuracy: 0.2520 - val_loss: 1.3866 - val_accuracy: 0.2485
+Epoch 4/200
+3190/3190 [==============================] - 23s 7ms/step - loss: 1.3866 - accuracy: 0.2488 - val_loss: 1.3868 - val_accuracy: 0.2485
+798/798 [==============================] - 3s 3ms/step - loss: 1.3868 - accuracy: 0.2485
+798/798 [==============================] - 4s 4ms/step - loss: 1.3866 - accuracy: 0.2485
+Starting experiment: edited_fixed_length with vocab size 20000
+Epoch 1/200
+3190/3190 [==============================] - 34s 10ms/step - loss: 1.3878 - accuracy: 0.2480 - val_loss: 1.3872 - val_accuracy: 0.2485
+Epoch 2/200
+3190/3190 [==============================] - 21s 7ms/step - loss: 1.3869 - accuracy: 0.2507 - val_loss: 1.3868 - val_accuracy: 0.2485
+Epoch 3/200
+3190/3190 [==============================] - 21s 6ms/step - loss: 1.3868 - accuracy: 0.2487 - val_loss: 1.3866 - val_accuracy: 0.2485
+Epoch 4/200
+3190/3190 [==============================] - 22s 7ms/step - loss: 1.3866 - accuracy: 0.2503 - val_loss: 1.3866 - val_accuracy: 0.2485
+798/798 [==============================] - 3s 3ms/step - loss: 1.3866 - accuracy: 0.2485
+798/798 [==============================] - 3s 3ms/step - loss: 1.3866 - accuracy: 0.2485
+</code></pre>
+</div>
+</div>
+<div class="cell code" id="QO240d1Pp7hC">
+<div class="sourceCode" id="cb32"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Adjust display settings for better alignment</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>pd.set_option(<span class="st">&#39;display.max_columns&#39;</span>, <span class="va">None</span>)</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>pd.set_option(<span class="st">&#39;display.width&#39;</span>, <span class="dv">1000</span>)</span></code></pre></div>
+</div>
+<div class="cell code" data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}" id="zpiukxubRcaM" data-outputId="c1bf1908-4d5c-4d46-b28f-b5344566ae59">
+<div class="sourceCode" id="cb33"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a DataFrame to display the results</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>df_unidirectional <span class="op">=</span> pd.DataFrame(all_results_unidirectional)</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the DataFrame</span></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_unidirectional)</span></code></pre></div>
+<div class="output stream stdout">
+<pre><code>               model_name  train_acc  train_loss  train_time   val_acc  val_loss  test_acc  test_loss                                            history
+0                unedited   0.442525    1.104049  138.695572  0.452077  1.073334  0.452077   1.073334  &lt;keras.src.callbacks.History object at 0x79345...
+1                unedited   0.937441    0.222545  306.012837  0.890596  0.357842  0.895572   0.321881  &lt;keras.src.callbacks.History object at 0x79337...
+2                unedited   0.252380    1.386382  102.549499  0.248511  1.386750  0.248511   1.386750  &lt;keras.src.callbacks.History object at 0x7933b...
+3                  edited   0.250362    1.386564   97.632819  0.248511  1.386764  0.248511   1.386717  &lt;keras.src.callbacks.History object at 0x79345...
+4                  edited   0.250500    1.386552   98.854450  0.248511  1.386791  0.248511   1.386781  &lt;keras.src.callbacks.History object at 0x79333...
+5                  edited   0.251048    1.386602  101.708936  0.248511  1.386603  0.248511   1.386589  &lt;keras.src.callbacks.History object at 0x79333...
+6   unedited_fixed_length   0.935345    0.224423  484.511530  0.882014  0.392904  0.888284   0.341328  &lt;keras.src.callbacks.History object at 0x79333...
+7   unedited_fixed_length   0.369563    1.271701  251.042958  0.378918  1.264803  0.395415   1.255222  &lt;keras.src.callbacks.History object at 0x79344...
+8   unedited_fixed_length   0.251391    1.386290  108.713932  0.248511  1.384712  0.248511   1.384712  &lt;keras.src.callbacks.History object at 0x79333...
+9     edited_fixed_length   0.249863    1.386586  104.951137  0.248511  1.386657  0.248511   1.386568  &lt;keras.src.callbacks.History object at 0x7933a...
+10    edited_fixed_length   0.248805    1.386613  106.182938  0.248511  1.386760  0.248511   1.386634  &lt;keras.src.callbacks.History object at 0x7933a...
+11    edited_fixed_length   0.250294    1.386625   97.266790  0.248511  1.386631  0.248511   1.386631  &lt;keras.src.callbacks.History object at 0x7933a...
+</code></pre>
+</div>
+</div>
+<div class="cell code" data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:1000}" id="AaYPt6s33eGy" data-outputId="59dff6d6-a77b-44a8-e8ac-54475aa0c682">
+<div class="sourceCode" id="cb35"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Import necessary libraries</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to plot accuracy and loss for different vocabulary sizes and experiments (unidirectional)</span></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_unidirectional_results(results_df):</span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Iterate over each unique experiment name</span></span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> experiment_name <span class="kw">in</span> results_df[<span class="st">&#39;model_name&#39;</span>].unique():</span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Filter the DataFrame for the current experiment</span></span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>        experiment_df <span class="op">=</span> results_df[results_df[<span class="st">&#39;model_name&#39;</span>] <span class="op">==</span> experiment_name]</span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Plot accuracy</span></span>
+<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a>        plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">8</span>))</span>
+<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> index, row <span class="kw">in</span> experiment_df.iterrows():</span>
+<span id="cb35-14"><a href="#cb35-14" aria-hidden="true" tabindex="-1"></a>            history <span class="op">=</span> row[<span class="st">&#39;history&#39;</span>]</span>
+<span id="cb35-15"><a href="#cb35-15" aria-hidden="true" tabindex="-1"></a>            vocab_size <span class="op">=</span> row[<span class="st">&#39;model_name&#39;</span>]</span>
+<span id="cb35-16"><a href="#cb35-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-17"><a href="#cb35-17" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Debugging: Print the contents of the history object</span></span>
+<span id="cb35-18"><a href="#cb35-18" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f&quot;Model: </span><span class="sc">{</span>experiment_name<span class="sc">}</span><span class="ss">, Vocab Size: </span><span class="sc">{</span>vocab_size<span class="sc">}</span><span class="ss">, History Data: </span><span class="sc">{</span>history<span class="sc">.</span>history<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb35-19"><a href="#cb35-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-20"><a href="#cb35-20" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> <span class="st">&#39;accuracy&#39;</span> <span class="kw">in</span> history.history <span class="kw">and</span> <span class="st">&#39;val_accuracy&#39;</span> <span class="kw">in</span> history.history:</span>
+<span id="cb35-21"><a href="#cb35-21" aria-hidden="true" tabindex="-1"></a>                plt.plot(history.history[<span class="st">&#39;accuracy&#39;</span>], label<span class="op">=</span><span class="ss">f&#39;</span><span class="sc">{</span>experiment_name<span class="sc">}</span><span class="ss"> Vocab_Size_</span><span class="sc">{</span>vocab_size<span class="sc">}</span><span class="ss"> Train&#39;</span>)</span>
+<span id="cb35-22"><a href="#cb35-22" aria-hidden="true" tabindex="-1"></a>                plt.plot(history.history[<span class="st">&#39;val_accuracy&#39;</span>], label<span class="op">=</span><span class="ss">f&#39;</span><span class="sc">{</span>experiment_name<span class="sc">}</span><span class="ss"> Vocab_Size_</span><span class="sc">{</span>vocab_size<span class="sc">}</span><span class="ss"> Val&#39;</span>, linestyle<span class="op">=</span><span class="st">&#39;--&#39;</span>)</span>
+<span id="cb35-23"><a href="#cb35-23" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>:</span>
+<span id="cb35-24"><a href="#cb35-24" aria-hidden="true" tabindex="-1"></a>                <span class="bu">print</span>(<span class="ss">f&quot;Missing keys in history for model: </span><span class="sc">{</span>experiment_name<span class="sc">}</span><span class="ss">, vocab size: </span><span class="sc">{</span>vocab_size<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb35-25"><a href="#cb35-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-26"><a href="#cb35-26" aria-hidden="true" tabindex="-1"></a>        plt.title(<span class="ss">f&quot;Model accuracy across different vocabulary sizes (</span><span class="sc">{</span>experiment_name<span class="sc">}</span><span class="ss"> vocabulary)&quot;</span>)</span>
+<span id="cb35-27"><a href="#cb35-27" aria-hidden="true" tabindex="-1"></a>        plt.xlabel(<span class="st">&quot;Epochs&quot;</span>)</span>
+<span id="cb35-28"><a href="#cb35-28" aria-hidden="true" tabindex="-1"></a>        plt.ylabel(<span class="st">&quot;Accuracy&quot;</span>)</span>
+<span id="cb35-29"><a href="#cb35-29" aria-hidden="true" tabindex="-1"></a>        plt.legend()</span>
+<span id="cb35-30"><a href="#cb35-30" aria-hidden="true" tabindex="-1"></a>        plt.show()</span>
+<span id="cb35-31"><a href="#cb35-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-32"><a href="#cb35-32" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Plot loss</span></span>
+<span id="cb35-33"><a href="#cb35-33" aria-hidden="true" tabindex="-1"></a>        plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">8</span>))</span>
+<span id="cb35-34"><a href="#cb35-34" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> index, row <span class="kw">in</span> experiment_df.iterrows():</span>
+<span id="cb35-35"><a href="#cb35-35" aria-hidden="true" tabindex="-1"></a>            history <span class="op">=</span> row[<span class="st">&#39;history&#39;</span>]</span>
+<span id="cb35-36"><a href="#cb35-36" aria-hidden="true" tabindex="-1"></a>            vocab_size <span class="op">=</span> row[<span class="st">&#39;model_name&#39;</span>]</span>
+<span id="cb35-37"><a href="#cb35-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-38"><a href="#cb35-38" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> <span class="st">&#39;loss&#39;</span> <span class="kw">in</span> history.history <span class="kw">and</span> <span class="st">&#39;val_loss&#39;</span> <span class="kw">in</span> history.history:</span>
+<span id="cb35-39"><a href="#cb35-39" aria-hidden="true" tabindex="-1"></a>                plt.plot(history.history[<span class="st">&#39;loss&#39;</span>], label<span class="op">=</span><span class="ss">f&#39;</span><span class="sc">{</span>experiment_name<span class="sc">}</span><span class="ss"> Vocab_Size_</span><span class="sc">{</span>vocab_size<span class="sc">}</span><span class="ss"> Train&#39;</span>)</span>
+<span id="cb35-40"><a href="#cb35-40" aria-hidden="true" tabindex="-1"></a>                plt.plot(history.history[<span class="st">&#39;val_loss&#39;</span>], label<span class="op">=</span><span class="ss">f&#39;</span><span class="sc">{</span>experiment_name<span class="sc">}</span><span class="ss"> Vocab_Size_</span><span class="sc">{</span>vocab_size<span class="sc">}</span><span class="ss"> Val&#39;</span>, linestyle<span class="op">=</span><span class="st">&#39;--&#39;</span>)</span>
+<span id="cb35-41"><a href="#cb35-41" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>:</span>
+<span id="cb35-42"><a href="#cb35-42" aria-hidden="true" tabindex="-1"></a>                <span class="bu">print</span>(<span class="ss">f&quot;Missing keys in history for model: </span><span class="sc">{</span>experiment_name<span class="sc">}</span><span class="ss">, vocab size: </span><span class="sc">{</span>vocab_size<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb35-43"><a href="#cb35-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-44"><a href="#cb35-44" aria-hidden="true" tabindex="-1"></a>        plt.title(<span class="ss">f&quot;Model loss across different vocabulary sizes (</span><span class="sc">{</span>experiment_name<span class="sc">}</span><span class="ss"> vocabulary)&quot;</span>)</span>
+<span id="cb35-45"><a href="#cb35-45" aria-hidden="true" tabindex="-1"></a>        plt.xlabel(<span class="st">&quot;Epochs&quot;</span>)</span>
+<span id="cb35-46"><a href="#cb35-46" aria-hidden="true" tabindex="-1"></a>        plt.ylabel(<span class="st">&quot;Loss&quot;</span>)</span>
+<span id="cb35-47"><a href="#cb35-47" aria-hidden="true" tabindex="-1"></a>        plt.legend()</span>
+<span id="cb35-48"><a href="#cb35-48" aria-hidden="true" tabindex="-1"></a>        plt.show()</span>
+<span id="cb35-49"><a href="#cb35-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-50"><a href="#cb35-50" aria-hidden="true" tabindex="-1"></a><span class="co"># Call the function with the DataFrame containing the results</span></span>
+<span id="cb35-51"><a href="#cb35-51" aria-hidden="true" tabindex="-1"></a>plot_unidirectional_results(df_unidirectional)</span></code></pre></div>
+<div class="output stream stdout">
+<pre><code>Model: unedited, Vocab Size: unedited, History Data: {&#39;loss&#39;: [1.3874974250793457, 1.386115550994873, 1.3235359191894531, 1.1466615200042725, 1.129076361656189, 1.104048728942871], &#39;accuracy&#39;: [0.25110697746276855, 0.2507934868335724, 0.330319344997406, 0.43085816502571106, 0.44953957200050354, 0.4425254762172699], &#39;val_loss&#39;: [1.387844204902649, 1.3867063522338867, 1.1222798824310303, 1.1343677043914795, 1.099082350730896, 1.0733336210250854], &#39;val_accuracy&#39;: [0.24851097166538239, 0.24851097166538239, 0.4958072006702423, 0.4142633080482483, 0.4481191337108612, 0.45207679271698]}
+Model: unedited, Vocab Size: unedited, History Data: {&#39;loss&#39;: [1.3875521421432495, 1.3865187168121338, 1.3859659433364868, 1.336401343345642, 1.2623246908187866, 1.247323751449585, 1.1696066856384277, 0.8359293937683105, 0.3993697166442871, 0.31818127632141113, 0.2815992832183838, 0.2569315433502197, 0.2381652444601059, 0.22254504263401031], &#39;accuracy&#39;: [0.24972569942474365, 0.25045064091682434, 0.25441810488700867, 0.324304461479187, 0.37608739733695984, 0.3707582354545593, 0.40520179271698, 0.635981559753418, 0.8750881552696228, 0.9053879380226135, 0.9182602167129517, 0.9261755347251892, 0.9323569536209106, 0.9374412298202515], &#39;val_loss&#39;: [1.3878532648086548, 1.3871982097625732, 1.3825359344482422, 1.2999550104141235, 1.2235181331634521, 1.2219388484954834, 1.1447646617889404, 0.45591971278190613, 0.3456656336784363, 0.3218812644481659, 0.32720649242401123, 0.32978224754333496, 0.33438897132873535, 0.35784223675727844], &#39;val_accuracy&#39;: [0.24851097166538239, 0.24851097166538239, 0.24851097166538239, 0.32774293422698975, 0.42131662368774414, 0.37836989760398865, 0.4166927933692932, 0.8403213024139404, 0.8876567482948303, 0.8955721259117126, 0.8970611095428467, 0.8937696218490601, 0.8949059844017029, 0.8905956149101257]}
+Model: unedited, Vocab Size: unedited, History Data: {&#39;loss&#39;: [1.387461543083191, 1.386812448501587, 1.3865396976470947, 1.3863818645477295], &#39;accuracy&#39;: [0.25190046429634094, 0.252145379781723, 0.24858933687210083, 0.25238049030303955], &#39;val_loss&#39;: [1.386829137802124, 1.3868739604949951, 1.387149453163147, 1.3867504596710205], &#39;val_accuracy&#39;: [0.24851097166538239, 0.24851097166538239, 0.24851097166538239, 0.24851097166538239]}
+</code></pre>
+</div>
+<div class="output display_data">
+<p><img src="3fb878d526209870f0bade9f153a3d001f1693d6.png" /></p>
+</div>
+<div class="output display_data">
+<p><img src="1f88b5315ea2af3b4546b16be10936005a1a8b14.png" /></p>
+</div>
+<div class="output stream stdout">
+<pre><code>Model: edited, Vocab Size: edited, History Data: {&#39;loss&#39;: [1.3876593112945557, 1.3868101835250854, 1.3866826295852661, 1.3865641355514526], &#39;accuracy&#39;: [0.25103840231895447, 0.25292906165122986, 0.2500391900539398, 0.25036245584487915], &#39;val_loss&#39;: [1.3868255615234375, 1.3868129253387451, 1.3867170810699463, 1.3867641687393188], &#39;val_accuracy&#39;: [0.24851097166538239, 0.24851097166538239, 0.24851097166538239, 0.24851097166538239]}
+Model: edited, Vocab Size: edited, History Data: {&#39;loss&#39;: [1.3874863386154175, 1.3868491649627686, 1.3866690397262573, 1.386551856994629], &#39;accuracy&#39;: [0.25156739354133606, 0.24877546727657318, 0.25103840231895447, 0.2504996061325073], &#39;val_loss&#39;: [1.3873751163482666, 1.3867813348770142, 1.386798620223999, 1.3867906332015991], &#39;val_accuracy&#39;: [0.24851097166538239, 0.24851097166538239, 0.24851097166538239, 0.24851097166538239]}
+Model: edited, Vocab Size: edited, History Data: {&#39;loss&#39;: [1.3875752687454224, 1.386864423751831, 1.386728048324585, 1.3866018056869507], &#39;accuracy&#39;: [0.25204741954803467, 0.2500685751438141, 0.2500391900539398, 0.25104820728302], &#39;val_loss&#39;: [1.386904239654541, 1.3865888118743896, 1.386641025543213, 1.3866029977798462], &#39;val_accuracy&#39;: [0.24851097166538239, 0.24851097166538239, 0.24851097166538239, 0.24851097166538239]}
+</code></pre>
+</div>
+<div class="output display_data">
+<p><img src="4384646048b45e97f18748b3f23be0420612bde8.png" /></p>
+</div>
+<div class="output display_data">
+<p><img src="f3b89fe4094b0523d7a3cf0bf34dd30198ae0546.png" /></p>
+</div>
+<div class="output stream stdout">
+<pre><code>Model: unedited_fixed_length, Vocab Size: unedited_fixed_length, History Data: {&#39;loss&#39;: [1.387427568435669, 1.3864233493804932, 1.312726378440857, 1.1370997428894043, 1.0537147521972656, 0.9473806619644165, 0.9310771226882935, 0.9041993618011475, 0.8314866423606873, 0.5979070067405701, 0.46098560094833374, 0.34935206174850464, 0.3112524151802063, 0.28957951068878174, 0.2738001048564911, 0.2605382800102234, 0.25003063678741455, 0.23555299639701843, 0.22442324459552765], &#39;accuracy&#39;: [0.2492554932832718, 0.25084248185157776, 0.3243730366230011, 0.43255290389060974, 0.46201997995376587, 0.48265087604522705, 0.4850117564201355, 0.4990301728248596, 0.5795650482177734, 0.6993436813354492, 0.8350215554237366, 0.8934561014175415, 0.9063381552696228, 0.9128232598304749, 0.9185149073600769, 0.9230309724807739, 0.9265869855880737, 0.9309561252593994, 0.9353448152542114], &#39;val_loss&#39;: [1.3868361711502075, 1.3853800296783447, 1.1667603254318237, 1.0985807180404663, 0.9417929649353027, 0.9361913800239563, 0.9278751015663147, 0.9127350449562073, 0.6764528751373291, 0.5915390253067017, 0.3984341323375702, 0.3495712876319885, 0.34132760763168335, 0.34139224886894226, 0.3543170094490051, 0.34838032722473145, 0.35382500290870667, 0.3819153904914856, 0.3929043710231781], &#39;val_accuracy&#39;: [0.24851097166538239, 0.24851097166538239, 0.40399685502052307, 0.4572100341320038, 0.5024686455726624, 0.47978055477142334, 0.4811520278453827, 0.5159874558448792, 0.6669670939445496, 0.6877350807189941, 0.8644200563430786, 0.884952962398529, 0.8882836699485779, 0.8876959085464478, 0.8889498710632324, 0.8899686336517334, 0.8886755704879761, 0.8817790150642395, 0.8820140957832336]}
+Model: unedited_fixed_length, Vocab Size: unedited_fixed_length, History Data: {&#39;loss&#39;: [1.3874696493148804, 1.3865197896957397, 1.3864461183547974, 1.336668848991394, 1.2791893482208252, 1.2790861129760742, 1.273960828781128, 1.2719812393188477, 1.274004340171814, 1.2717010974884033], &#39;accuracy&#39;: [0.25032326579093933, 0.25025469064712524, 0.25439852476119995, 0.3255192041397095, 0.373677521944046, 0.366487056016922, 0.3866085410118103, 0.3757445216178894, 0.3702978193759918, 0.3695630729198456], &#39;val_loss&#39;: [1.3873575925827026, 1.388354778289795, 1.384769320487976, 1.2755775451660156, 1.2666852474212646, 1.385682463645935, 1.2552220821380615, 1.2909891605377197, 1.2617182731628418, 1.2648032903671265], &#39;val_accuracy&#39;: [0.24851097166538239, 0.24851097166538239, 0.24851097166538239, 0.36908307671546936, 0.37656739354133606, 0.25152820348739624, 0.39541536569595337, 0.34474921226501465, 0.3735109865665436, 0.37891849875450134]}
+Model: unedited_fixed_length, Vocab Size: unedited_fixed_length, History Data: {&#39;loss&#39;: [1.3874943256378174, 1.3867089748382568, 1.3864573240280151, 1.3862899541854858], &#39;accuracy&#39;: [0.25093063712120056, 0.2514204680919647, 0.251097172498703, 0.25139105319976807], &#39;val_loss&#39;: [1.3873029947280884, 1.386871337890625, 1.388168454170227, 1.3847118616104126], &#39;val_accuracy&#39;: [0.24851097166538239, 0.24851097166538239, 0.24851097166538239, 0.24851097166538239]}
+</code></pre>
+</div>
+<div class="output display_data">
+<p><img src="4f0b8ff7bb8d268e36beab3ce3a343d54a2b8b81.png" /></p>
+</div>
+<div class="output display_data">
+<p><img src="749184fc2e6b7a8cba354634fa0342ca6d207838.png" /></p>
+</div>
+<div class="output stream stdout">
+<pre><code>Model: edited_fixed_length, Vocab Size: edited_fixed_length, History Data: {&#39;loss&#39;: [1.3877196311950684, 1.3868584632873535, 1.3867501020431519, 1.386586308479309], &#39;accuracy&#39;: [0.24908894300460815, 0.24849137663841248, 0.2502841055393219, 0.24986284971237183], &#39;val_loss&#39;: [1.386955976486206, 1.386665940284729, 1.3865679502487183, 1.386656641960144], &#39;val_accuracy&#39;: [0.24851097166538239, 0.24851097166538239, 0.24851097166538239, 0.24851097166538239]}
+Model: edited_fixed_length, Vocab Size: edited_fixed_length, History Data: {&#39;loss&#39;: [1.3874577283859253, 1.3868502378463745, 1.3866294622421265, 1.386613130569458], &#39;accuracy&#39;: [0.2511363625526428, 0.2519298493862152, 0.25202780961990356, 0.24880485236644745], &#39;val_loss&#39;: [1.3869221210479736, 1.3870632648468018, 1.3866335153579712, 1.3867595195770264], &#39;val_accuracy&#39;: [0.24851097166538239, 0.24851097166538239, 0.24851097166538239, 0.24851097166538239]}
+Model: edited_fixed_length, Vocab Size: edited_fixed_length, History Data: {&#39;loss&#39;: [1.3878484964370728, 1.3868643045425415, 1.3867913484573364, 1.3866254091262817], &#39;accuracy&#39;: [0.24799177050590515, 0.25066614151000977, 0.24871669709682465, 0.25029388070106506], &#39;val_loss&#39;: [1.3871511220932007, 1.3868131637573242, 1.3866361379623413, 1.3866310119628906], &#39;val_accuracy&#39;: [0.24851097166538239, 0.24851097166538239, 0.24851097166538239, 0.24851097166538239]}
+</code></pre>
+</div>
+<div class="output display_data">
+<p><img src="a8b0228c0f860d0ba778aa15b78af73d2ce629d9.png" /></p>
+</div>
+<div class="output display_data">
+<p><img src="1ea35ca9cc83610b4b9282663df55be25b904f6c.png" /></p>
+</div>
+</div>
+<div class="cell code" data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}" id="6PpvzE_8NnC5" data-outputId="785a2694-ca31-4e0d-cfbe-b0d49dd0469d">
+<div class="sourceCode" id="cb40"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> google.colab <span class="im">import</span> drive</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>drive.mount(<span class="st">&#39;/content/drive&#39;</span>)</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>jupyter nbconvert <span class="op">--</span>to html <span class="st">&quot;/content/drive/MyDrive/Colab Notebooks/458_M6_A3_lstm_uni.ipynb&quot;</span></span></code></pre></div>
+<div class="output stream stdout">
+<pre><code>Mounted at /content/drive
+[NbConvertApp] Converting notebook /content/drive/MyDrive/Colab Notebooks/458_M6_A3_lstm_uni.ipynb to html
+Traceback (most recent call last):
+  File &quot;/usr/local/bin/jupyter-nbconvert&quot;, line 8, in &lt;module&gt;
+    sys.exit(main())
+  File &quot;/usr/local/lib/python3.10/dist-packages/jupyter_core/application.py&quot;, line 283, in launch_instance
+    super().launch_instance(argv=argv, **kwargs)
+  File &quot;/usr/local/lib/python3.10/dist-packages/traitlets/config/application.py&quot;, line 992, in launch_instance
+    app.start()
+  File &quot;/usr/local/lib/python3.10/dist-packages/nbconvert/nbconvertapp.py&quot;, line 423, in start
+    self.convert_notebooks()
+  File &quot;/usr/local/lib/python3.10/dist-packages/nbconvert/nbconvertapp.py&quot;, line 597, in convert_notebooks
+    self.convert_single_notebook(notebook_filename)
+  File &quot;/usr/local/lib/python3.10/dist-packages/nbconvert/nbconvertapp.py&quot;, line 560, in convert_single_notebook
+    output, resources = self.export_single_notebook(
+  File &quot;/usr/local/lib/python3.10/dist-packages/nbconvert/nbconvertapp.py&quot;, line 488, in export_single_notebook
+    output, resources = self.exporter.from_filename(
+  File &quot;/usr/local/lib/python3.10/dist-packages/nbconvert/exporters/exporter.py&quot;, line 189, in from_filename
+    return self.from_file(f, resources=resources, **kw)
+  File &quot;/usr/local/lib/python3.10/dist-packages/nbconvert/exporters/exporter.py&quot;, line 206, in from_file
+    return self.from_notebook_node(
+  File &quot;/usr/local/lib/python3.10/dist-packages/nbconvert/exporters/html.py&quot;, line 223, in from_notebook_node
+    return super().from_notebook_node(nb, resources, **kw)
+  File &quot;/usr/local/lib/python3.10/dist-packages/nbconvert/exporters/templateexporter.py&quot;, line 413, in from_notebook_node
+    output = self.template.render(nb=nb_copy, resources=resources)
+  File &quot;/usr/local/lib/python3.10/dist-packages/jinja2/environment.py&quot;, line 1304, in render
+    self.environment.handle_exception()
+  File &quot;/usr/local/lib/python3.10/dist-packages/jinja2/environment.py&quot;, line 939, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File &quot;/usr/local/share/jupyter/nbconvert/templates/lab/index.html.j2&quot;, line 3, in top-level template code
+    {% from &#39;jupyter_widgets.html.j2&#39; import jupyter_widgets %}
+  File &quot;/usr/local/share/jupyter/nbconvert/templates/lab/base.html.j2&quot;, line 2, in top-level template code
+    {% from &#39;celltags.j2&#39; import celltags %}
+  File &quot;/usr/local/share/jupyter/nbconvert/templates/base/display_priority.j2&quot;, line 1, in top-level template code
+    {%- extends &#39;base/null.j2&#39; -%}
+  File &quot;/usr/local/share/jupyter/nbconvert/templates/base/null.j2&quot;, line 26, in top-level template code
+    {%- block body -%}
+  File &quot;/usr/local/share/jupyter/nbconvert/templates/base/null.j2&quot;, line 29, in block &#39;body&#39;
+    {%- block body_loop -%}
+  File &quot;/usr/local/share/jupyter/nbconvert/templates/base/null.j2&quot;, line 31, in block &#39;body_loop&#39;
+    {%- block any_cell scoped -%}
+  File &quot;/usr/local/share/jupyter/nbconvert/templates/base/null.j2&quot;, line 34, in block &#39;any_cell&#39;
+    {%- block codecell scoped -%}
+  File &quot;/usr/local/share/jupyter/nbconvert/templates/lab/base.html.j2&quot;, line 12, in block &#39;codecell&#39;
+    {{ super() }}
+  File &quot;/usr/local/share/jupyter/nbconvert/templates/base/null.j2&quot;, line 44, in block &#39;codecell&#39;
+    {%- block output_group -%}
+  File &quot;/usr/local/share/jupyter/nbconvert/templates/lab/base.html.j2&quot;, line 38, in block &#39;output_group&#39;
+    {{ super() }}
+  File &quot;/usr/local/share/jupyter/nbconvert/templates/base/null.j2&quot;, line 48, in block &#39;output_group&#39;
+    {%- block outputs scoped -%}
+  File &quot;/usr/local/share/jupyter/nbconvert/templates/lab/base.html.j2&quot;, line 44, in block &#39;outputs&#39;
+    {{ super() }}
+  File &quot;/usr/local/share/jupyter/nbconvert/templates/base/null.j2&quot;, line 50, in block &#39;outputs&#39;
+    {%- block output scoped -%}
+  File &quot;/usr/local/share/jupyter/nbconvert/templates/lab/base.html.j2&quot;, line 87, in block &#39;output&#39;
+    {{ super() }}
+  File &quot;/usr/local/share/jupyter/nbconvert/templates/base/null.j2&quot;, line 67, in block &#39;output&#39;
+    {%- block display_data scoped -%}
+  File &quot;/usr/local/share/jupyter/nbconvert/templates/base/null.j2&quot;, line 68, in block &#39;display_data&#39;
+    {%- block data_priority scoped -%}
+  File &quot;/usr/local/share/jupyter/nbconvert/templates/lab/base.html.j2&quot;, line 126, in block &#39;data_priority&#39;
+    {{ super() }}
+  File &quot;/usr/local/share/jupyter/nbconvert/templates/base/display_priority.j2&quot;, line 7, in block &#39;data_priority&#39;
+    {%- for type in output.data | filter_data_type -%}
+  File &quot;/usr/local/lib/python3.10/dist-packages/nbconvert/filters/widgetsdatatypefilter.py&quot;, line 57, in __call__
+    metadata[&quot;widgets&quot;][WIDGET_STATE_MIMETYPE][&quot;state&quot;]
+KeyError: &#39;state&#39;
+</code></pre>
+</div>
+</div>
+</body>
+</html>
