@@ -1,0 +1,2698 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>631556</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<div class="cell code" data-execution_count="1" id="B_19gt08Erto">
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> tensorflow <span class="im">as</span> tf</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> packaging <span class="im">import</span> version</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tensorflow.keras <span class="im">import</span> layers, models, backend <span class="im">as</span> k</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> collections <span class="im">import</span> Counter</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> classification_report, accuracy_score, mean_squared_error <span class="im">as</span> MSE, confusion_matrix</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> nltk</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>nltk.download(<span class="st">&#39;stopwords&#39;</span>, quiet<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.corpus <span class="im">import</span> stopwords</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> tensorflow_datasets <span class="im">as</span> tfds</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> string</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span></code></pre></div>
+</div>
+<div class="cell code" data-execution_count="2" data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:148,&quot;referenced_widgets&quot;:[&quot;819c54c8f7b04950ace49757af9de363&quot;,&quot;ff97fdf5ae484b2cb83cf55031b6769e&quot;,&quot;37382941bc924e2987cd4154e54ca17b&quot;,&quot;861f7dcfe1b24b25ae056e4b29065f3d&quot;,&quot;0b28a63b817441d48874e4ede7a6fc81&quot;,&quot;a4e4a117cc1144d9827941aa41ad6eef&quot;,&quot;ed226df5a2144a6e929c42675a9f2c1f&quot;,&quot;9aef0b6af7bf4c3daf69081567762a74&quot;,&quot;f692905ec1e74b10929927c08f3b0048&quot;,&quot;3b06865555db408d8e63f353ef3dba50&quot;,&quot;f1e93d6644bf4254b966484994a7639d&quot;,&quot;3bfabb13217c4518979d6b6d4b291373&quot;,&quot;f2b5f140c2a446f786c2ca89a3ad33ae&quot;,&quot;8f7f2dd612654426b34426ea15f8334a&quot;,&quot;2127b1fd9ac74ec0a0993cdb13f211b4&quot;,&quot;fc7b48db5a704e99b41ff9dc7aa05841&quot;,&quot;1ff71b182a4b417199f4b7f002914fe1&quot;,&quot;c2e582794d4a4be1bf33039154eee756&quot;,&quot;60f84c65e7ad43d7a393d1c89eba22f6&quot;,&quot;09de8a052a154940ad57af5eca57b868&quot;,&quot;047a015eba914edbb97e578df923558c&quot;,&quot;7003fe5e4c68454db1699578f4da7cc8&quot;,&quot;7889656894ee42c48442e842252eccc1&quot;,&quot;f3ebba783d454cc581db4aefe1cb578a&quot;,&quot;92d0d09f10a64befb879b6dd7cd3bbbb&quot;,&quot;ab9c7d8293f2422bb15ba8424330c417&quot;,&quot;46a022543dd64cdda9441eca4c77016f&quot;,&quot;aa8b575fdb094b6d9ade01ec90d4c76d&quot;,&quot;e9984851a2f34cbc9b468c7a5eb587ba&quot;,&quot;21980589f9154b6982186b8f5bb03ae2&quot;,&quot;82966a6afa9c451cb39075427f674ed4&quot;,&quot;33cd362f379746bfa1b17719a8264ba1&quot;,&quot;a7c2cb05691d4ddb8df8e057794dd210&quot;,&quot;fcb6edbaf9c84b57b308c07ff12a7e83&quot;,&quot;dc5f307a35044851a82fc01d4446a5e9&quot;,&quot;c4778c9f084a4ba99fc289a7c67146be&quot;,&quot;077cdfdec55146a7b72992a6850ff956&quot;,&quot;f689b6494a8c466597752633883e0666&quot;,&quot;d3b3678b5cee42be901d9617fbf5017c&quot;,&quot;f14768ec38dc4d32b46997b1449301aa&quot;,&quot;307661c70b5a4401be3835614add43eb&quot;,&quot;f1fe4c8c034a4fccb733648a6ec59e53&quot;,&quot;b0b7e528c9f94036842c117d8f95dc72&quot;,&quot;369e076d6ee443978b987775dbd929a0&quot;,&quot;efde71d1bc4b450fbe842f00517eae07&quot;,&quot;3f605e8785324158b8c0cbe7f43843bf&quot;,&quot;92270185c59746c88f715e4732cca930&quot;,&quot;268264000e7a4516bd7b1b31bfe2734e&quot;,&quot;0204611efffc48b4bc85dfd75dae5436&quot;,&quot;fc13c87012df4f278a71e49eae31ea15&quot;,&quot;766ac62d6d7247a380d8ac12cd55762d&quot;,&quot;f897c7449ed44edfab5e373ff85632f3&quot;,&quot;89059df68003435ba9ea0add3ee9b620&quot;,&quot;77b4ab869917492a808a97fbc3e91e26&quot;,&quot;080e9f10978947d3a9c38596f0bce46d&quot;,&quot;2eaf1931332b46acb67cca9e92c51bda&quot;,&quot;f4ec1a1db6ee45e4bd94c6608f399cff&quot;,&quot;d6ab89d71a584aff9909c58c29485b9e&quot;,&quot;06bb8f8266c041d1ade39f3179422953&quot;,&quot;050acdb6f601421991ac21c3fdc661fc&quot;,&quot;da54fb4ad3f846bf8a6c6b6e6b52a730&quot;,&quot;2b81b8ba1d9b40759b57c013a6e89e14&quot;,&quot;91f7296f49bb43d9b8f6256386c5ea9e&quot;,&quot;0ad3869ff7f440158f1a2a672ca3d418&quot;,&quot;0d72d147addf46e3a39b3677be402dbe&quot;,&quot;db9514b238fb4186860f3a2625dfa7b5&quot;,&quot;cef98434032a4db590bc34f936e64d8a&quot;,&quot;c85ad7ee522f4a76bca72e1e04adf96e&quot;,&quot;a6d105a3fa024763b6bb06dc8a4ee170&quot;,&quot;e3f556d4178447279ca2adc67d1002ab&quot;,&quot;4f6c9a2675b244f9818833da8cee0550&quot;,&quot;d456aa3302544a51acbb23554dfb2a9f&quot;,&quot;8f984df610f74be0bce6a9246229e6c6&quot;,&quot;a88a864cfb574e668b7bed9bd14eaa5d&quot;,&quot;a59f2948a6ce4ffe8cfe8dfb6e4782d8&quot;,&quot;eb78242277424a5c800e8763444a345c&quot;,&quot;8818414565e5413b8f0786a042265557&quot;,&quot;faef7c3f5cd4474eae18e09ba5d49ed9&quot;,&quot;aa7743612f034e3f9ae44df321e82b05&quot;,&quot;db98583b89204347be99a06d405c5872&quot;,&quot;6e425d312cf546eea1b88e9c2ae63bd0&quot;,&quot;4ce5551c1c544aea9eca9062389791f9&quot;,&quot;03cbb729e71e47fdab7ec7fc8514fa37&quot;,&quot;2c7c4e6edfe8479b9ed3c93c6cebb21a&quot;,&quot;adf73e1e5d7a46c39e3cff58c4eac8f3&quot;,&quot;714ca6df44da49469d9639c6b922ebfc&quot;,&quot;2fbf7ef5ceed42f48190c8f4e2688568&quot;,&quot;389f60af89364fe99b249ff4059316d4&quot;]}" id="PJe7JpG2Erq5" data-outputId="47eb5b67-5399-407c-c3e7-972f8bc518b6">
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># https://www.tensorflow.org/datasets/splits</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># The full &#39;train&#39; and &#39;test&#39; splits, interleaved together.</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>ri <span class="op">=</span> tfds.core.ReadInstruction(<span class="st">&#39;train&#39;</span>) <span class="op">+</span> tfds.core.ReadInstruction(<span class="st">&#39;test&#39;</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>dataset_all, info <span class="op">=</span> tfds.load(<span class="st">&#39;ag_news_subset&#39;</span>, with_info<span class="op">=</span><span class="va">True</span>, split<span class="op">=</span>ri, as_supervised<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>text_only_dataset_all <span class="op">=</span> dataset_all.<span class="bu">map</span>(<span class="kw">lambda</span> x, y: x)</span></code></pre></div>
+<div class="output stream stdout">
+<pre><code>Downloading and preparing dataset 11.24 MiB (download: 11.24 MiB, generated: 35.79 MiB, total: 47.03 MiB) to /root/tensorflow_datasets/ag_news_subset/1.0.0...
+</code></pre>
+</div>
+<div class="output display_data">
+<div class="sourceCode" id="cb4"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span><span class="dt">&quot;model_id&quot;</span><span class="fu">:</span><span class="st">&quot;819c54c8f7b04950ace49757af9de363&quot;</span><span class="fu">,</span><span class="dt">&quot;version_major&quot;</span><span class="fu">:</span><span class="dv">2</span><span class="fu">,</span><span class="dt">&quot;version_minor&quot;</span><span class="fu">:</span><span class="dv">0</span><span class="fu">}</span></span></code></pre></div>
+</div>
+<div class="output display_data">
+<div class="sourceCode" id="cb5"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span><span class="dt">&quot;model_id&quot;</span><span class="fu">:</span><span class="st">&quot;3bfabb13217c4518979d6b6d4b291373&quot;</span><span class="fu">,</span><span class="dt">&quot;version_major&quot;</span><span class="fu">:</span><span class="dv">2</span><span class="fu">,</span><span class="dt">&quot;version_minor&quot;</span><span class="fu">:</span><span class="dv">0</span><span class="fu">}</span></span></code></pre></div>
+</div>
+<div class="output display_data">
+<div class="sourceCode" id="cb6"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span><span class="dt">&quot;model_id&quot;</span><span class="fu">:</span><span class="st">&quot;7889656894ee42c48442e842252eccc1&quot;</span><span class="fu">,</span><span class="dt">&quot;version_major&quot;</span><span class="fu">:</span><span class="dv">2</span><span class="fu">,</span><span class="dt">&quot;version_minor&quot;</span><span class="fu">:</span><span class="dv">0</span><span class="fu">}</span></span></code></pre></div>
+</div>
+<div class="output display_data">
+<div class="sourceCode" id="cb7"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span><span class="dt">&quot;model_id&quot;</span><span class="fu">:</span><span class="st">&quot;fcb6edbaf9c84b57b308c07ff12a7e83&quot;</span><span class="fu">,</span><span class="dt">&quot;version_major&quot;</span><span class="fu">:</span><span class="dv">2</span><span class="fu">,</span><span class="dt">&quot;version_minor&quot;</span><span class="fu">:</span><span class="dv">0</span><span class="fu">}</span></span></code></pre></div>
+</div>
+<div class="output display_data">
+<div class="sourceCode" id="cb8"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span><span class="dt">&quot;model_id&quot;</span><span class="fu">:</span><span class="st">&quot;efde71d1bc4b450fbe842f00517eae07&quot;</span><span class="fu">,</span><span class="dt">&quot;version_major&quot;</span><span class="fu">:</span><span class="dv">2</span><span class="fu">,</span><span class="dt">&quot;version_minor&quot;</span><span class="fu">:</span><span class="dv">0</span><span class="fu">}</span></span></code></pre></div>
+</div>
+<div class="output display_data">
+<div class="sourceCode" id="cb9"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span><span class="dt">&quot;model_id&quot;</span><span class="fu">:</span><span class="st">&quot;2eaf1931332b46acb67cca9e92c51bda&quot;</span><span class="fu">,</span><span class="dt">&quot;version_major&quot;</span><span class="fu">:</span><span class="dv">2</span><span class="fu">,</span><span class="dt">&quot;version_minor&quot;</span><span class="fu">:</span><span class="dv">0</span><span class="fu">}</span></span></code></pre></div>
+</div>
+<div class="output display_data">
+<div class="sourceCode" id="cb10"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span><span class="dt">&quot;model_id&quot;</span><span class="fu">:</span><span class="st">&quot;cef98434032a4db590bc34f936e64d8a&quot;</span><span class="fu">,</span><span class="dt">&quot;version_major&quot;</span><span class="fu">:</span><span class="dv">2</span><span class="fu">,</span><span class="dt">&quot;version_minor&quot;</span><span class="fu">:</span><span class="dv">0</span><span class="fu">}</span></span></code></pre></div>
+</div>
+<div class="output display_data">
+<div class="sourceCode" id="cb11"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span><span class="dt">&quot;model_id&quot;</span><span class="fu">:</span><span class="st">&quot;faef7c3f5cd4474eae18e09ba5d49ed9&quot;</span><span class="fu">,</span><span class="dt">&quot;version_major&quot;</span><span class="fu">:</span><span class="dv">2</span><span class="fu">,</span><span class="dt">&quot;version_minor&quot;</span><span class="fu">:</span><span class="dv">0</span><span class="fu">}</span></span></code></pre></div>
+</div>
+<div class="output stream stdout">
+<pre><code>Dataset ag_news_subset downloaded and prepared to /root/tensorflow_datasets/ag_news_subset/1.0.0. Subsequent calls will reuse this data.
+</code></pre>
+</div>
+</div>
+<div class="cell code" data-execution_count="3" data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:318}" id="5KT1K9GJEroE" data-outputId="8f7cae23-b7fd-4fb0-e3de-f72999b997b9">
+<div class="sourceCode" id="cb13"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Downloading and preparing dataset</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>tfds.as_dataframe(dataset_all.take(<span class="dv">10</span>), info)</span></code></pre></div>
+<div class="output execute_result" data-execution_count="3">
+
+  <div id="df-cbcf683a-1044-4e22-b231-96072514fc68" class="colab-df-container">
+    <style type="text/css">
+</style>
+<table id="T_778c8">
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_778c8_level0_col0" class="col_heading level0 col0" >description</th>
+      <th id="T_778c8_level0_col1" class="col_heading level0 col1" >label</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_778c8_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_778c8_row0_col0" class="data row0 col0" >AMD #39;s new dual-core Opteron chip is designed mainly for corporate computing applications, including databases, Web services, and financial transactions.</td>
+      <td id="T_778c8_row0_col1" class="data row0 col1" >3 (Sci/Tech)</td>
+    </tr>
+    <tr>
+      <th id="T_778c8_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_778c8_row1_col0" class="data row1 col0" >Reuters - Major League Baseball\Monday announced a decision on the appeal filed by Chicago Cubs\pitcher Kerry Wood regarding a suspension stemming from an\incident earlier this season.</td>
+      <td id="T_778c8_row1_col1" class="data row1 col1" >1 (Sports)</td>
+    </tr>
+    <tr>
+      <th id="T_778c8_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_778c8_row2_col0" class="data row2 col0" >President Bush #39;s quot;revenue-neutral quot; tax reform needs losers to balance its winners, and people claiming the federal deduction for state and local taxes may be in administration planners #39; sights, news reports say.</td>
+      <td id="T_778c8_row2_col1" class="data row2 col1" >2 (Business)</td>
+    </tr>
+    <tr>
+      <th id="T_778c8_level0_row3" class="row_heading level0 row3" >3</th>
+      <td id="T_778c8_row3_col0" class="data row3 col0" >Britain will run out of leading scientists unless science education is improved, says Professor Colin Pillinger.</td>
+      <td id="T_778c8_row3_col1" class="data row3 col1" >3 (Sci/Tech)</td>
+    </tr>
+    <tr>
+      <th id="T_778c8_level0_row4" class="row_heading level0 row4" >4</th>
+      <td id="T_778c8_row4_col0" class="data row4 col0" >London, England (Sports Network) - England midfielder Steven Gerrard injured his groin late in Thursday #39;s training session, but is hopeful he will be ready for Saturday #39;s World Cup qualifier against Austria.</td>
+      <td id="T_778c8_row4_col1" class="data row4 col1" >1 (Sports)</td>
+    </tr>
+    <tr>
+      <th id="T_778c8_level0_row5" class="row_heading level0 row5" >5</th>
+      <td id="T_778c8_row5_col0" class="data row5 col0" >TOKYO - Sony Corp. is banking on the \$3 billion deal to acquire Hollywood studio Metro-Goldwyn-Mayer Inc...</td>
+      <td id="T_778c8_row5_col1" class="data row5 col1" >0 (World)</td>
+    </tr>
+    <tr>
+      <th id="T_778c8_level0_row6" class="row_heading level0 row6" >6</th>
+      <td id="T_778c8_row6_col0" class="data row6 col0" >Giant pandas may well prefer bamboo to laptops, but wireless technology is helping researchers in China in their efforts to protect the engandered animals living in the remote Wolong Nature Reserve.</td>
+      <td id="T_778c8_row6_col1" class="data row6 col1" >3 (Sci/Tech)</td>
+    </tr>
+    <tr>
+      <th id="T_778c8_level0_row7" class="row_heading level0 row7" >7</th>
+      <td id="T_778c8_row7_col0" class="data row7 col0" >VILNIUS, Lithuania - Lithuania #39;s main parties formed an alliance to try to keep a Russian-born tycoon and his populist promises out of the government in Sunday #39;s second round of parliamentary elections in this Baltic country.</td>
+      <td id="T_778c8_row7_col1" class="data row7 col1" >0 (World)</td>
+    </tr>
+    <tr>
+      <th id="T_778c8_level0_row8" class="row_heading level0 row8" >8</th>
+      <td id="T_778c8_row8_col0" class="data row8 col0" >Witnesses in the trial of a US soldier charged with abusing prisoners at Abu Ghraib have told the court that the CIA sometimes directed abuse and orders were received from military command to toughen interrogations.</td>
+      <td id="T_778c8_row8_col1" class="data row8 col1" >0 (World)</td>
+    </tr>
+    <tr>
+      <th id="T_778c8_level0_row9" class="row_heading level0 row9" >9</th>
+      <td id="T_778c8_row9_col0" class="data row9 col0" >Dan Olsen of Ponte Vedra Beach, Fla., shot a 7-under 65 Thursday to take a one-shot lead after two rounds of the PGA Tour qualifying tournament.</td>
+      <td id="T_778c8_row9_col1" class="data row9 col1" >1 (Sports)</td>
+    </tr>
+  </tbody>
+</table>
+
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-cbcf683a-1044-4e22-b231-96072514fc68')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-cbcf683a-1044-4e22-b231-96072514fc68 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-cbcf683a-1044-4e22-b231-96072514fc68');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+<div id="df-880837dc-b6dc-4f7e-8f39-013045fa3d37">
+  <button class="colab-df-quickchart" onclick="quickchart('df-880837dc-b6dc-4f7e-8f39-013045fa3d37')"
+            title="Suggest charts"
+            style="display:none;">
+
+<svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+     width="24px">
+    <g>
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+    </g>
+</svg>
+  </button>
+
+<style>
+  .colab-df-quickchart {
+      --bg-color: #E8F0FE;
+      --fill-color: #1967D2;
+      --hover-bg-color: #E2EBFA;
+      --hover-fill-color: #174EA6;
+      --disabled-fill-color: #AAA;
+      --disabled-bg-color: #DDD;
+  }
+
+  [theme=dark] .colab-df-quickchart {
+      --bg-color: #3B4455;
+      --fill-color: #D2E3FC;
+      --hover-bg-color: #434B5C;
+      --hover-fill-color: #FFFFFF;
+      --disabled-bg-color: #3B4455;
+      --disabled-fill-color: #666;
+  }
+
+  .colab-df-quickchart {
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    fill: var(--fill-color);
+    height: 32px;
+    padding: 0;
+    width: 32px;
+  }
+
+  .colab-df-quickchart:hover {
+    background-color: var(--hover-bg-color);
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    fill: var(--button-hover-fill-color);
+  }
+
+  .colab-df-quickchart-complete:disabled,
+  .colab-df-quickchart-complete:disabled:hover {
+    background-color: var(--disabled-bg-color);
+    fill: var(--disabled-fill-color);
+    box-shadow: none;
+  }
+
+  .colab-df-spinner {
+    border: 2px solid var(--fill-color);
+    border-color: transparent;
+    border-bottom-color: var(--fill-color);
+    animation:
+      spin 1s steps(1) infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+      border-left-color: var(--fill-color);
+    }
+    20% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    30% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+      border-right-color: var(--fill-color);
+    }
+    40% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    60% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+    }
+    80% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-bottom-color: var(--fill-color);
+    }
+    90% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+    }
+  }
+</style>
+
+  <script>
+    async function quickchart(key) {
+      const quickchartButtonEl =
+        document.querySelector('#' + key + ' button');
+      quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
+      quickchartButtonEl.classList.add('colab-df-spinner');
+      try {
+        const charts = await google.colab.kernel.invokeFunction(
+            'suggestCharts', [key], {});
+      } catch (error) {
+        console.error('Error during call to suggestCharts:', error);
+      }
+      quickchartButtonEl.classList.remove('colab-df-spinner');
+      quickchartButtonEl.classList.add('colab-df-quickchart-complete');
+    }
+    (() => {
+      let quickchartButtonEl =
+        document.querySelector('#df-880837dc-b6dc-4f7e-8f39-013045fa3d37 button');
+      quickchartButtonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+    })();
+  </script>
+</div>
+
+    </div>
+  </div>
+
+</div>
+</div>
+<div class="cell code" data-execution_count="4" data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}" id="yrHAnuCNErla" data-outputId="dba7b0a7-cefa-47e4-d9da-4125d33bd1ca">
+<div class="sourceCode" id="cb14"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check the categories</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>categories <span class="op">=</span> <span class="bu">dict</span>(<span class="bu">enumerate</span>(info.features[<span class="st">&quot;label&quot;</span>].names))</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&#39;Dictionary: &#39;</span>, categories)</span></code></pre></div>
+<div class="output stream stdout">
+<pre><code>Dictionary:  {0: &#39;World&#39;, 1: &#39;Sports&#39;, 2: &#39;Business&#39;, 3: &#39;Sci/Tech&#39;}
+</code></pre>
+</div>
+</div>
+<div class="cell code" data-execution_count="5" data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}" id="YuZ-GIyuEriA" data-outputId="9a850139-1bfc-4f97-de9c-1ba093b98261">
+<div class="sourceCode" id="cb16"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Review Class Balance</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>train_categories <span class="op">=</span> [categories[label] <span class="cf">for</span> label <span class="kw">in</span> dataset_all.<span class="bu">map</span>(<span class="kw">lambda</span> text, label: label).as_numpy_iterator()]</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>Counter(train_categories).most_common()</span></code></pre></div>
+<div class="output execute_result" data-execution_count="5">
+<pre><code>[(&#39;Sci/Tech&#39;, 31900), (&#39;Sports&#39;, 31900), (&#39;Business&#39;, 31900), (&#39;World&#39;, 31900)]</code></pre>
+</div>
+</div>
+<div class="cell code" data-execution_count="6" id="m2TglHC0E8Sm">
+<div class="sourceCode" id="cb18"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Custom stopwords function</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> custom_stopwords(input_text):</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    lowercase <span class="op">=</span> tf.strings.lower(input_text)</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    stripped_punct <span class="op">=</span> tf.strings.regex_replace(lowercase, <span class="vs">r&#39;[</span><span class="sc">%s</span><span class="vs">]&#39;</span> <span class="op">%</span> re.escape(string.punctuation), <span class="st">&#39;&#39;</span>)</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> tf.strings.regex_replace(stripped_punct, <span class="vs">r&#39;\b(&#39;</span> <span class="op">+</span> <span class="vs">r&#39;|&#39;</span>.join(STOPWORDS) <span class="op">+</span> <span class="vs">r&#39;)\b\s*&#39;</span>, <span class="st">&#39;&#39;</span>)</span></code></pre></div>
+</div>
+<div class="cell code" data-execution_count="7" id="eatEeWI5E8Pi">
+<div class="sourceCode" id="cb19"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>nltk.download(<span class="st">&#39;stopwords&#39;</span>, quiet<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>STOPWORDS <span class="op">=</span> stopwords.words(<span class="st">&quot;english&quot;</span>)</span></code></pre></div>
+</div>
+<div class="cell code" data-execution_count="11" id="ErLbIJUpFEQ1">
+<div class="sourceCode" id="cb20"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Text Vectorization and Vocabulary Adaptation</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> text_vectorization_and_adapt(text_dataset, max_tokens<span class="op">=</span><span class="va">None</span>, standardize_fn<span class="op">=</span><span class="va">None</span>, output_sequence_length<span class="op">=</span><span class="va">None</span>):</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    text_vectorization <span class="op">=</span> tf.keras.layers.TextVectorization(</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>        max_tokens<span class="op">=</span>max_tokens,</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>        output_mode<span class="op">=</span><span class="st">&quot;int&quot;</span>,</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>        standardize<span class="op">=</span>standardize_fn,</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>        output_sequence_length<span class="op">=</span>output_sequence_length</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>    text_vectorization.adapt(text_dataset)</span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> text_vectorization</span></code></pre></div>
+</div>
+<div class="cell code" data-execution_count="16" id="qUsRUE8xFJEe">
+<div class="sourceCode" id="cb21"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create and compile the CNN 1D model</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> create_model(vocab_size, output_sequence_length):</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    tf.keras.backend.clear_session()</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>    inputs <span class="op">=</span> tf.keras.Input(shape<span class="op">=</span>(output_sequence_length,), dtype<span class="op">=</span><span class="st">&quot;int64&quot;</span>)</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>    embedded <span class="op">=</span> layers.Embedding(input_dim<span class="op">=</span>vocab_size, output_dim<span class="op">=</span><span class="dv">256</span>, input_length<span class="op">=</span>output_sequence_length)(inputs)</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> layers.Conv1D(<span class="dv">128</span>, <span class="dv">3</span>, activation<span class="op">=</span><span class="st">&#39;relu&#39;</span>)(embedded)</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> layers.MaxPooling1D(<span class="dv">2</span>)(x)</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> layers.Conv1D(<span class="dv">128</span>, <span class="dv">3</span>, activation<span class="op">=</span><span class="st">&#39;relu&#39;</span>)(x)</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> layers.MaxPooling1D(<span class="dv">2</span>)(x)</span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> layers.Conv1D(<span class="dv">128</span>, <span class="dv">3</span>, activation<span class="op">=</span><span class="st">&#39;relu&#39;</span>)(x)</span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> layers.GlobalMaxPooling1D()(x)</span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> layers.Dense(<span class="dv">128</span>, activation<span class="op">=</span><span class="st">&#39;relu&#39;</span>)(x)</span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> layers.Dropout(<span class="fl">0.5</span>)(x)</span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>    outputs <span class="op">=</span> layers.Dense(<span class="dv">4</span>, activation<span class="op">=</span><span class="st">&quot;softmax&quot;</span>)(x)</span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>    model <span class="op">=</span> tf.keras.Model(inputs, outputs)</span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>    model.<span class="bu">compile</span>(optimizer<span class="op">=</span><span class="st">&quot;rmsprop&quot;</span>,</span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>                  loss<span class="op">=</span><span class="st">&quot;sparse_categorical_crossentropy&quot;</span>,</span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a>                  metrics<span class="op">=</span>[<span class="st">&quot;accuracy&quot;</span>])</span>
+<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> model</span></code></pre></div>
+</div>
+<div class="cell code" data-execution_count="17" id="k6DfoZMJFJBD">
+<div class="sourceCode" id="cb22"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Train and evaluate the model</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> train_and_evaluate_model(vocab_size, text_vectorization, output_sequence_length, model_name):</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;Starting experiment: </span><span class="sc">{</span>model_name<span class="sc">}</span><span class="ss"> with vocab size </span><span class="sc">{</span>vocab_size<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Prepare the dataset</span></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> vectorize_text(text, label):</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>        text <span class="op">=</span> text_vectorization(text)</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> text, label</span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>    vectorized_dataset <span class="op">=</span> dataset_all.<span class="bu">map</span>(vectorize_text)</span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>    vectorized_dataset <span class="op">=</span> vectorized_dataset.cache().prefetch(buffer_size<span class="op">=</span>tf.data.AUTOTUNE)</span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Split the dataset</span></span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>    dataset_size <span class="op">=</span> <span class="bu">len</span>(<span class="bu">list</span>(vectorized_dataset))</span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a>    train_size <span class="op">=</span> <span class="bu">int</span>(<span class="fl">0.8</span> <span class="op">*</span> dataset_size)</span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a>    val_size <span class="op">=</span> dataset_size <span class="op">-</span> train_size</span>
+<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a>    train_dataset <span class="op">=</span> vectorized_dataset.take(train_size).batch(<span class="dv">32</span>)</span>
+<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a>    val_dataset <span class="op">=</span> vectorized_dataset.skip(train_size).take(val_size).batch(<span class="dv">32</span>)</span>
+<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Train the model</span></span>
+<span id="cb22-22"><a href="#cb22-22" aria-hidden="true" tabindex="-1"></a>    model <span class="op">=</span> create_model(vocab_size, output_sequence_length)</span>
+<span id="cb22-23"><a href="#cb22-23" aria-hidden="true" tabindex="-1"></a>    callbacks <span class="op">=</span> [</span>
+<span id="cb22-24"><a href="#cb22-24" aria-hidden="true" tabindex="-1"></a>        tf.keras.callbacks.ModelCheckpoint(<span class="ss">f&quot;</span><span class="sc">{</span>model_name<span class="sc">}</span><span class="ss">.h5&quot;</span>, save_best_only<span class="op">=</span><span class="va">True</span>),</span>
+<span id="cb22-25"><a href="#cb22-25" aria-hidden="true" tabindex="-1"></a>        tf.keras.callbacks.EarlyStopping(monitor<span class="op">=</span><span class="st">&#39;val_accuracy&#39;</span>, patience<span class="op">=</span><span class="dv">3</span>)</span>
+<span id="cb22-26"><a href="#cb22-26" aria-hidden="true" tabindex="-1"></a>    ]</span>
+<span id="cb22-27"><a href="#cb22-27" aria-hidden="true" tabindex="-1"></a>    start_time <span class="op">=</span> time.time()</span>
+<span id="cb22-28"><a href="#cb22-28" aria-hidden="true" tabindex="-1"></a>    history <span class="op">=</span> model.fit(train_dataset, validation_data<span class="op">=</span>val_dataset, epochs<span class="op">=</span><span class="dv">200</span>, callbacks<span class="op">=</span>callbacks)</span>
+<span id="cb22-29"><a href="#cb22-29" aria-hidden="true" tabindex="-1"></a>    training_time <span class="op">=</span> time.time() <span class="op">-</span> start_time</span>
+<span id="cb22-30"><a href="#cb22-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-31"><a href="#cb22-31" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Evaluate on validation dataset</span></span>
+<span id="cb22-32"><a href="#cb22-32" aria-hidden="true" tabindex="-1"></a>    val_loss, val_accuracy <span class="op">=</span> model.evaluate(val_dataset)</span>
+<span id="cb22-33"><a href="#cb22-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-34"><a href="#cb22-34" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Load the best model and evaluate on validation dataset</span></span>
+<span id="cb22-35"><a href="#cb22-35" aria-hidden="true" tabindex="-1"></a>    model <span class="op">=</span> models.load_model(<span class="ss">f&quot;</span><span class="sc">{</span>model_name<span class="sc">}</span><span class="ss">.h5&quot;</span>)</span>
+<span id="cb22-36"><a href="#cb22-36" aria-hidden="true" tabindex="-1"></a>    test_loss, test_accuracy <span class="op">=</span> model.evaluate(val_dataset)</span>
+<span id="cb22-37"><a href="#cb22-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-38"><a href="#cb22-38" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Collect final train accuracy and loss</span></span>
+<span id="cb22-39"><a href="#cb22-39" aria-hidden="true" tabindex="-1"></a>    train_acc <span class="op">=</span> history.history[<span class="st">&#39;accuracy&#39;</span>][<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb22-40"><a href="#cb22-40" aria-hidden="true" tabindex="-1"></a>    train_loss <span class="op">=</span> history.history[<span class="st">&#39;loss&#39;</span>][<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb22-41"><a href="#cb22-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-42"><a href="#cb22-42" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> {</span>
+<span id="cb22-43"><a href="#cb22-43" aria-hidden="true" tabindex="-1"></a>        <span class="st">&#39;model_name&#39;</span>: model_name,</span>
+<span id="cb22-44"><a href="#cb22-44" aria-hidden="true" tabindex="-1"></a>        <span class="st">&#39;train_acc&#39;</span>: train_acc,</span>
+<span id="cb22-45"><a href="#cb22-45" aria-hidden="true" tabindex="-1"></a>        <span class="st">&#39;train_loss&#39;</span>: train_loss,</span>
+<span id="cb22-46"><a href="#cb22-46" aria-hidden="true" tabindex="-1"></a>        <span class="st">&#39;train_time&#39;</span>: training_time,</span>
+<span id="cb22-47"><a href="#cb22-47" aria-hidden="true" tabindex="-1"></a>        <span class="st">&#39;val_acc&#39;</span>: val_accuracy,</span>
+<span id="cb22-48"><a href="#cb22-48" aria-hidden="true" tabindex="-1"></a>        <span class="st">&#39;val_loss&#39;</span>: val_loss,</span>
+<span id="cb22-49"><a href="#cb22-49" aria-hidden="true" tabindex="-1"></a>        <span class="st">&#39;test_acc&#39;</span>: test_accuracy,</span>
+<span id="cb22-50"><a href="#cb22-50" aria-hidden="true" tabindex="-1"></a>        <span class="st">&#39;test_loss&#39;</span>: test_loss,</span>
+<span id="cb22-51"><a href="#cb22-51" aria-hidden="true" tabindex="-1"></a>        <span class="st">&#39;history&#39;</span>: history  <span class="co"># Ensure history is returned</span></span>
+<span id="cb22-52"><a href="#cb22-52" aria-hidden="true" tabindex="-1"></a>    }</span></code></pre></div>
+</div>
+<div class="cell code" data-execution_count="18" id="Ma_y6rMsFI-L">
+<div class="sourceCode" id="cb23"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Experiment with unedited and edited vocabularies</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>experiments <span class="op">=</span> [</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    {<span class="st">&quot;name&quot;</span>: <span class="st">&quot;unedited&quot;</span>, <span class="st">&quot;vocab_sizes&quot;</span>: [<span class="dv">5000</span>, <span class="dv">10000</span>, <span class="dv">20000</span>], <span class="st">&quot;standardize_fn&quot;</span>: <span class="va">None</span>, <span class="st">&quot;output_sequence_length&quot;</span>: <span class="dv">100</span>},</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>    {<span class="st">&quot;name&quot;</span>: <span class="st">&quot;edited&quot;</span>, <span class="st">&quot;vocab_sizes&quot;</span>: [<span class="dv">5000</span>, <span class="dv">10000</span>, <span class="dv">20000</span>], <span class="st">&quot;standardize_fn&quot;</span>: custom_stopwords, <span class="st">&quot;output_sequence_length&quot;</span>: <span class="dv">100</span>},</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>    {<span class="st">&quot;name&quot;</span>: <span class="st">&quot;unedited_fixed_length&quot;</span>, <span class="st">&quot;vocab_sizes&quot;</span>: [<span class="dv">5000</span>, <span class="dv">10000</span>, <span class="dv">20000</span>], <span class="st">&quot;standardize_fn&quot;</span>: <span class="va">None</span>, <span class="st">&quot;output_sequence_length&quot;</span>: <span class="dv">100</span>},</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>    {<span class="st">&quot;name&quot;</span>: <span class="st">&quot;edited_fixed_length&quot;</span>, <span class="st">&quot;vocab_sizes&quot;</span>: [<span class="dv">5000</span>, <span class="dv">10000</span>, <span class="dv">20000</span>], <span class="st">&quot;standardize_fn&quot;</span>: custom_stopwords, <span class="st">&quot;output_sequence_length&quot;</span>: <span class="dv">100</span>}</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>]</span></code></pre></div>
+</div>
+<div class="cell code" data-execution_count="19" data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}" id="r_2xGJsSFI7M" data-outputId="142c945e-4ff8-4a7d-f56c-d5d4a80d5711">
+<div class="sourceCode" id="cb24"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Collecting results for the model</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>all_results <span class="op">=</span> []</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> experiment <span class="kw">in</span> experiments:</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> vocab_size <span class="kw">in</span> experiment[<span class="st">&quot;vocab_sizes&quot;</span>]:</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">try</span>:</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>            text_vectorization <span class="op">=</span> text_vectorization_and_adapt(</span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>                dataset_all.<span class="bu">map</span>(<span class="kw">lambda</span> text, label: text),</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>                max_tokens<span class="op">=</span>vocab_size,</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>                standardize_fn<span class="op">=</span>experiment[<span class="st">&quot;standardize_fn&quot;</span>],</span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>                output_sequence_length<span class="op">=</span>experiment[<span class="st">&quot;output_sequence_length&quot;</span>]</span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>            )</span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>            results <span class="op">=</span> train_and_evaluate_model(vocab_size, text_vectorization, experiment[<span class="st">&quot;output_sequence_length&quot;</span>], experiment[<span class="st">&quot;name&quot;</span>])</span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a>            all_results.append(results)</span>
+<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">except</span> <span class="pp">ValueError</span> <span class="im">as</span> e:</span>
+<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f&quot;Error with vocab_size </span><span class="sc">{</span>vocab_size<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>e<span class="sc">}</span><span class="ss">&quot;</span>)</span></code></pre></div>
+<div class="output stream stdout">
+<pre><code>Starting experiment: unedited with vocab size 5000
+Epoch 1/200
+3190/3190 [==============================] - 29s 7ms/step - loss: 0.4739 - accuracy: 0.8309 - val_loss: 0.3451 - val_accuracy: 0.8805
+Epoch 2/200
+  25/3190 [..............................] - ETA: 14s - loss: 0.3526 - accuracy: 0.8875</code></pre>
+</div>
+<div class="output stream stderr">
+<pre><code>/usr/local/lib/python3.10/dist-packages/keras/src/engine/training.py:3103: UserWarning: You are saving your model as an HDF5 file via `model.save()`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save(&#39;my_model.keras&#39;)`.
+  saving_api.save_model(
+</code></pre>
+</div>
+<div class="output stream stdout">
+<pre><code>3190/3190 [==============================] - 15s 5ms/step - loss: 0.3429 - accuracy: 0.8887 - val_loss: 0.3365 - val_accuracy: 0.8865
+Epoch 3/200
+3190/3190 [==============================] - 15s 5ms/step - loss: 0.3263 - accuracy: 0.8976 - val_loss: 0.3583 - val_accuracy: 0.8825
+Epoch 4/200
+3190/3190 [==============================] - 15s 5ms/step - loss: 0.3235 - accuracy: 0.8989 - val_loss: 0.4098 - val_accuracy: 0.8663
+Epoch 5/200
+3190/3190 [==============================] - 15s 5ms/step - loss: 0.3208 - accuracy: 0.9010 - val_loss: 0.4186 - val_accuracy: 0.8638
+798/798 [==============================] - 2s 2ms/step - loss: 0.4186 - accuracy: 0.8638
+798/798 [==============================] - 3s 3ms/step - loss: 0.3365 - accuracy: 0.8865
+Starting experiment: unedited with vocab size 10000
+Epoch 1/200
+3190/3190 [==============================] - 26s 8ms/step - loss: 0.4734 - accuracy: 0.8280 - val_loss: 0.3411 - val_accuracy: 0.8839
+Epoch 2/200
+3190/3190 [==============================] - 16s 5ms/step - loss: 0.3139 - accuracy: 0.9003 - val_loss: 0.3111 - val_accuracy: 0.8945
+Epoch 3/200
+3190/3190 [==============================] - 16s 5ms/step - loss: 0.2911 - accuracy: 0.9102 - val_loss: 0.3172 - val_accuracy: 0.8974
+Epoch 4/200
+3190/3190 [==============================] - 16s 5ms/step - loss: 0.2903 - accuracy: 0.9134 - val_loss: 0.3461 - val_accuracy: 0.8950
+Epoch 5/200
+3190/3190 [==============================] - 16s 5ms/step - loss: 0.2822 - accuracy: 0.9181 - val_loss: 0.4000 - val_accuracy: 0.8771
+Epoch 6/200
+3190/3190 [==============================] - 15s 5ms/step - loss: 0.2767 - accuracy: 0.9220 - val_loss: 0.4926 - val_accuracy: 0.8719
+798/798 [==============================] - 2s 2ms/step - loss: 0.4926 - accuracy: 0.8719
+798/798 [==============================] - 3s 3ms/step - loss: 0.3111 - accuracy: 0.8945
+Starting experiment: unedited with vocab size 20000
+Epoch 1/200
+3190/3190 [==============================] - 28s 8ms/step - loss: 0.4602 - accuracy: 0.8348 - val_loss: 0.3290 - val_accuracy: 0.8871
+Epoch 2/200
+3190/3190 [==============================] - 16s 5ms/step - loss: 0.2942 - accuracy: 0.9068 - val_loss: 0.3132 - val_accuracy: 0.8977
+Epoch 3/200
+3190/3190 [==============================] - 16s 5ms/step - loss: 0.2561 - accuracy: 0.9224 - val_loss: 0.3229 - val_accuracy: 0.8977
+Epoch 4/200
+3190/3190 [==============================] - 16s 5ms/step - loss: 0.2383 - accuracy: 0.9309 - val_loss: 0.3597 - val_accuracy: 0.8957
+Epoch 5/200
+3190/3190 [==============================] - 16s 5ms/step - loss: 0.2269 - accuracy: 0.9364 - val_loss: 0.4037 - val_accuracy: 0.8943
+798/798 [==============================] - 2s 2ms/step - loss: 0.4037 - accuracy: 0.8943
+798/798 [==============================] - 3s 3ms/step - loss: 0.3132 - accuracy: 0.8977
+Starting experiment: edited with vocab size 5000
+Epoch 1/200
+3190/3190 [==============================] - 25s 7ms/step - loss: 0.4349 - accuracy: 0.8498 - val_loss: 0.3383 - val_accuracy: 0.8853
+Epoch 2/200
+3190/3190 [==============================] - 15s 5ms/step - loss: 0.3201 - accuracy: 0.8996 - val_loss: 0.3170 - val_accuracy: 0.8946
+Epoch 3/200
+3190/3190 [==============================] - 15s 5ms/step - loss: 0.3029 - accuracy: 0.9083 - val_loss: 0.3364 - val_accuracy: 0.8924
+Epoch 4/200
+3190/3190 [==============================] - 15s 5ms/step - loss: 0.2959 - accuracy: 0.9122 - val_loss: 0.3729 - val_accuracy: 0.8893
+Epoch 5/200
+3190/3190 [==============================] - 15s 5ms/step - loss: 0.2843 - accuracy: 0.9170 - val_loss: 0.4613 - val_accuracy: 0.8770
+798/798 [==============================] - 2s 2ms/step - loss: 0.4613 - accuracy: 0.8770
+798/798 [==============================] - 3s 3ms/step - loss: 0.3170 - accuracy: 0.8946
+Starting experiment: edited with vocab size 10000
+Epoch 1/200
+3190/3190 [==============================] - 25s 8ms/step - loss: 0.4320 - accuracy: 0.8513 - val_loss: 0.3279 - val_accuracy: 0.8911
+Epoch 2/200
+3190/3190 [==============================] - 16s 5ms/step - loss: 0.2979 - accuracy: 0.9076 - val_loss: 0.3236 - val_accuracy: 0.8923
+Epoch 3/200
+3190/3190 [==============================] - 15s 5ms/step - loss: 0.2655 - accuracy: 0.9205 - val_loss: 0.3607 - val_accuracy: 0.8880
+Epoch 4/200
+3190/3190 [==============================] - 15s 5ms/step - loss: 0.2478 - accuracy: 0.9279 - val_loss: 0.3457 - val_accuracy: 0.8924
+Epoch 5/200
+3190/3190 [==============================] - 15s 5ms/step - loss: 0.2295 - accuracy: 0.9359 - val_loss: 0.4060 - val_accuracy: 0.8814
+Epoch 6/200
+3190/3190 [==============================] - 16s 5ms/step - loss: 0.2140 - accuracy: 0.9426 - val_loss: 0.4457 - val_accuracy: 0.8793
+Epoch 7/200
+3190/3190 [==============================] - 16s 5ms/step - loss: 0.1931 - accuracy: 0.9495 - val_loss: 0.5097 - val_accuracy: 0.8772
+798/798 [==============================] - 2s 2ms/step - loss: 0.5097 - accuracy: 0.8772
+798/798 [==============================] - 3s 3ms/step - loss: 0.3236 - accuracy: 0.8923
+Starting experiment: edited with vocab size 20000
+Epoch 1/200
+3190/3190 [==============================] - 27s 8ms/step - loss: 0.4288 - accuracy: 0.8506 - val_loss: 0.3190 - val_accuracy: 0.8948
+Epoch 2/200
+3190/3190 [==============================] - 16s 5ms/step - loss: 0.2812 - accuracy: 0.9132 - val_loss: 0.3007 - val_accuracy: 0.9045
+Epoch 3/200
+3190/3190 [==============================] - 16s 5ms/step - loss: 0.2458 - accuracy: 0.9291 - val_loss: 0.3399 - val_accuracy: 0.8997
+Epoch 4/200
+3190/3190 [==============================] - 16s 5ms/step - loss: 0.2163 - accuracy: 0.9391 - val_loss: 0.4053 - val_accuracy: 0.8904
+Epoch 5/200
+3190/3190 [==============================] - 16s 5ms/step - loss: 0.1973 - accuracy: 0.9476 - val_loss: 0.4760 - val_accuracy: 0.8776
+798/798 [==============================] - 2s 2ms/step - loss: 0.4760 - accuracy: 0.8776
+798/798 [==============================] - 3s 3ms/step - loss: 0.3007 - accuracy: 0.9045
+Starting experiment: unedited_fixed_length with vocab size 5000
+Epoch 1/200
+3190/3190 [==============================] - 25s 8ms/step - loss: 0.4755 - accuracy: 0.8277 - val_loss: 0.3448 - val_accuracy: 0.8798
+Epoch 2/200
+3190/3190 [==============================] - 15s 5ms/step - loss: 0.3413 - accuracy: 0.8893 - val_loss: 0.3353 - val_accuracy: 0.8862
+Epoch 3/200
+3190/3190 [==============================] - 15s 5ms/step - loss: 0.3278 - accuracy: 0.8959 - val_loss: 0.3476 - val_accuracy: 0.8860
+Epoch 4/200
+3190/3190 [==============================] - 15s 5ms/step - loss: 0.3261 - accuracy: 0.8991 - val_loss: 0.3481 - val_accuracy: 0.8860
+Epoch 5/200
+3190/3190 [==============================] - 15s 5ms/step - loss: 0.3260 - accuracy: 0.8997 - val_loss: 0.3941 - val_accuracy: 0.8702
+798/798 [==============================] - 2s 2ms/step - loss: 0.3941 - accuracy: 0.8702
+798/798 [==============================] - 3s 3ms/step - loss: 0.3353 - accuracy: 0.8862
+Starting experiment: unedited_fixed_length with vocab size 10000
+Epoch 1/200
+3190/3190 [==============================] - 26s 8ms/step - loss: 0.4710 - accuracy: 0.8298 - val_loss: 0.3286 - val_accuracy: 0.8862
+Epoch 2/200
+3190/3190 [==============================] - 16s 5ms/step - loss: 0.3137 - accuracy: 0.9003 - val_loss: 0.3166 - val_accuracy: 0.8926
+Epoch 3/200
+3190/3190 [==============================] - 15s 5ms/step - loss: 0.2894 - accuracy: 0.9095 - val_loss: 0.3563 - val_accuracy: 0.8933
+Epoch 4/200
+3190/3190 [==============================] - 15s 5ms/step - loss: 0.2871 - accuracy: 0.9135 - val_loss: 0.3842 - val_accuracy: 0.8861
+Epoch 5/200
+3190/3190 [==============================] - 16s 5ms/step - loss: 0.2834 - accuracy: 0.9164 - val_loss: 0.3830 - val_accuracy: 0.8899
+Epoch 6/200
+3190/3190 [==============================] - 16s 5ms/step - loss: 0.2771 - accuracy: 0.9205 - val_loss: 0.4333 - val_accuracy: 0.8759
+798/798 [==============================] - 2s 2ms/step - loss: 0.4333 - accuracy: 0.8759
+798/798 [==============================] - 3s 3ms/step - loss: 0.3166 - accuracy: 0.8926
+Starting experiment: unedited_fixed_length with vocab size 20000
+Epoch 1/200
+3190/3190 [==============================] - 27s 8ms/step - loss: 0.4587 - accuracy: 0.8360 - val_loss: 0.3250 - val_accuracy: 0.8884
+Epoch 2/200
+3190/3190 [==============================] - 16s 5ms/step - loss: 0.2969 - accuracy: 0.9055 - val_loss: 0.3060 - val_accuracy: 0.8989
+Epoch 3/200
+3190/3190 [==============================] - 16s 5ms/step - loss: 0.2606 - accuracy: 0.9215 - val_loss: 0.3281 - val_accuracy: 0.8931
+Epoch 4/200
+3190/3190 [==============================] - 16s 5ms/step - loss: 0.2452 - accuracy: 0.9285 - val_loss: 0.3420 - val_accuracy: 0.8936
+Epoch 5/200
+3190/3190 [==============================] - 16s 5ms/step - loss: 0.2369 - accuracy: 0.9335 - val_loss: 0.4141 - val_accuracy: 0.8875
+798/798 [==============================] - 2s 2ms/step - loss: 0.4141 - accuracy: 0.8875
+798/798 [==============================] - 3s 3ms/step - loss: 0.3060 - accuracy: 0.8989
+Starting experiment: edited_fixed_length with vocab size 5000
+Epoch 1/200
+3190/3190 [==============================] - 24s 7ms/step - loss: 0.4489 - accuracy: 0.8421 - val_loss: 0.3448 - val_accuracy: 0.8834
+Epoch 2/200
+3190/3190 [==============================] - 15s 5ms/step - loss: 0.3186 - accuracy: 0.8990 - val_loss: 0.3671 - val_accuracy: 0.8748
+Epoch 3/200
+3190/3190 [==============================] - 15s 5ms/step - loss: 0.2980 - accuracy: 0.9083 - val_loss: 0.3760 - val_accuracy: 0.8780
+Epoch 4/200
+3190/3190 [==============================] - 15s 5ms/step - loss: 0.2861 - accuracy: 0.9140 - val_loss: 0.3426 - val_accuracy: 0.8904
+Epoch 5/200
+3190/3190 [==============================] - 15s 5ms/step - loss: 0.2791 - accuracy: 0.9184 - val_loss: 0.3971 - val_accuracy: 0.8816
+Epoch 6/200
+3190/3190 [==============================] - 15s 5ms/step - loss: 0.2653 - accuracy: 0.9239 - val_loss: 0.4512 - val_accuracy: 0.8824
+Epoch 7/200
+3190/3190 [==============================] - 15s 5ms/step - loss: 0.2585 - accuracy: 0.9274 - val_loss: 0.4939 - val_accuracy: 0.8793
+798/798 [==============================] - 2s 2ms/step - loss: 0.4939 - accuracy: 0.8793
+798/798 [==============================] - 3s 3ms/step - loss: 0.3426 - accuracy: 0.8904
+Starting experiment: edited_fixed_length with vocab size 10000
+Epoch 1/200
+3190/3190 [==============================] - 26s 8ms/step - loss: 0.4407 - accuracy: 0.8452 - val_loss: 0.3209 - val_accuracy: 0.8916
+Epoch 2/200
+3190/3190 [==============================] - 16s 5ms/step - loss: 0.2976 - accuracy: 0.9069 - val_loss: 0.3082 - val_accuracy: 0.8973
+Epoch 3/200
+3190/3190 [==============================] - 15s 5ms/step - loss: 0.2696 - accuracy: 0.9190 - val_loss: 0.3650 - val_accuracy: 0.8887
+Epoch 4/200
+3190/3190 [==============================] - 15s 5ms/step - loss: 0.2484 - accuracy: 0.9281 - val_loss: 0.3447 - val_accuracy: 0.8879
+Epoch 5/200
+3190/3190 [==============================] - 15s 5ms/step - loss: 0.2309 - accuracy: 0.9355 - val_loss: 0.4460 - val_accuracy: 0.8799
+798/798 [==============================] - 2s 2ms/step - loss: 0.4460 - accuracy: 0.8799
+798/798 [==============================] - 3s 3ms/step - loss: 0.3082 - accuracy: 0.8973
+Starting experiment: edited_fixed_length with vocab size 20000
+Epoch 1/200
+3190/3190 [==============================] - 27s 8ms/step - loss: 0.4321 - accuracy: 0.8508 - val_loss: 0.3163 - val_accuracy: 0.8960
+Epoch 2/200
+3190/3190 [==============================] - 16s 5ms/step - loss: 0.2838 - accuracy: 0.9127 - val_loss: 0.3029 - val_accuracy: 0.9041
+Epoch 3/200
+3190/3190 [==============================] - 16s 5ms/step - loss: 0.2458 - accuracy: 0.9284 - val_loss: 0.3221 - val_accuracy: 0.8996
+Epoch 4/200
+3190/3190 [==============================] - 16s 5ms/step - loss: 0.2157 - accuracy: 0.9393 - val_loss: 0.3606 - val_accuracy: 0.8935
+Epoch 5/200
+3190/3190 [==============================] - 16s 5ms/step - loss: 0.1912 - accuracy: 0.9485 - val_loss: 0.4934 - val_accuracy: 0.8672
+798/798 [==============================] - 2s 2ms/step - loss: 0.4934 - accuracy: 0.8672
+798/798 [==============================] - 3s 3ms/step - loss: 0.3029 - accuracy: 0.9041
+</code></pre>
+</div>
+</div>
+<div class="cell code" data-execution_count="20" data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}" id="nFzUR618FI43" data-outputId="9d0c56cd-3df7-4403-f10b-870b83e58b81">
+<div class="sourceCode" id="cb28"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Adjust display settings for better alignment</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>pd.set_option(<span class="st">&#39;display.max_columns&#39;</span>, <span class="va">None</span>)</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>pd.set_option(<span class="st">&#39;display.width&#39;</span>, <span class="dv">1000</span>)</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a DataFrame to display the results</span></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(all_results)</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the DataFrame</span></span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df)</span></code></pre></div>
+<div class="output stream stdout">
+<pre><code>               model_name  train_acc  train_loss  train_time   val_acc  val_loss  test_acc  test_loss                                            history
+0                unedited   0.900980    0.320824   89.320003  0.863754  0.418562  0.886481   0.336546  &lt;keras.src.callbacks.History object at 0x7b15e...
+1                unedited   0.921973    0.276651  105.381414  0.871865  0.492577  0.894475   0.311083  &lt;keras.src.callbacks.History object at 0x7b15e...
+2                unedited   0.936393    0.226941   92.535884  0.894318  0.403703  0.897688   0.313224  &lt;keras.src.callbacks.History object at 0x7b14f...
+3                  edited   0.916957    0.284348   86.182464  0.876959  0.461323  0.894632   0.317024  &lt;keras.src.callbacks.History object at 0x7b14f...
+4                  edited   0.949540    0.193106  118.815361  0.877155  0.509703  0.892281   0.323555  &lt;keras.src.callbacks.History object at 0x7b14e...
+5                  edited   0.947571    0.197283   91.195426  0.877586  0.475985  0.904467   0.300690  &lt;keras.src.callbacks.History object at 0x7b14e...
+6   unedited_fixed_length   0.899706    0.326020   86.545849  0.870180  0.394127  0.886207   0.335345  &lt;keras.src.callbacks.History object at 0x7b15e...
+7   unedited_fixed_length   0.920464    0.277066  104.007215  0.875901  0.433315  0.892594   0.316600  &lt;keras.src.callbacks.History object at 0x7b149...
+8   unedited_fixed_length   0.933474    0.236898   91.804288  0.887539  0.414115  0.898864   0.306024  &lt;keras.src.callbacks.History object at 0x7b149...
+9     edited_fixed_length   0.927429    0.258461  116.119199  0.879350  0.493881  0.890360   0.342594  &lt;keras.src.callbacks.History object at 0x7b15e...
+10    edited_fixed_length   0.935482    0.230895   87.718645  0.879859  0.445973  0.897257   0.308206  &lt;keras.src.callbacks.History object at 0x7b145...
+11    edited_fixed_length   0.948501    0.191244   90.541975  0.867163  0.493351  0.904075   0.302906  &lt;keras.src.callbacks.History object at 0x7b145...
+</code></pre>
+</div>
+</div>
+<div class="cell code" data-execution_count="21" data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:1000}" id="DkltsMeOFI2F" data-outputId="b2bdb229-2a99-43fc-9f49-e7322ccab8d7">
+<div class="sourceCode" id="cb30"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to plot accuracy and loss for different vocabulary sizes and experiments</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_results(results_df):</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Iterate over each unique experiment name</span></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> experiment_name <span class="kw">in</span> results_df[<span class="st">&#39;model_name&#39;</span>].unique():</span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Filter the DataFrame for the current experiment</span></span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>        experiment_df <span class="op">=</span> results_df[results_df[<span class="st">&#39;model_name&#39;</span>] <span class="op">==</span> experiment_name]</span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Plot accuracy</span></span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>        plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">8</span>))</span>
+<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> index, row <span class="kw">in</span> experiment_df.iterrows():</span>
+<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a>            history <span class="op">=</span> row[<span class="st">&#39;history&#39;</span>]</span>
+<span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a>            vocab_size <span class="op">=</span> row[<span class="st">&#39;model_name&#39;</span>]</span>
+<span id="cb30-13"><a href="#cb30-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-14"><a href="#cb30-14" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Debugging: Print the contents of the history object</span></span>
+<span id="cb30-15"><a href="#cb30-15" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f&quot;Model: </span><span class="sc">{</span>experiment_name<span class="sc">}</span><span class="ss">, Vocab Size: </span><span class="sc">{</span>vocab_size<span class="sc">}</span><span class="ss">, History Data: </span><span class="sc">{</span>history<span class="sc">.</span>history<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb30-16"><a href="#cb30-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-17"><a href="#cb30-17" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> <span class="st">&#39;accuracy&#39;</span> <span class="kw">in</span> history.history <span class="kw">and</span> <span class="st">&#39;val_accuracy&#39;</span> <span class="kw">in</span> history.history:</span>
+<span id="cb30-18"><a href="#cb30-18" aria-hidden="true" tabindex="-1"></a>                plt.plot(history.history[<span class="st">&#39;accuracy&#39;</span>], label<span class="op">=</span><span class="ss">f&#39;</span><span class="sc">{</span>experiment_name<span class="sc">}</span><span class="ss"> Vocab_Size_</span><span class="sc">{</span>vocab_size<span class="sc">}</span><span class="ss"> Train&#39;</span>)</span>
+<span id="cb30-19"><a href="#cb30-19" aria-hidden="true" tabindex="-1"></a>                plt.plot(history.history[<span class="st">&#39;val_accuracy&#39;</span>], label<span class="op">=</span><span class="ss">f&#39;</span><span class="sc">{</span>experiment_name<span class="sc">}</span><span class="ss"> Vocab_Size_</span><span class="sc">{</span>vocab_size<span class="sc">}</span><span class="ss"> Val&#39;</span>, linestyle<span class="op">=</span><span class="st">&#39;--&#39;</span>)</span>
+<span id="cb30-20"><a href="#cb30-20" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>:</span>
+<span id="cb30-21"><a href="#cb30-21" aria-hidden="true" tabindex="-1"></a>                <span class="bu">print</span>(<span class="ss">f&quot;Missing keys in history for model: </span><span class="sc">{</span>experiment_name<span class="sc">}</span><span class="ss">, vocab size: </span><span class="sc">{</span>vocab_size<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb30-22"><a href="#cb30-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-23"><a href="#cb30-23" aria-hidden="true" tabindex="-1"></a>        plt.title(<span class="ss">f&quot;Model accuracy across different vocabulary sizes (</span><span class="sc">{</span>experiment_name<span class="sc">}</span><span class="ss"> vocabulary)&quot;</span>)</span>
+<span id="cb30-24"><a href="#cb30-24" aria-hidden="true" tabindex="-1"></a>        plt.xlabel(<span class="st">&quot;Epochs&quot;</span>)</span>
+<span id="cb30-25"><a href="#cb30-25" aria-hidden="true" tabindex="-1"></a>        plt.ylabel(<span class="st">&quot;Accuracy&quot;</span>)</span>
+<span id="cb30-26"><a href="#cb30-26" aria-hidden="true" tabindex="-1"></a>        plt.legend()</span>
+<span id="cb30-27"><a href="#cb30-27" aria-hidden="true" tabindex="-1"></a>        plt.show()</span>
+<span id="cb30-28"><a href="#cb30-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-29"><a href="#cb30-29" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Plot loss</span></span>
+<span id="cb30-30"><a href="#cb30-30" aria-hidden="true" tabindex="-1"></a>        plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">8</span>))</span>
+<span id="cb30-31"><a href="#cb30-31" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> index, row <span class="kw">in</span> experiment_df.iterrows():</span>
+<span id="cb30-32"><a href="#cb30-32" aria-hidden="true" tabindex="-1"></a>            history <span class="op">=</span> row[<span class="st">&#39;history&#39;</span>]</span>
+<span id="cb30-33"><a href="#cb30-33" aria-hidden="true" tabindex="-1"></a>            vocab_size <span class="op">=</span> row[<span class="st">&#39;model_name&#39;</span>]</span>
+<span id="cb30-34"><a href="#cb30-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-35"><a href="#cb30-35" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> <span class="st">&#39;loss&#39;</span> <span class="kw">in</span> history.history <span class="kw">and</span> <span class="st">&#39;val_loss&#39;</span> <span class="kw">in</span> history.history:</span>
+<span id="cb30-36"><a href="#cb30-36" aria-hidden="true" tabindex="-1"></a>                plt.plot(history.history[<span class="st">&#39;loss&#39;</span>], label<span class="op">=</span><span class="ss">f&#39;</span><span class="sc">{</span>experiment_name<span class="sc">}</span><span class="ss"> Vocab_Size_</span><span class="sc">{</span>vocab_size<span class="sc">}</span><span class="ss"> Train&#39;</span>)</span>
+<span id="cb30-37"><a href="#cb30-37" aria-hidden="true" tabindex="-1"></a>                plt.plot(history.history[<span class="st">&#39;val_loss&#39;</span>], label<span class="op">=</span><span class="ss">f&#39;</span><span class="sc">{</span>experiment_name<span class="sc">}</span><span class="ss"> Vocab_Size_</span><span class="sc">{</span>vocab_size<span class="sc">}</span><span class="ss"> Val&#39;</span>, linestyle<span class="op">=</span><span class="st">&#39;--&#39;</span>)</span>
+<span id="cb30-38"><a href="#cb30-38" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>:</span>
+<span id="cb30-39"><a href="#cb30-39" aria-hidden="true" tabindex="-1"></a>                <span class="bu">print</span>(<span class="ss">f&quot;Missing keys in history for model: </span><span class="sc">{</span>experiment_name<span class="sc">}</span><span class="ss">, vocab size: </span><span class="sc">{</span>vocab_size<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb30-40"><a href="#cb30-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-41"><a href="#cb30-41" aria-hidden="true" tabindex="-1"></a>        plt.title(<span class="ss">f&quot;Model loss across different vocabulary sizes (</span><span class="sc">{</span>experiment_name<span class="sc">}</span><span class="ss"> vocabulary)&quot;</span>)</span>
+<span id="cb30-42"><a href="#cb30-42" aria-hidden="true" tabindex="-1"></a>        plt.xlabel(<span class="st">&quot;Epochs&quot;</span>)</span>
+<span id="cb30-43"><a href="#cb30-43" aria-hidden="true" tabindex="-1"></a>        plt.ylabel(<span class="st">&quot;Loss&quot;</span>)</span>
+<span id="cb30-44"><a href="#cb30-44" aria-hidden="true" tabindex="-1"></a>        plt.legend()</span>
+<span id="cb30-45"><a href="#cb30-45" aria-hidden="true" tabindex="-1"></a>        plt.show()</span>
+<span id="cb30-46"><a href="#cb30-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-47"><a href="#cb30-47" aria-hidden="true" tabindex="-1"></a><span class="co"># Call the function with the DataFrame containing the results</span></span>
+<span id="cb30-48"><a href="#cb30-48" aria-hidden="true" tabindex="-1"></a>plot_results(df)</span></code></pre></div>
+<div class="output stream stdout">
+<pre><code>Model: unedited, Vocab Size: unedited, History Data: {&#39;loss&#39;: [0.47393107414245605, 0.3428652882575989, 0.3262963593006134, 0.32350584864616394, 0.3208242952823639], &#39;accuracy&#39;: [0.8308679461479187, 0.8887343406677246, 0.8976293206214905, 0.8988929986953735, 0.9009796380996704], &#39;val_loss&#39;: [0.3450608253479004, 0.336546391248703, 0.35826534032821655, 0.4097585082054138, 0.4185624420642853], &#39;val_accuracy&#39;: [0.8805250525474548, 0.8864811658859253, 0.8825235366821289, 0.8663401007652283, 0.8637539148330688]}
+Model: unedited, Vocab Size: unedited, History Data: {&#39;loss&#39;: [0.47336164116859436, 0.3139481842517853, 0.2911033630371094, 0.29033783078193665, 0.2821511924266815, 0.2766507565975189], &#39;accuracy&#39;: [0.8279682397842407, 0.9002645015716553, 0.9102370738983154, 0.913440465927124, 0.9180838465690613, 0.9219729900360107], &#39;val_loss&#39;: [0.34111183881759644, 0.31108272075653076, 0.3171687424182892, 0.34609901905059814, 0.40004265308380127, 0.4925772547721863], &#39;val_accuracy&#39;: [0.8838949799537659, 0.8944749236106873, 0.8974137902259827, 0.8949843049049377, 0.8771159648895264, 0.8718652129173279]}
+Model: unedited, Vocab Size: unedited, History Data: {&#39;loss&#39;: [0.4601834714412689, 0.29421693086624146, 0.2560626268386841, 0.23832260072231293, 0.22694131731987], &#39;accuracy&#39;: [0.8348060250282288, 0.9067593812942505, 0.9223843812942505, 0.930907130241394, 0.9363930225372314], &#39;val_loss&#39;: [0.32899144291877747, 0.3132244348526001, 0.3229113221168518, 0.35971799492836, 0.40370339155197144], &#39;val_accuracy&#39;: [0.8870689868927002, 0.897688090801239, 0.897688090801239, 0.8956896662712097, 0.894318163394928]}
+</code></pre>
+</div>
+<div class="output display_data">
+<p><img src="53428a4b7be435c0f58eb0a46de9d1d1ce4a07e8.png" /></p>
+</div>
+<div class="output display_data">
+<p><img src="300f31b9c69f56cf568684d21cdc12f4bd8eefd8.png" /></p>
+</div>
+<div class="output stream stdout">
+<pre><code>Model: edited, Vocab Size: edited, History Data: {&#39;loss&#39;: [0.4348906874656677, 0.32012563943862915, 0.30294865369796753, 0.29585227370262146, 0.2843482196331024], &#39;accuracy&#39;: [0.8498138785362244, 0.8995885848999023, 0.9082974195480347, 0.9122354984283447, 0.9169572591781616], &#39;val_loss&#39;: [0.33829641342163086, 0.31702423095703125, 0.33644992113113403, 0.37290942668914795, 0.46132275462150574], &#39;val_accuracy&#39;: [0.8852664828300476, 0.8946316838264465, 0.8924372792243958, 0.8893417119979858, 0.8769592642784119]}
+Model: edited, Vocab Size: edited, History Data: {&#39;loss&#39;: [0.43203434348106384, 0.29792189598083496, 0.2654830813407898, 0.24780675768852234, 0.2295365333557129, 0.21401236951351166, 0.19310633838176727], &#39;accuracy&#39;: [0.8513126969337463, 0.9076312780380249, 0.920474112033844, 0.9278702735900879, 0.935873806476593, 0.9425548315048218, 0.9495396018028259], &#39;val_loss&#39;: [0.3278958201408386, 0.3235546052455902, 0.3606667220592499, 0.3457165062427521, 0.4060283899307251, 0.44568896293640137, 0.5097034573554993], &#39;val_accuracy&#39;: [0.8911049962043762, 0.8922805786132812, 0.8880094289779663, 0.8924372792243958, 0.8813871741294861, 0.8793495297431946, 0.8771551847457886]}
+Model: edited, Vocab Size: edited, History Data: {&#39;loss&#39;: [0.4287777841091156, 0.2812279164791107, 0.24578669667243958, 0.21627335250377655, 0.19728265702724457], &#39;accuracy&#39;: [0.850587785243988, 0.9132444858551025, 0.9291437864303589, 0.9390869736671448, 0.9475705623626709], &#39;val_loss&#39;: [0.31895512342453003, 0.3006901741027832, 0.339903861284256, 0.40525493025779724, 0.47598519921302795], &#39;val_accuracy&#39;: [0.894788384437561, 0.9044671058654785, 0.8997256755828857, 0.890399694442749, 0.8775861859321594]}
+</code></pre>
+</div>
+<div class="output display_data">
+<p><img src="d647bab5854e09f7ccd66d1863008b71cefbe796.png" /></p>
+</div>
+<div class="output display_data">
+<p><img src="8d0cc4a8c96535bbf5c8997069fd57529607e3e0.png" /></p>
+</div>
+<div class="output stream stdout">
+<pre><code>Model: unedited_fixed_length, Vocab Size: unedited_fixed_length, History Data: {&#39;loss&#39;: [0.47549039125442505, 0.3412872552871704, 0.32781654596328735, 0.3261340260505676, 0.3260200321674347], &#39;accuracy&#39;: [0.8277233839035034, 0.8892829418182373, 0.8958562016487122, 0.8991379141807556, 0.8997061252593994], &#39;val_loss&#39;: [0.34477871656417847, 0.33534517884254456, 0.34755897521972656, 0.34810900688171387, 0.3941265940666199], &#39;val_accuracy&#39;: [0.8797805905342102, 0.8862069249153137, 0.8859717845916748, 0.8859717845916748, 0.8701802492141724]}
+Model: unedited_fixed_length, Vocab Size: unedited_fixed_length, History Data: {&#39;loss&#39;: [0.4710380733013153, 0.3136758804321289, 0.28939422965049744, 0.2871438264846802, 0.2833622097969055, 0.27706587314605713], &#39;accuracy&#39;: [0.8298393487930298, 0.9002938866615295, 0.9094533920288086, 0.9134502410888672, 0.9163694977760315, 0.9204643368721008], &#39;val_loss&#39;: [0.32856348156929016, 0.31659966707229614, 0.3562675714492798, 0.38421377539634705, 0.3830272853374481, 0.43331456184387207], &#39;val_accuracy&#39;: [0.8861677050590515, 0.892594039440155, 0.893299400806427, 0.8861285448074341, 0.8898902535438538, 0.8759012818336487]}
+Model: unedited_fixed_length, Vocab Size: unedited_fixed_length, History Data: {&#39;loss&#39;: [0.4586629867553711, 0.296854704618454, 0.2606266736984253, 0.24524633586406708, 0.2368982434272766], &#39;accuracy&#39;: [0.8359522223472595, 0.9054858684539795, 0.921522319316864, 0.9285168647766113, 0.9334737658500671], &#39;val_loss&#39;: [0.3249718248844147, 0.3060239851474762, 0.3280896842479706, 0.34203457832336426, 0.4141153395175934], &#39;val_accuracy&#39;: [0.8884012699127197, 0.8988636136054993, 0.8931034207344055, 0.8935736417770386, 0.8875392079353333]}
+</code></pre>
+</div>
+<div class="output display_data">
+<p><img src="4df20eceeaf72657e157a4be5bcdb6d76787636f.png" /></p>
+</div>
+<div class="output display_data">
+<p><img src="2d3a6828463047467a283dd9656bf86893784b5b.png" /></p>
+</div>
+<div class="output stream stdout">
+<pre><code>Model: edited_fixed_length, Vocab Size: edited_fixed_length, History Data: {&#39;loss&#39;: [0.4489384591579437, 0.31857287883758545, 0.29801028966903687, 0.28610724210739136, 0.27906036376953125, 0.26527631282806396, 0.258461058139801], &#39;accuracy&#39;: [0.8420748710632324, 0.8990301489830017, 0.9082974195480347, 0.9140282273292542, 0.9183875322341919, 0.9238831996917725, 0.9274294376373291], &#39;val_loss&#39;: [0.34482628107070923, 0.36707228422164917, 0.3759540319442749, 0.3425941467285156, 0.39711934328079224, 0.45123812556266785, 0.493881493806839], &#39;val_accuracy&#39;: [0.8833855986595154, 0.8748040795326233, 0.878017246723175, 0.8903604745864868, 0.8815830945968628, 0.8824451565742493, 0.8793495297431946]}
+Model: edited_fixed_length, Vocab Size: edited_fixed_length, History Data: {&#39;loss&#39;: [0.4406875967979431, 0.2975558340549469, 0.2696053683757782, 0.24842552840709686, 0.23089540004730225], &#39;accuracy&#39;: [0.8452292084693909, 0.9069357514381409, 0.9190145134925842, 0.92811518907547, 0.9354819655418396], &#39;val_loss&#39;: [0.32085809111595154, 0.3082059621810913, 0.36504995822906494, 0.34469810128211975, 0.44597259163856506], &#39;val_accuracy&#39;: [0.8915752172470093, 0.8972570300102234, 0.8886755704879761, 0.8878918290138245, 0.8798589110374451]}
+Model: edited_fixed_length, Vocab Size: edited_fixed_length, History Data: {&#39;loss&#39;: [0.4321441054344177, 0.2837766706943512, 0.2457578480243683, 0.2157336175441742, 0.19124408066272736], &#39;accuracy&#39;: [0.850813090801239, 0.9126763343811035, 0.928360104560852, 0.93934166431427, 0.9485011696815491], &#39;val_loss&#39;: [0.316337525844574, 0.30290618538856506, 0.32214826345443726, 0.36062684655189514, 0.4933509826660156], &#39;val_accuracy&#39;: [0.8960031270980835, 0.9040752053260803, 0.8996473550796509, 0.8934561014175415, 0.8671630024909973]}
+</code></pre>
+</div>
+<div class="output display_data">
+<p><img src="5b97d3be3c9e9ac80dd3e6a72e8abdcacdaa0ec7.png" /></p>
+</div>
+<div class="output display_data">
+<p><img src="1aba27fd7c2dce850a52dd9843f6b53b7295c325.png" /></p>
+</div>
+</div>
+<div class="cell code" data-execution_count="22" data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:1000}" id="mcHjLl1DFlyO" data-outputId="726f985a-5e9f-428b-b1f0-5e4de88a7e26">
+<div class="sourceCode" id="cb35"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> confusion_matrix</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to plot the confusion matrix</span></span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_confusion_matrix(model, vectorizer, dataset, model_name):</span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Vectorize the test data</span></span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> vectorize_text(text, label):</span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>        text <span class="op">=</span> vectorizer(text)</span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> text, label</span>
+<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a>    vectorized_dataset <span class="op">=</span> dataset.<span class="bu">map</span>(vectorize_text)</span>
+<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a>    test_data <span class="op">=</span> vectorized_dataset.skip(<span class="bu">int</span>(<span class="fl">0.8</span> <span class="op">*</span> <span class="bu">len</span>(<span class="bu">list</span>(vectorized_dataset)))).take(<span class="bu">int</span>(<span class="fl">0.2</span> <span class="op">*</span> <span class="bu">len</span>(<span class="bu">list</span>(vectorized_dataset)))).batch(<span class="dv">32</span>)</span>
+<span id="cb35-14"><a href="#cb35-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-15"><a href="#cb35-15" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Get true labels and predictions</span></span>
+<span id="cb35-16"><a href="#cb35-16" aria-hidden="true" tabindex="-1"></a>    true_labels <span class="op">=</span> []</span>
+<span id="cb35-17"><a href="#cb35-17" aria-hidden="true" tabindex="-1"></a>    predictions <span class="op">=</span> []</span>
+<span id="cb35-18"><a href="#cb35-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-19"><a href="#cb35-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> text_batch, label_batch <span class="kw">in</span> test_data:</span>
+<span id="cb35-20"><a href="#cb35-20" aria-hidden="true" tabindex="-1"></a>        preds <span class="op">=</span> model.predict(text_batch)</span>
+<span id="cb35-21"><a href="#cb35-21" aria-hidden="true" tabindex="-1"></a>        predictions.extend(tf.argmax(preds, axis<span class="op">=</span><span class="dv">1</span>).numpy())</span>
+<span id="cb35-22"><a href="#cb35-22" aria-hidden="true" tabindex="-1"></a>        true_labels.extend(label_batch.numpy())</span>
+<span id="cb35-23"><a href="#cb35-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-24"><a href="#cb35-24" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Compute confusion matrix</span></span>
+<span id="cb35-25"><a href="#cb35-25" aria-hidden="true" tabindex="-1"></a>    cm <span class="op">=</span> confusion_matrix(true_labels, predictions)</span>
+<span id="cb35-26"><a href="#cb35-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-27"><a href="#cb35-27" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Plot confusion matrix</span></span>
+<span id="cb35-28"><a href="#cb35-28" aria-hidden="true" tabindex="-1"></a>    plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">8</span>))</span>
+<span id="cb35-29"><a href="#cb35-29" aria-hidden="true" tabindex="-1"></a>    sns.heatmap(cm, annot<span class="op">=</span><span class="va">True</span>, fmt<span class="op">=</span><span class="st">&#39;d&#39;</span>, cmap<span class="op">=</span><span class="st">&#39;Blues&#39;</span>, xticklabels<span class="op">=</span>categories.values(), yticklabels<span class="op">=</span>categories.values())</span>
+<span id="cb35-30"><a href="#cb35-30" aria-hidden="true" tabindex="-1"></a>    plt.xlabel(<span class="st">&#39;Predicted&#39;</span>)</span>
+<span id="cb35-31"><a href="#cb35-31" aria-hidden="true" tabindex="-1"></a>    plt.ylabel(<span class="st">&#39;True&#39;</span>)</span>
+<span id="cb35-32"><a href="#cb35-32" aria-hidden="true" tabindex="-1"></a>    plt.title(<span class="ss">f&#39;Confusion Matrix for </span><span class="sc">{</span>model_name<span class="sc">}</span><span class="ss">&#39;</span>)</span>
+<span id="cb35-33"><a href="#cb35-33" aria-hidden="true" tabindex="-1"></a>    plt.show()</span>
+<span id="cb35-34"><a href="#cb35-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-35"><a href="#cb35-35" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the best models</span></span>
+<span id="cb35-36"><a href="#cb35-36" aria-hidden="true" tabindex="-1"></a>edited_fixed_length_model <span class="op">=</span> models.load_model(<span class="st">&quot;edited_fixed_length.h5&quot;</span>)</span>
+<span id="cb35-37"><a href="#cb35-37" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot confusion matrix for Edited_Fixed_Length model</span></span>
+<span id="cb35-38"><a href="#cb35-38" aria-hidden="true" tabindex="-1"></a>plot_confusion_matrix(edited_fixed_length_model, text_vectorization_and_adapt(dataset_all.<span class="bu">map</span>(<span class="kw">lambda</span> text, label: text), max_tokens<span class="op">=</span><span class="dv">20000</span>, standardize_fn<span class="op">=</span>custom_stopwords, output_sequence_length<span class="op">=</span><span class="dv">100</span>), dataset_all, <span class="st">&quot;Edited_Fixed_Length&quot;</span>)</span></code></pre></div>
+<div class="output stream stdout">
+<pre><code>1/1 [==============================] - 0s 110ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 19ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 19ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 23ms/step
+1/1 [==============================] - 0s 22ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 20ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 19ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 19ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 19ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 20ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 22ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 20ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 19ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 20ms/step
+1/1 [==============================] - 0s 19ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 19ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 21ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 19ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 19ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 19ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 19ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 19ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 19ms/step
+1/1 [==============================] - 0s 19ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 19ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 86ms/step
+</code></pre>
+</div>
+<div class="output display_data">
+<p><img src="be1b18ed8a40641bec01d4131fd1b3d67f7f71d2.png" /></p>
+</div>
+</div>
+<div class="cell code" data-execution_count="24" id="h7Q84s2gxFWX">
+<div class="sourceCode" id="cb37"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define function to evaluate the models</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> evaluate_model(model, vectorizer, dataset):</span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Vectorize the test data</span></span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> vectorize_text(text, label):</span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>        text <span class="op">=</span> vectorizer(text)</span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> text, label</span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>    vectorized_dataset <span class="op">=</span> dataset.<span class="bu">map</span>(vectorize_text)</span>
+<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a>    test_data <span class="op">=</span> vectorized_dataset.skip(<span class="bu">int</span>(<span class="fl">0.8</span> <span class="op">*</span> <span class="bu">len</span>(<span class="bu">list</span>(vectorized_dataset)))).take(<span class="bu">int</span>(<span class="fl">0.2</span> <span class="op">*</span> <span class="bu">len</span>(<span class="bu">list</span>(vectorized_dataset)))).batch(<span class="dv">32</span>)</span>
+<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Get true labels and predictions</span></span>
+<span id="cb37-12"><a href="#cb37-12" aria-hidden="true" tabindex="-1"></a>    true_labels <span class="op">=</span> []</span>
+<span id="cb37-13"><a href="#cb37-13" aria-hidden="true" tabindex="-1"></a>    predictions <span class="op">=</span> []</span>
+<span id="cb37-14"><a href="#cb37-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-15"><a href="#cb37-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> text_batch, label_batch <span class="kw">in</span> test_data:</span>
+<span id="cb37-16"><a href="#cb37-16" aria-hidden="true" tabindex="-1"></a>        preds <span class="op">=</span> model.predict(text_batch)</span>
+<span id="cb37-17"><a href="#cb37-17" aria-hidden="true" tabindex="-1"></a>        predictions.extend(tf.argmax(preds, axis<span class="op">=</span><span class="dv">1</span>).numpy())</span>
+<span id="cb37-18"><a href="#cb37-18" aria-hidden="true" tabindex="-1"></a>        true_labels.extend(label_batch.numpy())</span>
+<span id="cb37-19"><a href="#cb37-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-20"><a href="#cb37-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Compute metrics</span></span>
+<span id="cb37-21"><a href="#cb37-21" aria-hidden="true" tabindex="-1"></a>    f1 <span class="op">=</span> f1_score(true_labels, predictions, average<span class="op">=</span><span class="st">&#39;weighted&#39;</span>)</span>
+<span id="cb37-22"><a href="#cb37-22" aria-hidden="true" tabindex="-1"></a>    accuracy <span class="op">=</span> accuracy_score(true_labels, predictions)</span>
+<span id="cb37-23"><a href="#cb37-23" aria-hidden="true" tabindex="-1"></a>    recall <span class="op">=</span> recall_score(true_labels, predictions, average<span class="op">=</span><span class="st">&#39;weighted&#39;</span>)</span>
+<span id="cb37-24"><a href="#cb37-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-25"><a href="#cb37-25" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> f1, accuracy, recall</span></code></pre></div>
+</div>
+<div class="cell code" data-execution_count="26" data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}" id="0yA8S5A0Flvk" data-outputId="416cad87-6ed6-4e1b-a694-24efad928f66">
+<div class="sourceCode" id="cb38"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> f1_score, accuracy_score, recall_score</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Evaluate the Edited_Fixed_Length model</span></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>edited_fixed_length_vectorizer <span class="op">=</span> text_vectorization_and_adapt(</span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>    dataset_all.<span class="bu">map</span>(<span class="kw">lambda</span> text, label: text),</span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>    max_tokens<span class="op">=</span><span class="dv">20000</span>,</span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>    standardize_fn<span class="op">=</span>custom_stopwords,</span>
+<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a>    output_sequence_length<span class="op">=</span><span class="dv">100</span></span>
+<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a>edited_fixed_length_f1, edited_fixed_length_accuracy, edited_fixed_length_recall <span class="op">=</span> evaluate_model(</span>
+<span id="cb38-10"><a href="#cb38-10" aria-hidden="true" tabindex="-1"></a>    edited_fixed_length_model,</span>
+<span id="cb38-11"><a href="#cb38-11" aria-hidden="true" tabindex="-1"></a>    edited_fixed_length_vectorizer,</span>
+<span id="cb38-12"><a href="#cb38-12" aria-hidden="true" tabindex="-1"></a>    dataset_all</span>
+<span id="cb38-13"><a href="#cb38-13" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb38-14"><a href="#cb38-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-15"><a href="#cb38-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Print results for Edited_Fixed_Length model</span></span>
+<span id="cb38-16"><a href="#cb38-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Edited_Fixed_Length Model - F1 Score: </span><span class="sc">{</span>edited_fixed_length_f1<span class="sc">}</span><span class="ss">, Accuracy: </span><span class="sc">{</span>edited_fixed_length_accuracy<span class="sc">}</span><span class="ss">, Recall: </span><span class="sc">{</span>edited_fixed_length_recall<span class="sc">}</span><span class="ss">&quot;</span>)</span></code></pre></div>
+<div class="output stream stdout">
+<pre><code>1/1 [==============================] - 0s 22ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 25ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 21ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 19ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 21ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 19ms/step
+1/1 [==============================] - 0s 20ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 19ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 19ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 19ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 26ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 19ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 19ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 19ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 19ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 20ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 22ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 21ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 19ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 19ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 19ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 19ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 19ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 15ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 17ms/step
+1/1 [==============================] - 0s 18ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 16ms/step
+1/1 [==============================] - 0s 17ms/step
+Edited_Fixed_Length Model - F1 Score: 0.9040367435470286, Accuracy: 0.9040752351097179, Recall: 0.9040752351097179
+</code></pre>
+</div>
+</div>
+<div class="cell code" data-execution_count="26" id="FXDkT2MpFlsv">
+<div class="sourceCode" id="cb40"><pre class="sourceCode python"><code class="sourceCode python"></code></pre></div>
+</div>
+<div class="cell code" data-execution_count="26" id="ANSXjE2MFlqV">
+<div class="sourceCode" id="cb41"><pre class="sourceCode python"><code class="sourceCode python"></code></pre></div>
+</div>
+</body>
+</html>
